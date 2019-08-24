@@ -38,31 +38,41 @@ class postController extends Controller {
 		]);
 	}
 	function process_insert(Request $request) {
-		$validation = Validator::make($request->all(), [
-			'title' => 'required',
-			'type_room' => 'required',
-		]);
-		$post = new Post();
-		$post->title = $request->get('name');
-		$post->email = $request->get('email');
-		$post->gender = $request->get('gender');
-		$post->pass = $request->get('pass');
-		$post->birth = $request->get('birth');
-		$post->status = $request->get('status');
-		$post->insert();
-		return redirect('post')->with('messages', 'Data is successfully updated');
+				
+		$image_name = $request->hidden_image;
+		$image1 = $request->file('image1');
+		$image2 = $request->file('image2');
+		$image3 = $request->file('image3');
+		if ($image1 !=''&& $image2 !=''&& $image3 !='') {
 
-	}function process_update(Request $request) {
-		$post = new Post();
-		$post->id = $request->get('id');
-		$post->name = $request->get('name');
-		$post->email = $request->get('email');
-		$post->gender = $request->get('gender');
-		$post->pass = $request->get('pass');
-		$post->birth = $request->get('birth');
-		$post->status = $request->get('status');
-		$post->update();
-		return redirect('post')->with('messages', 'Data is successfully updated');
+			$image_name1 = rand() . '.' . $image1->getClientOriginalExtension();
+			$image_name2 = rand() . '.' . $image2->getClientOriginalExtension();
+			$image_name3 = rand() . '.' . $image3->getClientOriginalExtension();
+			$image1->move(public_path('images'), $image_name1);
+			$image2->move(public_path('images'), $image_name2);
+			$image3->move(public_path('images'), $image_name3);
+
+			$post = new Post();
+			
+			$post->title = $request->get('title');
+			$post->content = $request->get('describ');
+			$post->img1 = $image_name1;
+			$post->img2 = $image_name2;
+			$post->img3 = $image_name3;
+			$post->type_room=$request->get('type');
+			$post->url_post = $request->get('url_post');
+			$post->insert();
+
+		} else {
+			$request->validate([
+				'image1' => 'required|image|max:2048',
+				'image2' => 'required|image|max:2048',
+				'image3' => 'required|image|max:2048',
+				'title' => 'required',
+				'url_post' => 'required',
+			]);
+		}
+		return redirect('admin/post')->with('messages', 'Data is successfully inserted');
 
 	}
 

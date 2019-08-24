@@ -125,9 +125,8 @@
 </div>
 </div>
 
-  @foreach ($room_id as $id)
 
-
+{{--   @foreach ($room_id as $id)
 <div class="row">
     <div class="col-xs-12 form-group">
         <label>Room {{ $id->room_id }}</label>
@@ -136,15 +135,58 @@
               <i class="fa fa-home"></i>
             </span>
           
-              {{-- expr --}}
+              
           
-        <input type="" class="form-control" value="{{ $id->room_name }}" placeholder="Room" ">
+        <input type="text" class="form-control" value="{{ $id->room_name }}" placeholder="Room" ">
           
       </div>
            <p class="help-block"></p>
          </div>
        </div>
-@endforeach
+@endforeach --}}
+@if ($bill->so_luong==1)
+  <div class="row">
+    <div class="col-xs-12 form-group">
+        <label>Room 1</label>
+        <div class="input-group">
+             <span class="input-group-addon">
+              <i class="fa fa-home"></i>
+            </span>
+        <select class="form-control" name="room1">
+          @foreach ($room1 as $room21)
+            <option value="{{ $room21->room_id }}" @if ($info->room_id=$room21->room_id)
+              selected="selected"
+            @endif>
+            {{ $room21->room_name }}</option>
+          @endforeach
+      </select>
+      </div>
+           <p class="help-block"></p>
+         </div>
+       </div>
+                @elseif($bill->so_luong==2)
+           <div class="row">
+    <div class="col-xs-12 form-group">
+        <label>Room 1</label>
+        <div class="input-group">
+             <span class="input-group-addon">
+              <i class="fa fa-home"></i>
+            </span>
+        <select class="form-control" name="room1">
+          @foreach ($room1 as $room21)
+            <option value="{{ $room21->room_id }}"{{--  @if ($info->room_id=$room21->room_id)
+              selected="selected"
+            @endif --}}>
+            {{ $room21->room_name }}</option>
+          @endforeach
+      </select>
+      </div>
+           <p class="help-block"></p>
+         </div>
+       </div>
+         
+ 
+@endif
    
 
 <input class="btn btn-primary" type="submit" value="Save">

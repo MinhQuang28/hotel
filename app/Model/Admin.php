@@ -7,7 +7,7 @@ use DB;
 class Admin {
 	public $table = 'admin';
 	public function get_all() {
-		$array = DB::select("select * from $this->table");
+		$array = DB::select("select * from $this->table ");
 		return $array;
 	}
 	public function insert() {

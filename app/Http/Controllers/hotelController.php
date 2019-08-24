@@ -36,6 +36,7 @@ class hotelController extends Controller {
 
 function process_insert(Request $request) {
 
+			
 		$image_name = $request->hidden_image;
 		$image1 = $request->file('image1');
 		$image2 = $request->file('image2');
@@ -67,7 +68,6 @@ function process_insert(Request $request) {
 				'name' => 'required',
 				'address' => 'required',
 			]);
-			
 		}
 		return redirect('hotel')->with('messages', 'Data is successfully inserted');
 

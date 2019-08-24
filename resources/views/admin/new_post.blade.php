@@ -23,100 +23,110 @@
         </div>
         @endif
         <div class="row">
-    <div class="col-md-12">
-        <form action="{{ route('post.process_insert') }}" enctype="multipart/form-data" method="post" role="form">
-            @csrf
-             <div class="panel panel-default">
-            <div class="panel-heading"> Create New  </div>
-                <input hidden="hidden" name="id" type="text" value="">
-                   <div class="panel-body">
-                <div class="row">
-                    <div class="col-xs-12 form-group">
-                        <label for="text" class="control-label">Titile</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-sticky-note"></i>
-                        </span>
-                        <input class="form-control" name="name" placeholder="Enter title" type="text" >
+            <div class="col-md-12">
+                <form action="{{ route('post.process_insert') }}" enctype="multipart/form-data" method="post" role="form">
+                    @csrf
+                    <div class="panel panel-default">
+                        <div class="panel-heading"> Create New  </div>
+                        <input hidden="hidden" name="id" type="text" value="">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <label for="text" class="control-label">Titile</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-sticky-note"></i>
+                                        </span>
+                                        <input class="form-control" name="title" placeholder="Enter title" type="text" >
+                                    </div>
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <label for="photo" class="control-label">Photo 1</label>
+                                    <br>
+                                    <input class="form-control" style="margin-top: 4px;" name="image1" type="file" id="photo">
+                                    <p class="help-block"></p>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <label for="photo" class="control-label">Photo 2</label>
+                                    <br>
+                                    <input class="form-control" style="margin-top: 4px;" name="image2" type="file" id="photo">
+                                    <p class="help-block"></p>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <label for="photo" class="control-label">Photo 3</label>
+                                    <br>
+                                    <input class="form-control" style="margin-top: 4px;" name="image3" type="file" id="photo">
+                                    <p class="help-block"></p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <label for="photo" class="control-label"> Type Room</label>
+
+
+                                    <select class="form-control" name="type">
+                                        <option value="-1">--Chọn--</option>
+                                        @foreach ($type as $type)
+                                        <option value="{{ $type->type_id }}">{{ $type->type_name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <p class="help-block"></p>
+
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <label for="photo" class="control-label"> Url Post</label>
+                                    
+                                    
+                                    <input class="form-control"  type="text" name="url_post">
+                                    <p class="help-block"></p>
+
+                                </div>
+                            </div>
+
+                            <div class="box-body pad">
+                                <textarea cols="80" id="editor1" name="describ" rows="10">
+
+                                </textarea>
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button class="btn btn-primary" type="submit">
+                                    Submit
+                                </button>
+                                <button class="btn btn-danger" type="cancel">
+                                    cancel
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                     <p class="help-block"></p>
                 </div>
-            </div>
-
-
-
-<div class="row">
-    <div class="col-xs-12 form-group">
-        <label for="photo" class="control-label">Photo 1</label>
-        <br>
-        <input class="form-control" style="margin-top: 4px;" name="image1" type="file" id="photo">
-        <p class="help-block"></p>
-    </div>
-
-</div>
-<div class="row">
-    <div class="col-xs-12 form-group">
-        <label for="photo" class="control-label">Photo 2</label>
-        <br>
-        <input class="form-control" style="margin-top: 4px;" name="image2" type="file" id="photo">
-        <p class="help-block"></p>
-    </div>
-
-</div>
-<div class="row">
-    <div class="col-xs-12 form-group">
-        <label for="photo" class="control-label">Photo 3</label>
-        <br>
-        <input class="form-control" style="margin-top: 4px;" name="image3" type="file" id="photo">
-        <p class="help-block"></p>
-    </div>
-
-</div>
-
-
-               <div class="row">
-    <div class="col-xs-12 form-group">
-        <label for="photo" class="control-label"> Type Room</label>
-                   
-                       
-                        <select class="form-control">
-                            <option value="-1">--Chọn--</option>
-                            @foreach ($type as $type)
-                              <option value="{{ $type->type_id }}">{{ $type->type_name }}</option>
-                            @endforeach
-                        </select>
-                <p class="help-block"></p>
-
-                </div>
-            </div>
-
-                    <div class="box-body pad">
-                        <textarea cols="80" id="editor1" name="describ" rows="10">
-                           
-                        </textarea>
-                    </div>
-            <!-- /.box-body -->
-            <div class="box-footer">
-                <button class="btn btn-primary" type="submit">
-                    Submit
-                </button>
-                <button class="btn btn-danger" type="cancel">
-                    cancel
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
-        <script src="{{ asset('bower_components/ckeditor/ckeditor.js') }}">
-        </script>
-        <!-- Bootstrap WYSIHTML5 -->
-        <script src="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}">
-        </script>
-        <script>
-            $(function () {
+                <script src="{{ asset('bower_components/ckeditor/ckeditor.js') }}">
+                </script>
+                <!-- Bootstrap WYSIHTML5 -->
+                <script src="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}">
+                </script>
+                <script>
+                    $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
-   CKEDITOR.replace( 'editor1', {
+    CKEDITOR.replace( 'editor1', {
         filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
         filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
         filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Flash') }}',
@@ -126,10 +136,10 @@
     } );
     //bootstrap WYSIHTML5 - text editor
     $('.textarea').wysihtml5()
-  })
-        </script>
-        @include('layer.edit')
-        <!-- jQuery 3 -->
-        @endsection
-    </section>
+})
+</script>
+@include('layer.edit')
+<!-- jQuery 3 -->
+@endsection
+</section>
 </div>

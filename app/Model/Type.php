@@ -7,7 +7,7 @@ use DB;
 class Type {
 	public $table = 'type_room';
 	public function get_all() {
-		$array = DB::select("select * from $this->table inner join hotel on $this->table.hotel_id=hotel.hotel_id");
+		$array = DB::select("select * from $this->table inner join hotel on $this->table.hotel_id=hotel.hotel_id ");
 		return $array;
 	}
 	public function insert() {

@@ -9,6 +9,10 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Request;
 use Session;
 use App\Model\Admin;
+use App\Model\Bill;
+use App\Model\Hotel;
+use App\Model\Room;
+use App\Model\Customer;
 
 class Controller extends BaseController
 {
@@ -35,8 +39,17 @@ class Controller extends BaseController
 		return redirect()->route('view_login')->with('error','Đăng nhập sai');
 	}
 	public  function welcome()
-	{
-		return view('admin.welcome');
+	{	$room= new Room();
+		 $count_room=$room->count_room();
+		 $bill= new Bill();
+		 $count_bill=$bill->count_bill();
+		 $customer= new Customer();
+		 $count_cus=$customer->count_cus();
+		 $count_bill_today=$bill->count_new();
+		 $result_oder=$bill->new_oder();
+
+		return view('admin.welcome',[
+			'room' => $count_room,'bill'=>$count_bill,'cus'=>$count_cus,'today'=>$count_bill_today,'result'=>$result_oder]);
 	}
 	
 	public function logout()

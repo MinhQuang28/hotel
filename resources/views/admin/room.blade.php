@@ -232,7 +232,7 @@
 </script>
 <script type="text/javascript">
   $(document).ready(function() {
-    $('.room').removeClass('room').addClass('active');
+    $('.hotel2').removeClass('hotel2').addClass('active');
 });
 </script>
 @endpush

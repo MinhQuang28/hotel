@@ -18,7 +18,14 @@ class Customer {
 			$this->tuoi,
 			$this->ma_lop,
 		]);
+
 	}
+	function count_cus(){
+		// $count=DB::select("SELECT count(*) FROM bill_detail where id_bill=?",[$id]);
+		$count = DB::table('Customer')->where('access', '=', 0)->count();
+
+		return $count;
+}
 	public function delete() {
 		DB::delete("delete from $this->table
             where ma_sinh_vien = ?", [$this->ma_sinh_vien]);

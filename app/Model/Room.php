@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Room {
 	public $table = 'Room';
 	public function get_all() {
-		$array = DB::select("select * from $this->table");
+		$array = DB::select("select * from $this->table ");
 		return $array;
 	}
 	public function insert() {
@@ -29,11 +29,24 @@ class Room {
 	}
 
 	public function get_all_in_type() {
-		$array = DB::select("select * from $this->table
+		$array = DB::select("SELECT * from $this->table
 
             where room_status=0 and type_id = ?", [$this->type_id]);
 		return $array;
 	}
+	public function get_roomID($id){
+		$array=DB::select("SELECT * FROM bill_detail where id_bill=?",[$id]);
+		return $array[0];
+	}
+	public function get_roomIDs($id){
+		$array=DB::select("SELECT * FROM bill_detail where id_bill=?",[$id]);
+		return $array;
+	}
+	function count_room(){
+		// $count=DB::select("SELECT count(*) FROM bill_detail where id_bill=?",[$id]);
+		$count = DB::table('room')->where('room_status',0)->count();
+		return $count;
+}
 	public function update() {
 		DB::update("update $this->table
             set

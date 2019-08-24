@@ -124,8 +124,7 @@
 </div>
 
 
-@for ($i = 1; $i <=$bill->so_luong ; $i++)
-{{-- expr --}}
+ @for ($i = 1; $i <=$bill->so_luong ; $i++)
 <div class="row">
     <div class="col-xs-12 form-group">
         <label>Room {{ $i }}</label>
@@ -135,7 +134,7 @@
             </span>
         <select class="form-control" name="room{{ $i }}">
           @foreach ($room1 as $room21)
-            {{-- expr --}}
+           
             <option value="{{ $room21->room_id }}">{{ $room21->room_name }}</option>
           @endforeach
       </select>
@@ -143,7 +142,12 @@
            <p class="help-block"></p>
          </div>
        </div>
-@endfor
+@endfor 
+
+
+
+
+
 
 <input class="btn btn-primary" type="submit" value="Save">
 <button class="btn btn-danger" type="cancel">

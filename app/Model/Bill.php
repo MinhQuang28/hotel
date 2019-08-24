@@ -10,9 +10,17 @@ class Bill {
 	public $room = 'room';
 	public $customer = 'customer';
 	public function get_all() {
-		$array = DB::select("select * FROM bill INNER JOIN customer on customer.id=bill.cus_id");
+		$array = DB::select("SELECT * FROM bill INNER JOIN customer on customer.id=bill.cus_id  ");
 		return $array;
-	}public function get_hotel() {
+	}
+	public function get_today() {
+		$array = DB::select("SELECT * FROM bill INNER JOIN customer on customer.id=bill.cus_id Where status=0 or status=1 and check_in=CURDATE() or check_out=CURDATE() and status=3 ");
+		return $array;
+	}public function get_week() {
+		$array = DB::select("SELECT * FROM `bill`INNER JOIN customer on customer.id=bill.cus_id WHERE create_at>=CURRENT_DATE()-7  ");
+		return $array;
+	}
+	public function get_hotel() {
 		$hotel_name = DB::select(" SELECT hotel.hotel_id from hotel INNER JOIN room on hotel.hotel_id=room.hotel_id INNER JOIN bill_detail ON bill_detail.room_id=room.room_id WHERE bill_detail.room_id=1 and id_bill=1 ");
 		return $hotel_name;
 	}
@@ -33,7 +41,7 @@ class Bill {
             where ma_sinh_vien = ?", [$this->ma_sinh_vien]);
 	}
 	public function get_one() {
-		$array = DB::select("select * from $this->bill  INNER JOIN customer on customer.id=bill.cus_id inner join type_room on bill.type_id=type_room.type_id
+		$array = DB::select("SELECT * from $this->bill  INNER JOIN customer on customer.id=bill.cus_id inner join type_room on bill.type_id=type_room.type_id
 
             where bill_id = ?
             limit 1", [$this->bill_id]);
@@ -41,14 +49,37 @@ class Bill {
 		return $array[0];
 	}
 		public function get_id_room() {
-		$array = DB::select("select * from bill_detail inner join room on bill_detail.room_id=room.room_id
+		$array = DB::select("SELECT * from bill_detail inner join room on bill_detail.room_id=room.room_id
 
             where id_bill = ?
             ", [$this->id_bill]);
 		return $array;
 		// lay phong con trong trong 1 khach san
 	}
+	function count_booking($id){
+		// $count=DB::select("SELECT count(*) FROM bill_detail where id_bill=?",[$id]);
+		$count = DB::table('bill_detail')->where('id_bill',$id)->count();
+		return $count;
+}function count_bill(){
+		// $count=DB::select("SELECT count(*) FROM bill_detail where id_bill=?",[$id]);
+		$count = DB::table('bill')->where('create_at', '>=', '2019-8-20')->count();
+
+		return $count;
+}
+function count_new(){
+		// $count=DB::select("SELECT count(*) FROM bill_detail where id_bill=?",[$id]);
+		$count = DB::table('bill')->where('status', '=', 2)->count();
+
+		return $count;
+}
+function new_oder(){
+		// $count=DB::select("SELECT count(*) FROM bill_detail where id_bill=?",[$id]);
+		$count = DB::select('SELECT * from bill INNER JOIN customer on customer.id=bill.cus_id where status=0 or status=1 ORDER by create_at DESC');
+
+		return $count;
+}
 	 public function get_login()
+	
     {
     	$array = DB::select("select * from $this->table
     		where email = ? and pass = ?

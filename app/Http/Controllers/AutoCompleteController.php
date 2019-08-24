@@ -11,7 +11,7 @@ class AutoCompleteController extends Controller
  
     public function index()
     {
-        return view('search');
+        return view('hotel.index');
     }
  
     public function search(Request $request)

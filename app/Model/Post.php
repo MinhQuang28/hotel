@@ -7,18 +7,18 @@ use DB;
 class Post {
 	public $table = 'post';
 	public function get_all() {
-		$array = DB::select("select * from $this->table");
+		$array = DB::select("select * from $this->table ");
 		return $array;
 	}
 	public function insert() {
-		DB::insert("insert into $this->table('title', 'img1','','img2', 'img3', 'type_room', 'content')
-    		values (?,?,?)", [
+		DB::insert("INSERT into post (title, img1,img2, img3, type_room,content,url_post) values (?,?,?,?,?,?,?)", [
 			$this->title,
 			$this->img1,
-			$this->img1,
-			$this->img1,
+			$this->img2,
+			$this->img3,
 			$this->type_room,
 			$this->content,
+			$this->url_post
 		]);
 	}
 	public function delete() {

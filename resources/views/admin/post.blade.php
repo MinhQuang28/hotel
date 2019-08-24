@@ -89,7 +89,7 @@
 
 });
           $(document).ready(function() {
-            $('.post').removeClass('post').addClass('active');
+            $('.hotel3').removeClass('hotel3').addClass('active');
         });
     </script>
    @endpush

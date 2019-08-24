@@ -204,7 +204,7 @@
 });
  
 </script>   
-</script>
+
 <script src="js/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
 <script src="js/bootstrap.min.js"></script>
