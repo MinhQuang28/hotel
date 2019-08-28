@@ -1,0 +1,17 @@
+<!DOCTYPE	html	PUBLIC	"-//W3C//DTD	XHTML	1.0	Transitional//EN"	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">	<html>	
+<head>			<title>Date</title>			
+	<script	type="text/javascript">			var	started	=	new	Date();
+		var	now	=	started.getTime();			
+</script>		
+</head>	
+<body>			<p	id="dateField">	</p>	
+	<script	type="text/javascript">	
+		var	bottom	=	new	Date();
+			var	diff	=	(bottom.getTime()	-	now)/1000;	
+					var		finaltime	=		diff.toPrecision(5);	
+					var	dateLoc	=	document.getElementById("dateField"); 
+					dateLoc.innerHTML	=	"Trang	được	tải	trong	"	+	finaltime	+	"";		
+	</script>	
+</body>
+
+</html>

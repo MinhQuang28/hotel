@@ -20,6 +20,9 @@ class Controller extends BaseController
     public function view_login()
 	{
 		return view('admin.view_login');
+	} public function login_user()
+	{
+		return view('hotel.login');
 	}
 	public function process_login()
 	{
@@ -37,6 +40,23 @@ class Controller extends BaseController
 			return redirect()->route("welcome")->with('messages',' Welcome Admin: ');
 		}
 		return redirect()->route('view_login')->with('error','Đăng nhập sai');
+	}
+	public function process_login_user()
+	{
+		$cus           = new Customer();
+		$cus->email    = Request::get('email');
+		$cus->pass = Request::get('pass');
+
+		$cus           = $cus->get_login();
+		
+
+		if(count($cus)==1&& $cus[0]->access==0){
+			Session::put('ma_us',$cus[0]->id);
+			Session::put('ten_us',$cus[0]->name);
+
+			return redirect()->route("home")->with('messages',' Welcome user: ');
+		}
+		return redirect()->route('login')->with('error1','Đăng nhập sai');
 	}
 	public  function welcome()
 	{	$room= new Room();

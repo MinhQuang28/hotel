@@ -211,18 +211,39 @@ class billController extends Controller {
 		$count=$bill->count_booking($id);
 		if($count==1){
 		$inf_room=$room->get_roomID($id);
-	}else{
-		$inf_room=$room->get_roomIDs($id);
+	
+			return view("admin/bill_update", [
+			'hotel' => $hotel,'bill'=>$bill1,'room'=>$room1,'room1'=>$inf_room]
+	);
+	}elseif($count==2){
+		$inf_room=$room->get_roomID($id);
+		$inf_room1=$room->get_roomID1($id);
+		return view("admin/bill_update", [
+			'hotel' => $hotel,'bill'=>$bill1,'room'=>$room1,'room1'=>$inf_room]);
+	}
+	else {
+		$inf_room=$room->get_roomID($id);
+		$inf_room1=$room->get_roomID1($id);
+		$inf_room2=$room->get_roomID2($id);
+		return view("admin/bill_update", [
+			'hotel' => $hotel,'bill'=>$bill1,'room'=>$room1,'room1'=>$inf_room,'room2'=>$inf_room1,'room3'=>$inf_room2]);
 	}
 		date_default_timezone_set('Asia/Macau');
 		$date=date('Y-m-d H:i:s T', time());
 		
 		// lay id room da comfirm
 
-		return view("admin/bill_update", [
-			'hotel' => $hotel,'bill'=>$bill1,'room1'=>$room1,'info'=>$inf_room]
-	);
+	
 	}
+	 function process_update(Request $request){
+	 	$bill= new Bill();
+	 	$bill->bill_id=$request->get('id');
+	 	$bill->name=$request->get('name');
+	 	$bill->monney=$request->get('monney');
+	 	$bill->check_in=$request->get('check_in');
+	 	$bill->check_out=$request->get('check_out');
+
+	 }
 
 
 	function removedata(Request $request) {

@@ -35,12 +35,18 @@ class Room {
 		return $array;
 	}
 	public function get_roomID($id){
-		$array=DB::select("SELECT * FROM bill_detail where id_bill=?",[$id]);
+		 $array=DB::select("SELECT * FROM bill_detail where id_bill='$id' limit 0,1");
+				
 		return $array[0];
 	}
-	public function get_roomIDs($id){
-		$array=DB::select("SELECT * FROM bill_detail where id_bill=?",[$id]);
-		return $array;
+	public function get_roomID1($id){
+		$array=DB::select("SELECT * FROM bill_detail where id_bill='$id' limit 1,1");
+				
+		return $array[0];
+	}public function get_roomID2($id){
+			$array=DB::select("SELECT * FROM bill_detail where id_bill='$id' limit 2,1");
+				
+		return $array[0];
 	}
 	function count_room(){
 		// $count=DB::select("SELECT count(*) FROM bill_detail where id_bill=?",[$id]);

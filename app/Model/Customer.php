@@ -20,6 +20,17 @@ class Customer {
 		]);
 
 	}
+
+	public function get_login()
+    {
+    	$array = DB::select("select * from $this->table
+    		where email = ? and pass = ?
+    		limit 1",[
+    			$this->email,
+    			$this->pass
+    		]);
+    	return $array;
+    }
 	function count_cus(){
 		// $count=DB::select("SELECT count(*) FROM bill_detail where id_bill=?",[$id]);
 		$count = DB::table('Customer')->where('access', '=', 0)->count();

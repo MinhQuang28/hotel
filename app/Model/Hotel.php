@@ -63,4 +63,19 @@ class Hotel {
 			$this->hotel_id,
 		]);
 	}
+
+
+	// show tren khach hang
+	public function limit_hotel(){
+		$array = DB::select("select * from $this->table limit 0,5");
+		return $array;
+	}
+	public function get_hotel($id){
+		$array= DB::select("SELECT * from hotel where hotel_id='$id'");
+		return $array[0];
+	}
+	public function info_hotel($id){
+		$array=DB::select('select * from info_hotel where id_hotel = ?', [$id]);
+		return $array[0];
+	}
 }

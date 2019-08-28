@@ -100,5 +100,15 @@ Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"], function(){
 });
 
 // KHach hang
-Route::get("search", "AutoCompleteController@index");
+Route::get("/", "indexController@index")->name('home');
+Route::get('hotels',"indexController@hotels")->name('indexController.hotels');
 Route::get("autocomplete", "AutoCompleteController@search");
+Route::get('hotel/{id}',"indexController@hotel")->name('indexController@hotel');
+Route::get('login',"Controller@login_user")->name('login');
+Route::post("process_login_user","Controller@process_login_user")
+->name("process_login_user");
+Route::group(["prefix" => "", "middleware" => "CheckUser"], function(){
+
+	Route::get('room/{id}',"indexController@rooms")->name('room');
+
+	});

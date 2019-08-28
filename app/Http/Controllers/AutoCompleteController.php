@@ -9,16 +9,13 @@ use DB;
 class AutoCompleteController extends Controller
 {
  
-    public function index()
-    {
-        return view('hotel.index');
-    }
- 
+  
     public function search(Request $request)
     {
           $search = $request->get('term');
         
-      $result = DB::table('hotel')->where('hotel_name','LIKE', '%'. $request->get('term'). '%' )->get();
+      $result = DB::table('city_hotel')->where('city','LIKE', '%'. $request->get('term'). '%' )
+      ->get();
           // $result = User::where('name', 'LIKE', '%'. $search. '%')
 
           return response()->json($result);
