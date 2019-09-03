@@ -107,8 +107,12 @@ Route::get('hotel/{id}',"indexController@hotel")->name('indexController@hotel');
 Route::get('login',"Controller@login_user")->name('login');
 Route::post("process_login_user","Controller@process_login_user")
 ->name("process_login_user");
-Route::group(["prefix" => "", "middleware" => "CheckUser"], function(){
+Route::post("search","indexController@search")
+->name("search");
 
 	Route::get('room/{id}',"indexController@rooms")->name('room');
+
+Route::group(["prefix" => "", "middleware" => "CheckUser"], function(){
+Route::post('proocess_booking',"indexController@proocess_booking")->name('proocess_booking'); ;
 
 	});

@@ -7,7 +7,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                    	<h1 class="page-title">Login Page</h1>
+                    	<h1 class="page-title">  @if (Session::has('error1'))
+                                       
+                                            {{Session::get('error1')}}
+                                       @else
+                                       Login
+                                    @endif</h1>
                         <ul class="breadcrumb">
                             <li><a href="#">Home</a></li>
                             <li class="active">Login Page</li>
@@ -19,12 +24,8 @@
         
         
         <!--===== INNERPAGE-WRAPPER ====-->
-        <section class="innerpage-wrapper">
-             @if (Session::has('error1'))
-                                        <div class="callout callout-info">
-                                            {{Session::get('error1')}}
-                                       </div>
-                                    @endif
+     
+           
         	<div id="login" class="innerpage-section-padding">
                 <div class="container">
                     <div class="row">

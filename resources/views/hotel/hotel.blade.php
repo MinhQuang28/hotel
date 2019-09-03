@@ -159,7 +159,7 @@
                                             </a>
                                             <div class="main-mask">
                                                 <ul class="list-unstyled list-inline offer-price-1">
-                                                    <li class="price">$140.00<span class="divider">|</span><span class="pkg">Avg/Night</span></li>
+                                                    <li class="price">${{ $hotels->price_avg }}.00<span class="divider">|</span><span class="pkg">Avg/Night</span></li>
                                                 </ul>
                                             </div><!-- end main-mask -->
                                         </div><!-- end h-grid-img -->
@@ -173,7 +173,7 @@
                                                 <span><i class="fa fa-star lightgrey"></i></span>
                                             </div><!-- end rating -->
                                             
-                                            <h3 class="block-title"><a href="hotel-detail-left-sidebar.html">{{ $hotels->hotel_name }}</a></h3>
+                                            <h3 class="block-title"><a href=" {{ url('hotel',[$hotels->hotel_id]) }}">{{ $hotels->hotel_name }}</a></h3>
                                             <p class="block-minor">From: {{ $hotels->city }}</p>
                                             <p>{{ $hotels->hotel_address }} </p>
                                             <div class="grid-btn">

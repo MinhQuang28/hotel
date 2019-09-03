@@ -1,194 +1,200 @@
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Hotel Homepage</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="icon" href="images/favicon.png" type="image/x-icon">
-        
-        <!-- Google Fonts -->   
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-        
-        <!-- Bootstrap Stylesheet -->   
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        
-        <!-- Font Awesome Stylesheet -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-            
-        <!-- Custom Stylesheets --> 
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" id="cpswitch" href="css/orange.css">
-        <link rel="stylesheet" href="css/responsive.css">
-    
-        <!-- Owl Carousel Stylesheet -->
-        <link rel="stylesheet" href="css/owl.carousel.css">
-        <link rel="stylesheet" href="css/owl.theme.css">
-        
-        <!-- Flex Slider Stylesheet -->
-        <link rel="stylesheet" href="css/flexslider.css" type="text/css" />
-        
-        <!--Date-Picker Stylesheet-->
-        <link rel="stylesheet" href="css/datepicker.css">
-        
-        <!-- Magnific Gallery -->
-        <link rel="stylesheet" href="css/magnific-popup.css">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<head>
+    <title>Hotel Homepage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Google Fonts -->   
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
-    </head>
+    <!-- Bootstrap Stylesheet -->   
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Font Awesome Stylesheet -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Custom Stylesheets --> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" id="cpswitch" href="css/orange.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Owl Carousel Stylesheet -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+
+    <!-- Flex Slider Stylesheet -->
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" />
+
+    <!--Date-Picker Stylesheet-->
+    <link rel="stylesheet" href="css/datepicker.css">
+
+    <!-- Magnific Gallery -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+
+
+<body id="hotel-homepage">
+
+    <!--====== LOADER =====-->
+    <div class="loader"></div>
     
     
-    <body id="hotel-homepage">
-    
-        <!--====== LOADER =====-->
-        <div class="loader"></div>
-    
-    
-        <!--======== SEARCH-OVERLAY =========-->       
-        <div class="overlay">
-            <a href="javascript:void(0)" id="close-button" class="closebtn">&times;</a>
-            <div class="overlay-content">
-                <div class="form-center">
-                    <form>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search..." required />
-                                <span class="input-group-btn"><button type="submit" class="btn"><span><i class="fa fa-search"></i></span></button></span>
-                            </div><!-- end input-group -->
-                        </div><!-- end form-group -->
-                    </form>
-                </div><!-- end form-center -->
-            </div><!-- end overlay-content -->
-        </div><!-- end overlay -->
-        
-        
-        <!--============= TOP-BAR ===========-->
-        <div id="top-bar" class="tb-text-grey">
+    <!--======== SEARCH-OVERLAY =========-->       
+    <div class="overlay">
+        <a href="javascript:void(0)" id="close-button" class="closebtn">&times;</a>
+        <div class="overlay-content">
+            <div class="form-center">
+                <form>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..." required />
+                            <span class="input-group-btn"><button type="submit" class="btn"><span><i class="fa fa-search"></i></span></button></span>
+                        </div><!-- end input-group -->
+                    </div><!-- end form-group -->
+                </form>
+            </div><!-- end form-center -->
+        </div><!-- end overlay-content -->
+    </div><!-- end overlay -->
+
+
+    <!--============= TOP-BAR ===========-->
+    <div id="top-bar" class="tb-text-grey">
+        <div class="container">
+            <div class="row">          
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div id="info">
+                        <ul class="list-unstyled list-inline">
+                            <li><span><i class="fa fa-map-marker"></i></span>29 tran hung dao, Ha Noi, VN</li>
+                            <li><span><i class="fa fa-phone"></i></span>+88.66.43.465</li>
+                        </ul>
+                    </div><!-- end info -->
+                </div><!-- end columns -->
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div id="links">
+                        <ul class="list-unstyled list-inline">
+                           @if (Session::has('ma_us'))
+
+                           <li><a href="{{ url('profile') }}"><span>Welcome<i class="fa fa-user"></i> {{Session::get('ten_us')}} </span></a></li>
+                           @else
+                           <li><a href="{{ url('login') }}"><span><i class="fa fa-lock"></i></span>Login</a></li>
+                           <li><a href="registration.html"><span><i class="fa fa-plus"></i></span>Sign Up</a></li>
+                           @endif
+
+                           <li>
+                            <form>
+                                <ul class="list-inline">
+                                    <li>
+                                        <div class="form-group currency">
+                                            <span><i class="fa fa-angle-down"></i></span>
+                                            <select class="form-control">
+                                                <option value="">$</option>
+                                                <option value="">£</option>
+                                            </select>
+                                        </div><!-- end form-group -->
+                                    </li>
+
+                                    <li>
+                                        <div class="form-group language">
+                                            <span><i class="fa fa-angle-down"></i></span>
+                                            <select class="form-control">
+                                                <option value="">EN</option>
+                                                <option value="">UR</option>
+                                                <option value="">FR</option>
+                                                <option value="">IT</option>
+                                            </select>
+                                        </div><!-- end form-group -->
+                                    </li>
+                                </ul>
+                            </form>
+                        </li>
+                    </ul>
+                </div><!-- end links -->
+            </div><!-- end columns -->              
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end top-bar -->
+
+
+<!--========================= FLEX SLIDER =====================-->
+<section class="flexslider-container" id="flexslider-container-3">
+
+    <div class="header-absolute">
+        <nav class="navbar navbar-default main-navbar navbar-custom navbar-transparent" id="mynavbar">
             <div class="container">
-                <div class="row">          
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <div id="info">
-                            <ul class="list-unstyled list-inline">
-                                <li><span><i class="fa fa-map-marker"></i></span>29 Land St, Lorem City, CA</li>
-                                <li><span><i class="fa fa-phone"></i></span>+00 123 4567</li>
-                            </ul>
-                        </div><!-- end info -->
-                    </div><!-- end columns -->
-                    
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <div id="links">
-                            <ul class="list-unstyled list-inline">
-                                <li><a href="login.html"><span><i class="fa fa-lock"></i></span>Login</a></li>
-                                <li><a href="registration.html"><span><i class="fa fa-plus"></i></span>Sign Up</a></li>
-                                <li>
-                                    <form>
-                                        <ul class="list-inline">
-                                            <li>
-                                                <div class="form-group currency">
-                                                    <span><i class="fa fa-angle-down"></i></span>
-                                                    <select class="form-control">
-                                                        <option value="">$</option>
-                                                        <option value="">£</option>
-                                                    </select>
-                                                </div><!-- end form-group -->
-                                            </li>
-                                            
-                                            <li>
-                                                <div class="form-group language">
-                                                    <span><i class="fa fa-angle-down"></i></span>
-                                                    <select class="form-control">
-                                                        <option value="">EN</option>
-                                                        <option value="">UR</option>
-                                                        <option value="">FR</option>
-                                                        <option value="">IT</option>
-                                                    </select>
-                                                </div><!-- end form-group -->
-                                            </li>
-                                        </ul>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div><!-- end links -->
-                    </div><!-- end columns -->              
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </div><!-- end top-bar -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" id="menu-button">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>                        
+                  </button>
+                  <div class="header-search hidden-lg">
+                    <a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a>
+                </div>
+                <a href="{{ url('lav.com') }}" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>
+            </div><!-- end navbar-header -->
+
+            <div class="collapse navbar-collapse" id="myNavbar1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#" class=>Home<span></span></a>     
+                    </li>
+                    <li class=""><a href="{{ url('hotels') }}" class="" data-toggle="">Hotels<span></span></a>
+
+                    </li>
+                    <li class=""><a href="{{ url('services') }}" >Services<span></span></a>
+
+                    </li>
+                    <li class=""><a href="{{ url('blog') }}" >Blog<span></span></a>
+
+                    </li>
+                    <li class=""><a href="{{ url('about') }}" >about<span></span></a>          
+                    </li>
+                    <li class=""><a href="{{ url('contact') }} }}">Contact<span></span></a>
+
+                    </li>
+
+                    <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
+                </ul>
+            </div><!-- end navbar collapse -->
+        </div><!-- end container -->
+    </nav><!-- end navbar -->
+</div><!-- end header-absolute -->
+
+<div class="sidenav-content">
+    <div id="mySidenav" class="sidenav" >
+        <h2 id="web-name"><span><i class="fa fa-plane"></i></span>Star Travel</h2>
+
+        <div id="main-menu">
+            <div class="closebtn">
+                <button class="btn btn-default" id="closebtn">&times;</button>
+            </div><!-- end close-btn -->
+
+            <div class="list-group panel">
+
+                <a href="{{ url('lav.com') }}" class="list-group-item"><span><i class="fa fa-home link-icon"></i></span>Home<span></span></a>
+
+                <a href="" class="list-group-item" ><span><i class="fa fa-plane link-icon"></i></span>Flights<span></span></a>
+
+                <a href="#hotels-links" class="list-group-item" ><span><i class="fa fa-building link-icon"></i></span>Hotels<span></span></a>
+
+                <a href="#tours-links" class="list-group-item"  ><span><i class="fa fa-globe link-icon"></i></span>Tours<span></span></a>
+                <a href="#cruise-links" class="list-group-item" ><span><i class="fa fa-ship link-icon"></i></span>Cruise<span></span></a>
 
 
-        <!--========================= FLEX SLIDER =====================-->
-        <section class="flexslider-container" id="flexslider-container-3">
-            
-            <div class="header-absolute">
-                <nav class="navbar navbar-default main-navbar navbar-custom navbar-transparent" id="mynavbar">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" id="menu-button">
-                              <span class="icon-bar"></span>
-                              <span class="icon-bar"></span>
-                              <span class="icon-bar"></span>                        
-                            </button>
-                            <div class="header-search hidden-lg">
-                                <a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a>
-                            </div>
-                            <a href="{{ url('lav.com') }}" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>
-                        </div><!-- end navbar-header -->
-                    
-                        <div class="collapse navbar-collapse" id="myNavbar1">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="active"><a href="#" class=>Home<span></span></a>     
-                                </li>
-                                <li class=""><a href="{{ url('hotels') }}" class="" data-toggle="">Hotels<span></span></a>
-                                          
-                                </li>
-                                <li class=""><a href="{{ url('services') }}" >Services<span></span></a>
-                                          
-                                </li>
-                                <li class=""><a href="{{ url('blog') }}" >Blog<span></span></a>
-                                            
-                                </li>
-                                <li class=""><a href="{{ url('about') }}" >about<span></span></a>          
-                                </li>
-                                <li class=""><a href="{{ url('contact') }} }}">Contact<span></span></a>
-                                           
-                                </li>
-                               
-                                <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
-                            </ul>
-                        </div><!-- end navbar collapse -->
-                    </div><!-- end container -->
-                 </nav><!-- end navbar -->
-            </div><!-- end header-absolute -->
-            
-            <div class="sidenav-content">
-                <div id="mySidenav" class="sidenav" >
-                    <h2 id="web-name"><span><i class="fa fa-plane"></i></span>Star Travel</h2>
-    
-                    <div id="main-menu">
-                        <div class="closebtn">
-                            <button class="btn btn-default" id="closebtn">&times;</button>
-                        </div><!-- end close-btn -->
-                        
-                        <div class="list-group panel">
-                        
-                            <a href="{{ url('lav.com') }}" class="list-group-item"><span><i class="fa fa-home link-icon"></i></span>Home<span></span></a>
-                           
-                            <a href="" class="list-group-item" ><span><i class="fa fa-plane link-icon"></i></span>Flights<span></span></a>
-                            
-                            <a href="#hotels-links" class="list-group-item" ><span><i class="fa fa-building link-icon"></i></span>Hotels<span></span></a>
-                            
-                            <a href="#tours-links" class="list-group-item"  ><span><i class="fa fa-globe link-icon"></i></span>Tours<span></span></a>
-                            <a href="#cruise-links" class="list-group-item" ><span><i class="fa fa-ship link-icon"></i></span>Cruise<span></span></a>
-                           
-                            
-                         
-                        </div><!-- end list-group -->
-                    </div><!-- end main-menu -->
-                </div><!-- end mySidenav -->
-         </div>
+
+            </div><!-- end list-group -->
+        </div><!-- end main-menu -->
+    </div><!-- end mySidenav -->
+</div>
 
 <div class="flexslider slider" id="slider-3">
     <ul class="slides">
@@ -219,7 +225,8 @@
                 <div class="tab-content">
 
                     <div id="flights" class="tab-pane active">
-                        <form>
+                        <form action="{{ route('search') }}" method="post">
+                            @csrf
                             <div class="row">
 
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -230,7 +237,7 @@
                                         <div class="col-xs-12 col-sm-12 col-md-12">
                                             <div class="form-group left-icon">
                                                 <label>To</label>
-                                                <input type="text" id="search" name="search" class="form-control" placeholder="City, Country" >
+                                                <input type="text" id="search" name="city" class="form-control" placeholder="City, Country" >
                                                 <i class="fa fa-map-marker"></i>
                                             </div>
                                         </div><!-- end columns -->
@@ -240,11 +247,11 @@
 
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="row">
-
+                                          
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group left-icon">
                                                 <label>Check In</label>
-                                                <input type="text" class="form-control dpd1" placeholder="mm/dd/yy" >
+                                                <input type="text" class="form-control dpd1" name="check_in" placeholder="mm/dd/yy" >
                                                 <i class="fa fa-calendar"></i>
                                             </div>
                                         </div><!-- end columns -->
@@ -252,7 +259,7 @@
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group left-icon">
                                                 <label>Check Out</label>
-                                                <input type="text" class="form-control dpd2" placeholder="mm/dd/yy" >
+                                                <input type="text" class="form-control dpd2" name="check_out" placeholder="mm/dd/yy" >
                                                 <i class="fa fa-calendar"></i>
                                             </div>
                                         </div><!-- end columns -->
@@ -263,7 +270,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group right-icon">
                                         <label>Adults</label>
-                                        <select class="form-control">
+                                        <select class="form-control" name="guest">
                                             <option selected>01</option>
                                             <option>02</option>
                                             <option>03</option>
@@ -355,8 +362,13 @@
             <div class="hidden-xs hidden-sm col-md-6 no-pd-l">
                 <div class="welcome-message">
                     <h2>Find Your Perfect Plan</h2>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper, imeam mnesarchum at, pro an eros perpetua ullamcorper.</p>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>HOTELS, RESORTS, HOSTELS & MORE
+                    Get the best prices on 2,000,000+ properties, worldwide</p>
+                    <p>Book Things to Do Worldwide!
+                        We offer over thousands of sightseeing tours and activities in hundreds of destinations worldwide.
+                    </p>
+                    <p>Thank you</p>
+
                     <a href="#" class="btn btn-w-border">Explore More</a>
                 </div>
             </div>
@@ -425,12 +437,12 @@
                     <div class="item">
                         <div class="main-block hotel-block">
                             <div class="main-img">
-                                <a href="hotel-detail-right-sidebar.html">
-                                    <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-responsive" alt="hotel-img" />
+                                <a href="{{ url('hotel',[$hotel->hotel_id]) }}">
+                                    <img src="../images/{{$hotel->img1}}" alt="hotel-img" />
                                 </a>
                                 <div class="main-mask">
                                     <ul class="list-unstyled list-inline offer-price-1">
-                                        <li class="price">$568.00<span class="divider">|</span><span class="pkg">Avg/Night</span></li>
+                                        <li class="price">${{ $hotel->price_avg }}<span class="divider">|</span><span class="pkg">Avg/Night</span></li>
                                         <li class="rating">
                                             <span><i class="fa fa-star orange"></i></span>
                                             <span><i class="fa fa-star orange"></i></span>
@@ -448,7 +460,7 @@
                                 </div><!-- end arrow -->
 
                                 <div class="main-title hotel-title">
-                                    <a href="hotel-detail-right-sidebar.html">{{ $hotel->hotel_name }}</a>
+                                    <a href="{{ url('hotel',[$hotel->hotel_id]) }}">{{ $hotel->hotel_name }}</a>
                                     <p>From: Scotland</p>
                                 </div><!-- end hotel-title -->
                             </div><!-- end hotel-info -->
@@ -464,7 +476,7 @@
                 </div><!-- end owl-hotel-offers -->
 
                 <div class="view-all text-center">
-                    <a href="hotel-grid-right-sidebar.html" class="btn btn-orange">View All</a>
+                    <a href="{{ url('hotels') }}" class="btn btn-orange">View All</a>
                 </div><!-- end view-all -->
             </div><!-- end columns -->
         </div><!-- end row -->
@@ -754,94 +766,94 @@
 
 
 <section id="footer" class="ftr-heading-w ftr-heading-mgn-2">
-        
-            <div id="footer-top" class="banner-padding ftr-top-grey ftr-text-grey">
-                <div class="container">
-                    <div class="row">
 
-                        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 footer-widget ftr-about ftr-our-company">
-                            <h3 class="footer-heading">OUR COMPANY</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.</p>
-                            <ul class="social-links list-inline list-unstyled">
-                                <li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
-                                <li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>
-                                <li><a href="#"><span><i class="fa fa-google-plus"></i></span></a></li>
-                                <li><a href="#"><span><i class="fa fa-pinterest-p"></i></span></a></li>
-                                <li><a href="#"><span><i class="fa fa-instagram"></i></span></a></li>
-                                <li><a href="#"><span><i class="fa fa-linkedin"></i></span></a></li>
-                                <li><a href="#"><span><i class="fa fa-youtube-play"></i></span></a></li>
-                            </ul>
-                        </div><!-- end columns -->
-                        
-                        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 footer-widget ftr-map">
-                            <div class="map">
-                                <iframe src=        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6509729.487836256!2d-123.77686152799836!3d37.1864783963941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia!5e0!3m2!1sen!2s!4v1490695907554" allowfullscreen></iframe>
-                            </div>
-                        </div><!-- end columns -->
-                        
-                    </div><!-- end row -->
-                </div><!-- end container -->
-            </div><!-- end footer-top -->
+    <div id="footer-top" class="banner-padding ftr-top-grey ftr-text-grey">
+        <div class="container">
+            <div class="row">
 
-            <div id="footer-bottom" class="ftr-bot-black">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="copyright">
-                            <p>© 2017 <a href="#">StarTravel</a>. All rights reserved.</p>
-                        </div><!-- end columns -->
-                        
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="terms">
-                            <ul class="list-unstyled list-inline">
-                                <li><a href="#">Terms & Condition</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
-                        </div><!-- end columns -->
-                    </div><!-- end row -->
-                </div><!-- end container -->
-            </div><!-- end footer-bottom -->
-            
-        </section><!-- end footer -->
-        
-       
-        <!-- Page Scripts Starts -->
-      <script>
- $(document).ready(function() {
-  $("#search").autocomplete({
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 footer-widget ftr-about ftr-our-company">
+                    <h3 class="footer-heading">OUR COMPANY</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.</p>
+                    <ul class="social-links list-inline list-unstyled">
+                        <li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-google-plus"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-pinterest-p"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-instagram"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-linkedin"></i></span></a></li>
+                        <li><a href="#"><span><i class="fa fa-youtube-play"></i></span></a></li>
+                    </ul>
+                </div><!-- end columns -->
 
-    source: function(request, response) {
-      $.ajax({
-        url: "{{url('autocomplete')}}",
-        data: {
-          term : request.term
-      },
-      dataType: "json",
-      success: function(data){
-         var resp = $.map(data,function(obj){
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 footer-widget ftr-map">
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7449.419253995984!2d105.84151262461423!3d21.00427374404641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac768ffe1abd%3A0x22b136bcf1c08e2a!2sBach%20Khoa%2C%20Hai%20B%C3%A0%20Tr%C6%B0ng%20District%2C%20Hanoi%2C%20Vietnam!5e0!3m2!1sen!2s!4v1567043873278!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    </div>
+                </div><!-- end columns -->
+
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end footer-top -->
+
+    <div id="footer-bottom" class="ftr-bot-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="copyright">
+                    <p>© 2017 <a href="#">StarTravel</a>. All rights reserved.</p>
+                </div><!-- end columns -->
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="terms">
+                    <ul class="list-unstyled list-inline">
+                        <li><a href="#">Terms & Condition</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div><!-- end columns -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end footer-bottom -->
+
+</section><!-- end footer -->
+
+
+<!-- Page Scripts Starts -->
+<script>
+   $(document).ready(function() {
+      $("#search").autocomplete({
+
+        source: function(request, response) {
+          $.ajax({
+            url: "{{url('autocomplete')}}",
+            data: {
+              term : request.term
+          },
+          dataType: "json",
+          success: function(data){
+           var resp = $.map(data,function(obj){
                     //console.log(obj.city_name);
                     return obj.city;
                 }); 
 
-         response(resp);
-     }
- });
-  },
-  minLength: 1
-});
-});
+           response(resp);
+       }
+   });
+      },
+      minLength: 1
+  });
+  });
 
 </script>   
 
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.flexslider.js"></script>
-        <script src="js/bootstrap-datepicker.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/custom-navigation.js"></script>
-        <script src="js/custom-flex.js"></script>
-        <script src="js/custom-owl.js"></script>
-        <script src="js/custom-date-picker.js"></script>
-        <script src="js/custom-gallery.js"></script>
-        <!-- Page Scripts Ends -->
-        
-    </body>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/custom-navigation.js"></script>
+<script src="js/custom-flex.js"></script>
+<script src="js/custom-owl.js"></script>
+<script src="js/custom-date-picker.js"></script>
+<script src="js/custom-gallery.js"></script>
+<!-- Page Scripts Ends -->
+
+</body>
 </html>

@@ -33,5 +33,10 @@ class Type {
             limit 1", [$this->id]);
 		return $array[0];
 	}
+	public function get_room($id){
+		$room= DB::select("SELECT * from type_room inner join info_room on type_room.type_id=info_room.id_type where type_id = ?
+            limit 1", [$id]);
+		return $room[0];
+	}
 	
 }

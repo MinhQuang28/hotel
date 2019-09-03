@@ -57,11 +57,11 @@
         <div id="top-bar" class="tb-text-white">
             <div class="container">
                 <div class="row">          
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div id="info">
                             <ul class="list-unstyled list-inline">
-                                <li><span><i class="fa fa-map-marker"></i></span>29 Land St, Lorem City, CA</li>
-                                <li><span><i class="fa fa-phone"></i></span>+00 123 4567</li>
+                                <li><span><i class="fa fa-map-marker"></i></span>29 tran hung dao, Ha Noi, VN</li>
+                                <li><span><i class="fa fa-phone"></i></span>+88.66.43.465</li>
                             </ul>
                         </div><!-- end info -->
                     </div><!-- end columns -->
@@ -69,8 +69,14 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div id="links">
                             <ul class="list-unstyled list-inline">
-                                <li><a href="login.html"><span><i class="fa fa-lock"></i></span>Login</a></li>
+                                 @if (Session::has('ma_us'))
+                                       
+                                           <li><a href="{{ url('profile') }}"><span>Welcome<i class="fa fa-user"></i> {{Session::get('ten_us')}} </span></a></li>
+                                       @else
+                                      <li><a href="{{ url('login') }}"><span><i class="fa fa-lock"></i></span>Login</a></li>
                                 <li><a href="registration.html"><span><i class="fa fa-plus"></i></span>Sign Up</a></li>
+                                    @endif
+                                
                                 <li>
                                     <form>
                                         <ul class="list-inline">

@@ -57,11 +57,11 @@
         <div id="top-bar" class="tb-text-white">
             <div class="container">
                 <div class="row">          
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div id="info">
                             <ul class="list-unstyled list-inline">
-                                <li><span><i class="fa fa-map-marker"></i></span>29 Land St, Lorem City, CA</li>
-                                <li><span><i class="fa fa-phone"></i></span>+00 123 4567</li>
+                                <li><span><i class="fa fa-map-marker"></i></span>29 tran hung dao, Ha Noi, VN</li>
+                                <li><span><i class="fa fa-phone"></i></span>+88.66.43.465</li>
                             </ul>
                         </div><!-- end info -->
                     </div><!-- end columns -->
@@ -69,8 +69,14 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div id="links">
                             <ul class="list-unstyled list-inline">
-                                <li><a href="login.html"><span><i class="fa fa-lock"></i></span>Login</a></li>
+                                 @if (Session::has('ma_us'))
+                                       
+                                           <li><a href="profile"><span>Welcome<i class="fa fa-user"></i> {{Session::get('ten_us')}} </span></a></li>
+                                       @else
+                                      <li><a href="{{ url('login') }}"><span><i class="fa fa-lock"></i></span>Login</a></li>
                                 <li><a href="registration.html"><span><i class="fa fa-plus"></i></span>Sign Up</a></li>
+                                    @endif
+                                
                                 <li>
                                     <form>
                                         <ul class="list-inline">
@@ -174,7 +180,6 @@
                 </div><!-- end main-menu -->
             </div><!-- end mySidenav -->
         </div><!-- end sidenav-content -->
-        
         <!--================= PAGE-COVER ================-->
         <section class="page-cover" id="cover-hotel-detail">
             <div class="container">
@@ -200,39 +205,20 @@
                         <div class="col-xs-12 col-sm-12 col-md-3 side-bar left-side-bar">
                             
                             <div class="side-bar-block booking-form-block">
-                                <h2 class="selected-price">{{ $info->price_avg }}$ <span>avg/day</span></h2>
+                                <h2 class="selected-price">{{ $hotel->price_avg }}$ <span>avg/day</span></h2>
                             
                                 <div class="booking-form">
                                     <h3>Book Hotel</h3>
                                     <p>Find your dream hotel today</p>
                                     
                                     <form>
+                                        
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name" required/>                                       
+                                            <input type="text" class="form-control dpd1" value="{{Session::get('check_in')}}" placeholder="Check-in Date" required/>                                              <i class="fa fa-calendar"></i>
                                         </div>
                                         
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name" required/>                                       
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email" required/>                                       
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Phone" required/>                                       
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Country" required/>                                       
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <input type="text" class="form-control dpd1" placeholder="Arrival Date" required/>                                              <i class="fa fa-calendar"></i>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <input type="text" class="form-control dpd2" placeholder="Departure Date" required/>                                            <i class="fa fa-calendar"></i>
+                                            <input type="text" class="form-control dpd2" placeholder="check-out Date" value="{{Session::get('check_in')}}" required/>                                            <i class="fa fa-calendar"></i>
                                         </div>
                                         
                                         <div class="row">
@@ -252,32 +238,6 @@
                                                 <div class="form-group right-icon">
                                                     <select class="form-control">
                                                         <option selected>Beds</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                    </select>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="row">
-                                            <div class="col-sm-6 col-md-12 col-lg-6 no-sp-r">
-                                                <div class="form-group right-icon">
-                                                    <select class="form-control">
-                                                        <option selected>Adults</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                    </select>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="col-sm-6 col-md-12 col-lg-6 no-sp-l">    
-                                                <div class="form-group right-icon">
-                                                    <select class="form-control">
-                                                        <option selected>Childs</option>
                                                         <option>1</option>
                                                         <option>2</option>
                                                         <option>3</option>
@@ -365,7 +325,7 @@
                                     <li><a href="#restaurant" data-toggle="tab">Restaurant</a></li>
                                     <li><a href="#pick-up" data-toggle="tab">Pick Up Services</a></li>
                                     <li><a href="#luxury-gym" data-toggle="tab">Luxury Gym</a></li>
-                                    <li><a href="#sports-club" data-toggle="tab">Sports Club</a></li>
+                                    <li><a href="#sports-club" data-toggle="tab">Address</a></li>
                                 </ul>
                                 
                                 <div class="tab-content">
@@ -424,13 +384,9 @@
                                     
                                     <div id="sports-club" class="tab-pane">
                                         <div class="row">
-                                            <div class="col-sm-4 col-md-4 tab-img">
-                                                <img src="../images/gyms.jpg" class="img-responsive" alt="flight-detail-img" />
-                                            </div><!-- end columns -->
-                                            
-                                            <div class="col-sm-8 col-md-8 tab-text">
-                                                <h3>Sports Club</h3>
-                                                <p>Drive 495 Owner Don Saladino is a personal trainer who has worked with basically all of the superhero celebrities. Think Ryan Reynolds for his role in Deadpool, or Sebastian Stan and Scarlett Johansoon for their roles in Avengers..</p>
+                                            <div class="col-sm-12 col-md-12 tab-img">
+                                                <h5>{{ $hotel->hotel_address }}</h5>
+                                                <p><iframe height="200px" width="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14904.17614617304!2d107.03087627865564!3d20.950746626649362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1664996cf687a9a1!2sSaigon%20Halong%20Hotel!5e0!3m2!1sen!2s!4v1567070803737!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></p>
                                             </div><!-- end columns -->
                                         </div><!-- end row -->
                                     </div><!-- end sports-club -->
@@ -464,10 +420,10 @@
                                         </div><!-- end room-img -->
                                         
                                         <div class="list-info room-info">
-                                            <h3 class="block-title"><a href="#">{{ $rooms->type_name}}</a></h3>
+                                            <h3 class="block-title"><a href="{{ url('room',[$rooms->type_id]) }}">{{ $rooms->type_name}}</a></h3>
                                             <p class="block-minor">Max Guests:{{ $rooms->guest }}</p>
                                             <p>{{ $rooms->short_des}}.</p>
-                                            <a href="#" class="btn btn-orange btn-lg">View More</a>
+                                            <a href="{{ url('room',[$rooms->type_id]) }}" class="btn btn-orange btn-lg">View More</a>
                                          </div><!-- end room-info -->
                                     </div><!-- end list-content -->
                                 </div><!-- end room-block -->
