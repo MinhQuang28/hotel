@@ -38,5 +38,9 @@ class Type {
             limit 1", [$id]);
 		return $room[0];
 	}
+	public function find_bed($bed,$id){
+		$bed=DB::select("SELECT * FROM type_room inner join hotel on hotel.hotel_id=type_room.hotel_id where hotel.hotel_id=$id and bed=$bed");
+		return $bed;
+	}
 	
 }

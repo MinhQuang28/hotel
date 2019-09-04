@@ -39,32 +39,32 @@ function process_insert(Request $request) {
 			
 		$image_name = $request->hidden_image;
 		$image1 = $request->file('image1');
-		$image2 = $request->file('image2');
-		$image3 = $request->file('image3');
-		if ($image1 !=''&& $image2 !=''&& $image3 !='') {
+		// $image2 = $request->file('image2');
+		// $image3 = $request->file('image3');
+		if ($image1 !='') {
 
 			$image_name1 = rand() . '.' . $image1->getClientOriginalExtension();
-			$image_name2 = rand() . '.' . $image2->getClientOriginalExtension();
-			$image_name3 = rand() . '.' . $image3->getClientOriginalExtension();
+			// $image_name2 = rand() . '.' . $image2->getClientOriginalExtension();
+			// $image_name3 = rand() . '.' . $image3->getClientOriginalExtension();
 			$image1->move(public_path('images'), $image_name1);
-			$image2->move(public_path('images'), $image_name2);
-			$image3->move(public_path('images'), $image_name3);
+			// $image2->move(public_path('images'), $image_name2);
+			// $image3->move(public_path('images'), $image_name3);
 
 			$hotel = new Hotel();
 			
 			$hotel->hotel_name = $request->get('name');
 			$hotel->hotel_address = $request->get('address');
 			$hotel->img1 = $image_name1;
-			$hotel->img2 = $image_name2;
-			$hotel->img3 = $image_name3;
+			// $hotel->img2 = $image_name2;
+			// $hotel->img3 = $image_name3;
 			$hotel->describ = $request->get('describ');
 			$hotel->insert();
 
 		} else {
 			$request->validate([
 				'image1' => 'required|image|max:2048',
-				'image2' => 'required|image|max:2048',
-				'image3' => 'required|image|max:2048',
+				// 'image2' => 'required|image|max:2048',
+				// 'image3' => 'required|image|max:2048',
 				'name' => 'required',
 				'address' => 'required',
 			]);
@@ -86,32 +86,32 @@ function process_insert(Request $request) {
 
 		$image_name = $request->hidden_image;
 		$image1 = $request->file('image1');
-		$image2 = $request->file('image2');
-		$image3 = $request->file('image3');
-		if ($image1 !=''&& $image2 !=''&& $image3 !='') {
+		// $image2 = $request->file('image2');
+		// $image3 = $request->file('image3');
+		if ($image1 !='') {
 
 			$image_name1 = rand() . '.' . $image1->getClientOriginalExtension();
-			$image_name2 = rand() . '.' . $image2->getClientOriginalExtension();
-			$image_name3 = rand() . '.' . $image3->getClientOriginalExtension();
+			// $image_name2 = rand() . '.' . $image2->getClientOriginalExtension();
+			// $image_name3 = rand() . '.' . $image3->getClientOriginalExtension();
 			$image1->move(public_path('images'), $image_name1);
-			$image2->move(public_path('images'), $image_name2);
-			$image3->move(public_path('images'), $image_name3);
+			// $image2->move(public_path('images'), $image_name2);
+			// $image3->move(public_path('images'), $image_name3);
 
 			$hotel = new Hotel();
 			$hotel->hotel_id = $request->get('id');
 			$hotel->hotel_name = $request->get('name');
 			$hotel->hotel_address = $request->get('address');
 			$hotel->img1 = $image_name1;
-			$hotel->img2 = $image_name2;
-			$hotel->img3 = $image_name3;
+			// $hotel->img2 = $image_name2;
+			// $hotel->img3 = $image_name3;
 			$hotel->describ = $request->get('describ');
 			$hotel->update();
 
 		} else {
 			$request->validate([
 				'image1' => 'required|image|max:2048',
-				'image2' => 'required|image|max:2048',
-				'image3' => 'required|image|max:2048',
+				// 'image2' => 'required|image|max:2048',
+				// 'image3' => 'required|image|max:2048',
 				'name' => 'required',
 				'address' => 'required',
 			]);
@@ -131,5 +131,8 @@ function process_insert(Request $request) {
 		if ($que) {
 			echo 'Data Deleted';
 		}
+	}
+	function edit_detail($id){
+		return view('admin.edit_detail_hotel');
 	}
 }

@@ -18,8 +18,8 @@ class Hotel {
 			$this->hotel_name,
 			$this->hotel_address,
 			$this->img1,
-			$this->img2,
-			$this->img3,
+			// $this->img2,
+			// $this->img3,
 			$this->describ,
 			$this->hotel_id
 		]);
@@ -37,15 +37,13 @@ class Hotel {
             hotel_name = ?,
             hotel_address = ?,
             img1 = ?,
-            img2 = ?,
-            img3 = ?,
             describ = ?
             where hotel_id = ?", [
 			$this->hotel_name,
 			$this->hotel_address,
 			$this->img1,
-			$this->img2,
-			$this->img3,
+			// $this->img2,
+			// $this->img3,
 			$this->describ,
 			$this->hotel_id,
 		]);

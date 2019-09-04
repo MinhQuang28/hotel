@@ -22,6 +22,12 @@
             </ul>
         </div>
         @endif
+        <div align="right">
+        <a href="{{ route('hotel.edit_detail',[$hotel->hotel_id]) }}" class="btn btn-success btn-sm" id="add_data" name="add" type="button">
+            Edit hotel details
+        </a>
+    </div>
+    <br>
         <div class="row">
     <div class="col-md-12">
         <form action="{{ route('hotel.process_update') }}" enctype="multipart/form-data" method="post" role="form">
@@ -63,44 +69,7 @@
     </div>
 
 </div>
-<div class="row">
-    <div class="col-xs-12 form-group">
-        <label for="photo" class="control-label">Photo 2</label>
-        <br>
-         <a data-toggle="modal" data-target="#myModal1"><img height="50px" src="{{ URL::to('/') }}/images/{{ $hotel->img2 }}" with="100px"></a>
-       <div id="myModal1" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-body">
-            <img  src="{{ URL::to('/') }}/images/{{ $hotel->img2 }}" height="600" width="700" >
-        </div>
-    </div>
-  </div>
-</div>
-        <input class="form-control" style="margin-top: 4px;" name="image2" type="file" id="photo">
-        <p class="help-block"></p>
-    </div>
 
-</div>
-<div class="row">
-    <div class="col-xs-12 form-group">
-        <label for="photo" class="control-label">Photo 3</label>
-        <br>
-         <a data-toggle="modal" data-target="#myModal2"><img height="50px" src="{{ URL::to('/') }}/images/{{ $hotel->img3 }}" with="100px"></a>
-       <div id="myModal2" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-body">
-            <img  src="{{ URL::to('/') }}/images/{{ $hotel->img3 }}" height="600" width="100%" >
-        </div>
-    </div>
-  </div>
-</div>
-        <input class="form-control" style="margin-top: 4px;" name="image3" type="file" id="photo">
-        <p class="help-block"></p>
-    </div>
-
-</div>
 
 
                <div class="row">

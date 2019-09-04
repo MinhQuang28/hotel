@@ -204,7 +204,7 @@
             <div class="col-xs-12 col-sm-12 col-md-3 side-bar left-side-bar">
 
                 <div class="side-bar-block booking-form-block">
-                   <h2 class="selected-price">${{ $room->price }}.00 <span>Small Cruise</span></h2>
+                   <h2 class="selected-price"><font id="price_select">${{ $room->price }}</font>.00 <span>/Day</span></h2>
 
                    <div class="booking-form">
                        <h3>Book Cruise</h3>
@@ -216,11 +216,11 @@
 
 
                         <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Name" required/>                                       
+                          <input type="text" class="form-control" value="{{ Session::get('ten_us') }}" placeholder="Name" required/>                                       
                       </div>
-
+                      <input type="number" name="tong_tien" id="tong_tien" value="" hidden="hidden">
                       <div class="form-group">
-                          <input type="email" class="form-control" placeholder="Email" required/>                                       
+                          <input type="email" class="form-control"  placeholder="Email" required/>                                       
                       </div>
 
                       <div class="form-group">
@@ -230,19 +230,19 @@
 
 
                       <div class="form-group">
-                          <input type="text" class="form-control dpd1" placeholder="Check-in Date" required/>                                       		<i class="fa fa-calendar"></i>
+                          <input type="text" class="form-control dpd1" name="check_in" value="{{ Session::get('check_in') }}" placeholder="Check-in Date" required/>                                       		<i class="fa fa-calendar"></i>
                       </div>
 
                       <div class="form-group">
-                          <input type="text" class="form-control dpd2" placeholder="Check-out Date" required/>                                       		<i class="fa fa-calendar"></i>
+                          <input type="text" value='{{ Session::get('check_out') }}' class="form-control dpd2" placeholder="Check-out Date" name="check_out" required/>                                       		<i class="fa fa-calendar"></i>
                       </div>
 
                       <div class="form-group right-icon">
-                        <select class="form-control">
-                            <option selected>Room</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
+                        <select id="select-room" required class="form-control"   onchange="myFunction()">
+                            <option>Room</option>
+                            <option value="1">1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
                         </select>
                         <i class="fa fa-angle-down"></i>
                     </div>
@@ -265,7 +265,15 @@
                    data-toggle="modal" data-target="#booking_check"
                    @endif  class="btn btn-block btn-orange">Confirm Booking</button>
                </form>
+<script type="text/javascript">
 
+function myFunction() {
+var x = document.getElementById("select-room").value;
+var s=x*{{ $room->price }};
+document.getElementById("tong_tien").value = s;
+document.getElementById("price_select").innerHTML=s;
+  }
+  </script>
            </div><!-- end booking-form -->
        </div><!-- end side-bar-block -->
 
@@ -321,7 +329,7 @@
         </div><!-- end feature-slider-nav -->
 
         <ul class="list-unstyled features tour-features">
-           <li><div class="f-icon"><i class="fa fa-bed"></i></div><div class="f-text"><p class="f-heading">bed</p><p class="f-data">{{{ $room->guest }}}</p></div></li>
+           <li><div class="f-icon"><i class="fa fa-bed"></i></div><div class="f-text"><p class="f-heading">bed</p><p class="f-data">{{{ $room->bed }}}</p></div></li>
            <li><div class="f-icon"><i class="fa fa-calendar"></i></div><div class="f-text"><p class="f-heading">Duration</p><p class="f-data">1 DAYS</p></div></li>
            <li><div class="f-icon"><i class="fa fa-clock-o"></i></div><div class="f-text"><p class="f-heading">Discount</p><p class="f-data">10% OFF</p></div></li>
        </ul>

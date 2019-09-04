@@ -1,7 +1,13 @@
 
 @extends('layer.master')
 @section('content')
+<style type="text/css">
+    button.btn.btn-success.btn-sm {
+    float: left;
+}
+</style>
 <div class="content-wrapper">
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
@@ -16,7 +22,7 @@
 
     <!-- Main content -->
     <section class="content container-fluid">
-       <div class="row">
+     <div class="row">
         <div class="col-xs-3 form-group">
           {{--   <label>Hotel</label> --}}
           <select data-column="1" class="form-control filter-select">
@@ -28,7 +34,7 @@
 
     </div>
     <div class="col-xs-offset-10" align="right"> 
-        <button type="button" name="add" id="add_data" class="btn btn-success btn-sm">Add</button>
+        <button type="button" name="add" id="add_data" class="btn btn-success">Add</button>
     </div>
 </div>
 
@@ -59,10 +65,10 @@
         <div class="modal-content">
             <form method="post" id="student_form">
                 <div class="modal-header">
-                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                   <h4 class="modal-title">Add Data</h4>
-               </div>
-               <div class="modal-body">
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">Add Data</h4>
+             </div>
+             <div class="modal-body">
                 {{csrf_field()}}
                 <span id="form_output"></span>
                 <div class="form-group">
@@ -73,7 +79,7 @@
                     <label>Select Hotel</label>
                     <select name="hotel_id" id="hotel_id" class="form-control">
                         @foreach ($hotel as $hotel1)
-                           <option value="{{ $hotel1->hotel_id }}">{{ $hotel1->hotel_name }}</option>
+                        <option value="{{ $hotel1->hotel_id }}">{{ $hotel1->hotel_name }}</option>
                         @endforeach
                         
                     </select>
@@ -83,15 +89,19 @@
                     <label>Enter Price</label>
                     <input type="text" name="price" id="last_name" class="form-control" />
                 </div>
+                 <div class="form-group">
+                    <label>Enter guest</label>
+                    <input type="number" name="guest" id="guest" class="form-control" />
+                </div>
             </div>
             <div class="modal-footer">
-             <input type="hidden" name="id" id="student_id" value="" />
-             <input type="hidden" name="button_action" id="button_action" value="insert" />
-             <input type="submit" name="submit" id="action" value="Add" class="btn btn-info" />
-             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-         </div>
-     </form>
- </div>
+            <input type="hidden" name="id" id="student_id" value="" />
+            <input type="hidden" name="button_action" id="button_action" value="insert" />
+            <input type="submit" name="submit" id="action" value="Add" class="btn btn-info" />
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </form>
+</div>
 </div>
 
 
@@ -171,6 +181,7 @@
             {
                 $('#first_name').val(data.name);
                 $('#last_name').val(data.price);
+                $('#guest').val(data.bed);
                 $('#hotel_id').val(data.hotel).change();
                 $('#student_id').val(id);
                 $('#studentModal').modal('show');

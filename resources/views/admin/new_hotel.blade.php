@@ -53,7 +53,7 @@
     </div>
 
 </div>
-<div class="row">
+{{-- <div class="row">
     <div class="col-xs-12 form-group">
         <label for="photo" class="control-label">Photo 2</label>
         
@@ -71,7 +71,7 @@
         <p class="help-block"></p>
     </div>
 
-</div>
+</div> --}}
 
 
                <div class="row">

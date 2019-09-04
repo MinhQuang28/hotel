@@ -51,7 +51,7 @@
             </a>
             <ul class="treeview-menu">
            
-                <li class="bill2"><a href="{{ url('admin/bill/xuly') }}"><i class="fa fa-hacker-news"></i>solve today</a></li>
+                <li class="bill2"><a href="{{ url('admin/bill/xuly') }}"><i class="fa fa-hacker-news"></i>today</a></li>
                <li class="bill1"><a href="{{ url('admin/bill/week') }}"><i class="fa fa-money"></i> <span>7 day ago</span></a></li>
                 <li class="bill"><a href="{{ url('admin/bill') }}"><i class="fa fa-paste"></i>All bill</a></li>
             </ul>

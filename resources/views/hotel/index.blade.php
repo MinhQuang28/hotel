@@ -491,26 +491,26 @@
             <div class="col-sm-12 col-md-12 col-lg-6 luxury-img luxury-room-imgs">
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 luxury-room-block">
-                        <a href="images/luxury-room-1.jpg" title="image-7" class="with-caption gallery image-link">
-                            <img class="img-responsive" src="images/luxury-room-1.jpg" alt="luxury-room-img">
+                        <a href="images/55.jpg" title="image-7" class="with-caption gallery image-link">
+                            <img class="img-responsive" src="images/55.jpg" alt="luxury-room-img">
                         </a>
                     </div>
 
                     <div class="col-xs-6 col-sm-6 luxury-room-block">
-                        <a href="images/luxury-room-2.jpg" title="image-7" class="with-caption gallery image-link">
-                            <img class="img-responsive" src="images/luxury-room-2.jpg" alt="luxury-room-img">
+                        <a href="images/64.jpg" title="image-7" class="with-caption gallery image-link">
+                            <img class="img-responsive" src="images/64.jpg" alt="luxury-room-img">
                         </a>
                     </div>
 
                     <div class="col-xs-6 col-sm-6 luxury-room-block">
-                        <a href="images/luxury-room-3.jpg" title="image-7" class="with-caption gallery image-link">
-                            <img class="img-responsive" src="images/luxury-room-3.jpg" alt="luxury-room-img">
+                        <a href="images/59.jpg" title="image-7" class="with-caption gallery image-link">
+                            <img class="img-responsive" src="images/59.jpg" alt="luxury-room-img">
                         </a>
                     </div>
 
                     <div class="col-xs-6 col-sm-6 luxury-room-block">
-                        <a href="images/luxury-room-4.jpg" title="image-7" class="with-caption gallery image-link">
-                            <img class="img-responsive" src="images/luxury-room-4.jpg" alt="luxury-room-img">
+                        <a href="images/65.jpg" title="image-7" class="with-caption gallery image-link">
+                            <img class="img-responsive" src="images/65.jpg" alt="luxury-room-img">
                         </a>
                     </div>
                 </div>
@@ -518,8 +518,8 @@
             </div><!-- end columns -->
 
             <div class="col-sm-12 col-md-12 col-lg-6 luxury-text luxury-room-text">
-                <h2>Luxurious Rooms</h2>
-                <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri.</p>
+                <h2>Crowne Plaza Times Square</h2>
+                <p>Crowne Plaza Times Square tọa lạc tại thành phố Đà Lạt, trong bán kính 1,7 km từ Hồ Xuân Hương và 1,7 km từ Công viên Yersin. Nhà trọ có nhà hàng, khu vườn, sảnh khách chung, Wi-Fi miễn phí, dịch vụ đặt vé, sân hiên, dịch vụ phòng, máy ATM và dịch vụ thu đổi ngoại tệ cho khách..</p>
                 <a href="hotel-detail-right-sidebar.html" class="btn btn-black">From $99/Day</a>
                 <a href="hotel-detail-right-sidebar.html" class="btn btn-o-border">View Details</a>
             </div><!-- end columns -->
@@ -542,7 +542,8 @@
                     <div class="carousel-inner text-center">
 
                         <div class="item active">
-                            <blockquote>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper.</blockquote>
+                            <blockquote>So many false promises - Hotel book in room says “rooftop bar with extensive cocktail menu” yet there is no bar!? When I raised this to staff they did not seem to care. The “free bikes” .. there was only two available and they were falling apart not safe to drive which really put a downer on our trip as we love cycling. The rooftop pool was dirty and there is no view of the beach. Place is like a building site bricks everywhere outside, constant drilling and no electric for 40 mins with no communication from staff. Staff do not speak English well very hard to communicate.
+Room was good size Night staff are better than day - male attendant brought us new kettle as our one given was dirty</blockquote>
                             <div class="rating">
                                 <span><i class="fa fa-star orange"></i></span>
                                 <span><i class="fa fa-star orange"></i></span>
@@ -555,7 +556,7 @@
                         </div><!-- end item -->
 
                         <div class="item">
-                            <blockquote>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper.</blockquote>
+                            <blockquote> Breakfast is not an “American style buffet” as described it is catered only for Vietnamese cuisine. Also in a tiny room which is very uncomfortable and overcrowded. The description says “boasts a restaurant” there is no restaurant. We found a dirty sock under the bed, the cleaner did not give us toilet roll or change sheets. The room is quite dirty ie. the walls and cupboards and the card holder on wall for electric is falling apart too. Paper thin walls..</blockquote>
                             <div class="rating">
                                 <span><i class="fa fa-star orange"></i></span>
                                 <span><i class="fa fa-star orange"></i></span>
@@ -568,7 +569,7 @@
                         </div><!-- end item -->
 
                         <div class="item">
-                            <blockquote>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper.</blockquote>
+                            <blockquote> Breakfast is not an “American style buffet” as described it is catered only for Vietnamese cuisine. Also in a tiny room which is very uncomfortable and overcrowded. The description says “boasts a restaurant” there is no restaurant. We found a dirty sock under the bed, the cleaner did not give us toilet roll or change sheets. The room is quite dirty ie. the walls and cupboards and the card holder on wall for electric is falling apart too. Paper thin walls.</blockquote>
                             <div class="rating">
                                 <span><i class="fa fa-star orange"></i></span>
                                 <span><i class="fa fa-star orange"></i></span>
@@ -583,11 +584,11 @@
                     </div><!-- end carousel-inner -->
 
                     <ol class="carousel-indicators">
-                        <li data-target="#quote-carousel" data-slide-to="0" class="active"><img src="images/client-1.jpg" class="img-responsive"  alt="client-img">
+                        <li data-target="#quote-carousel" data-slide-to="0" class="active"><img src="images/author2.png" class="img-responsive"  alt="client-img">
                         </li>
-                        <li data-target="#quote-carousel" data-slide-to="1"><img src="images/client-2.jpg" class="img-responsive"  alt="client-img">
+                        <li data-target="#quote-carousel" data-slide-to="1"><img src="images/author.png" class="img-responsive"  alt="client-img">
                         </li>
-                        <li data-target="#quote-carousel" data-slide-to="2"><img src="images/client-3.jpg" class="img-responsive"  alt="client-img">
+                        <li data-target="#quote-carousel" data-slide-to="2"><img src="images/author1.jpg" class="img-responsive"  alt="client-img">
                         </li>
                     </ol>
 

@@ -36,6 +36,7 @@ Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"], function(){
 		Route::post("postdata", "$controller@postdata")->name("$group.postdata");
 		Route::get("fetchdata", "$controller@fetchdata")->name("$group.fetchdata");
 		Route::get("removedata", "$controller@removedata")->name("$group.removedata");
+		Route::get('insert_detail/{id}',"$controller@insert_detail")->name("$group.insert_detail");
 	});
 // hotel
 	Route::group(["prefix" => "hotel"], function () {
@@ -48,6 +49,7 @@ Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"], function(){
 		Route::post("process_insert", "$controller@process_insert")->name("$group.process_insert");
 		Route::post("process_update", "$controller@process_update")->name("$group.process_update");
 		Route::get("removedata", "$controller@removedata")->name("$group.removedata");
+		Route::get('edit_detail/{id}',"$controller@edit_detail")->name("$group.edit_detail");
 	});
 // rooom
 	Route::group(["prefix" => "room"], function () {
@@ -109,7 +111,8 @@ Route::post("process_login_user","Controller@process_login_user")
 ->name("process_login_user");
 Route::post("search","indexController@search")
 ->name("search");
-
+Route::post("search_room","indexController@search_room")
+->name("search_room");
 	Route::get('room/{id}',"indexController@rooms")->name('room');
 
 Route::group(["prefix" => "", "middleware" => "CheckUser"], function(){

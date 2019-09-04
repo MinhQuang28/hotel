@@ -25,7 +25,7 @@ class typeController extends Controller {
 		
 		return Datatables::of($type)
 			->addColumn('action', function ($type) {
-				return '<a href="#" class="btn btn-xs btn-primary edit" id="' . $type->type_id . '"><i class="glyphicon glyphicon-edit"></i> Edit</a> <a href="#" class="btn btn-xs btn-danger delete" id="' . $type->type_id . '"><i class="glyphicon glyphicon-remove"></i> Delete</a>';
+				return '<a href="#" class="btn btn-sm btn-primary edit" id="' . $type->type_id . '"><i class="glyphicon glyphicon-edit"></i> Edit</a> <a href="#" class="btn btn-sm btn-danger delete" id="' . $type->type_id . '"><i class="glyphicon glyphicon-remove"></i> Delete</a>';
 			})
 
 		// ->rawColumns(['action1'], ['action'])
@@ -50,14 +50,14 @@ class typeController extends Controller {
 			if ($request->get('button_action') == "insert") {
 			
 				$que = DB::insert('insert into type_room (type_name,
-				price,hotel_id ) values (?,?,?)', [$request->get('name'), $request->get('price'),$request->get('hotel_id')]);
+				price,hotel_id,guest ) values (?,?,?,?)', [$request->get('name'), $request->get('price'),$request->get('hotel_id'),$request->get('guest')]);
 
 				if ($que) {$success_output = '<div class="alert alert-success">Data Inserted</div>';}
 
 			}
 
 			if ($request->get('button_action') == 'update') {
-				$query_update = DB::update('update type_room set type_name =?,price=?  where type_id = ?', [$request->get('name'), $request->get('price'), $request->get('id')]);
+				$query_update = DB::update('update type_room set type_name =?,price=?,hotel_id=?,guest=?  where type_id = ?', [$request->get('name'), $request->get('price'),$request->get('hotel_id'),$request->get('guest'), $request->get('id')]);
 				$success_output = '<div class="alert alert-success">Data Updated</div>';
 			}
 
@@ -76,6 +76,7 @@ class typeController extends Controller {
 				'name' => $out->type_name,
 				'price' => $out->price,
 				'hotel'=>$out->hotel_id,
+				'bed'=>$out->bed
 			);
 		}
 
@@ -88,5 +89,8 @@ class typeController extends Controller {
 		if ($que) {
 			echo 'Data Deleted';
 		}
+	}
+	function insert_detail($id){
+		return view('admin.new_typeD');
 	}
 }

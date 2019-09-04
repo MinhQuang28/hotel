@@ -65,5 +65,29 @@ class indexController extends Controller {
 
 
 	}
+	public function search_room(Request $request){
+		$room=$request->get('room');
+		$bed=$request->get('bed');
+		$id=$request->get('id');
+		Session::put('room',$room);
+		$hotel= new Hotel();
+		$one_hotel=$hotel->get_hotel($id);
+		$info=$hotel->info_hotel($id);
+		$show_rooms = DB::table('type_room')
+		->where('hotel_id',$id )
+		->where('bed',$bed)
+		->paginate(3);
+
+		return view('hotel.hotel_room',['hotel'=>$one_hotel,'info'=>$info,'room'=>$show_rooms]);
+	}
+	public function proocess_booking(Request $request){
+		$check_in = date("Y-m-d", strtotime($request->get('check_in')));
+		$check_out=date("Y-m-d",strtotime($request->get('check_out')));
+		$date1=date_create($check_in);
+		$date2=date_create($check_out);
+		$diff=date_diff($date1,$date2);
+		$so_ngay=$diff->format("%a");
+		print_r($so_ngay);
+	}
 }
 
