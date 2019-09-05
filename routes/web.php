@@ -119,3 +119,9 @@ Route::group(["prefix" => "", "middleware" => "CheckUser"], function(){
 Route::post('proocess_booking',"indexController@proocess_booking")->name('proocess_booking'); ;
 
 	});
+Route::get('about', function(){
+	return view('hotel.about');
+});
+Route::get('Contact', function(){
+	return view('hotel.contact');
+});

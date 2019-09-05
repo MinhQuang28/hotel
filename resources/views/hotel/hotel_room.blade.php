@@ -120,7 +120,7 @@
               <span class="icon-bar"></span>                        
           </button>
           <div class="header-search hidden-lg">
-            <a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a>
+            <a href="javascript:void(0)" class="search-button"><span><i class="fas fa-user-tie"></i></span></a>
         </div>
         <a href="#" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>
     </div><!-- end navbar-header -->

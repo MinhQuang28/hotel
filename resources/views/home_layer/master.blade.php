@@ -35,7 +35,36 @@
         <div class="loader"></div>
     
     
-        <!--======== SEARCH-OVERLAY =========-->       
+       <!doctype html>
+<html lang="en">
+    <head>
+        <title>Hotel Grid Left Sidebar</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="icon" href="images/favicon.png" type="image/x-icon">
+        
+        <!-- Google Fonts -->   
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+        
+        <!-- Bootstrap Stylesheet -->   
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        
+        <!-- Font Awesome Stylesheet -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+            
+        <!-- Custom Stylesheets --> 
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" id="cpswitch" href="css/orange.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        
+        <!--Jquery UI Stylesheet-->
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+    </head>
+    
+    
+    <body>
+    
+       <!--======== SEARCH-OVERLAY =========-->       
         <div class="overlay">
             <a href="javascript:void(0)" id="close-button" class="closebtn">&times;</a>
             <div class="overlay-content">
@@ -44,7 +73,7 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Search..." required />
-                                <span class="input-group-btn"><button type="submit" class="btn"><span><i class="fa fa-search"></i></span></button></span>
+                                <span class="input-group-btn"><button type="submit" class="btn"><span><i class="fas fa-user-tie"></i></span></button></span>
                             </div><!-- end input-group -->
                         </div><!-- end form-group -->
                     </form>
