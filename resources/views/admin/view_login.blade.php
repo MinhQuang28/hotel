@@ -74,7 +74,7 @@
     <a href="../../index2.html"><b>Admin</b>LTE</a>
   </div>
     @if (Session::has('error'))
-                                        <div class="callout callout-info">
+                                        <div class="callout callout-danger">
                                             {{Session::get('error')}}
                                        </div>
                                     @endif

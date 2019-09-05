@@ -3,7 +3,7 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1> Hotel Edit<small></small></h1>
+        <h1> New post<small></small></h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> admin </a></li>
             <li class="active"> edit</li>
@@ -54,39 +54,12 @@
                                 </div>
 
                             </div>
-                            <div class="row">
-                                <div class="col-xs-12 form-group">
-                                    <label for="photo" class="control-label">Photo 2</label>
-                                    <br>
-                                    <input class="form-control" style="margin-top: 4px;" name="image2" type="file" id="photo">
-                                    <p class="help-block"></p>
-                                </div>
-
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12 form-group">
-                                    <label for="photo" class="control-label">Photo 3</label>
-                                    <br>
-                                    <input class="form-control" style="margin-top: 4px;" name="image3" type="file" id="photo">
-                                    <p class="help-block"></p>
-                                </div>
-
-                            </div>
-
 
                             <div class="row">
                                 <div class="col-xs-12 form-group">
-                                    <label for="photo" class="control-label"> Type Room</label>
-
-
-                                    <select class="form-control" name="type">
-                                        <option value="-1">--Chọn--</option>
-                                        @foreach ($type as $type)
-                                        <option value="{{ $type->type_id }}">{{ $type->type_name }}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="photo" class="control-label">author</label>
+                                    <input class="form-control"  type="text" name="author">
                                     <p class="help-block"></p>
-
                                 </div>
                             </div>
                              <div class="row">

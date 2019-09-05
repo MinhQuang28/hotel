@@ -145,7 +145,7 @@
 
             <div class="collapse navbar-collapse" id="myNavbar1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#" class=>Home<span></span></a>     
+                    <li class="active"><a href="/" class=>Home<span></span></a>
                     </li>
                     <li class=""><a href="{{ url('hotels') }}" class="" data-toggle="">Hotels<span></span></a>
 
@@ -153,12 +153,12 @@
                     <li class=""><a href="{{ url('services') }}" >Services<span></span></a>
 
                     </li>
-                    <li class=""><a href="{{ url('blog') }}" >Blog<span></span></a>
+                    <li class=""><a href="{{ url('blogs') }}" >Blog<span></span></a>
 
                     </li>
                     <li class=""><a href="{{ url('about') }}" >about<span></span></a>          
                     </li>
-                    <li class=""><a href="{{ url('contact') }} }}">Contact<span></span></a>
+                    <li class=""><a href="{{ url('Contact')}}">Contact<span></span></a>
 
                     </li>
 
@@ -180,14 +180,18 @@
 
             <div class="list-group panel">
 
-                <a href="{{ url('lav.com') }}" class="list-group-item"><span><i class="fa fa-home link-icon"></i></span>Home<span></span></a>
+                <a href="/" class="list-group-item active" ><span><i class="fa fa-home link-icon"></i></span>Home<span></span></a>
 
-                <a href="" class="list-group-item" ><span><i class="fa fa-plane link-icon"></i></span>Flights<span></span></a>
+                <a href="{{ url('hotels') }}" class="list-group-item " ><span><i class="fa fa-building link-icon"></i></span>Hotels<span></span></a>
 
-                <a href="#hotels-links" class="list-group-item" ><span><i class="fa fa-building link-icon"></i></span>Hotels<span></span></a>
+                <a href="{{ url('service') }}" class="list-group-item" ><span><i class="fa fa-globe link-icon"></i></span>Service<span></span></a>
 
-                <a href="#tours-links" class="list-group-item"  ><span><i class="fa fa-globe link-icon"></i></span>Tours<span></span></a>
-                <a href="#cruise-links" class="list-group-item" ><span><i class="fa fa-ship link-icon"></i></span>Cruise<span></span></a>
+
+                <a href="{{ url('blog') }}" class="list-group-item" ><span><i class="fa fa-ship link-icon"></i></span>Blog<span></span></a>
+
+                <a href="{{ url('contact') }}" class="list-group-item" ><span><i class="fa fa-car link-icon"></i></span>Contact<span></span></a>
+
+                <a href="{{ url('about') }}" class="list-group-item" ><span><i class="fa fa-clone link-icon"></i></span>About<span></span></a>
 
 
 

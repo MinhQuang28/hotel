@@ -1,112 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="570ec89f-5cd5-48d0-9e91-80d0fb69fe4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/05595bbf5cfffed69bfd82c39996b51d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/08e58c2d6b453f5f779373178dfac602" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/0a21e5c446da04f95a4233bf1859bb06" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/0acb6cdcc722f5de73c63f77566955f0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/0bb2161922e71050d77f7f163591db7c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/0dba2b797b69e8d732be14d05d964f47" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/0f0f3f314c68779b434d21c5f8b533f7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/0fa0f6d6e49b59f898893c9352d3a5e1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/10bdd034a3c33bacb55b7293c92bfff5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/18707af47fed06ab5cbb1f3eb110392a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/1bbdfadbf2307f65ab26e8c6812adaac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/1c64c611146484921b79e1b6604577d8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/1d655687e78ded2ce425ed8e3e17b017" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/213bef13c19b1d4285747df676369ddc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/21b24df95f9ce28748c52d4716feb8eb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/278fba84055ad42dbbc3e853c1c6529d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/28ceca72659bfe091f39449940191f8d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/28f9a7c230acf5bc1fb7bd49c7d43230" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/2b5b2965a9b353aaefdefb8d05712e28" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/2cf5b2afde3075050117e4991adbdfbc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/2fdd2db6ec4489fa1ba666200ccb2f55" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/31f83a187e59e180ab329efd4fa7ca53" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/346c65083f35a3afe97a4c9c6e255e69" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/3ad082bfd2014f3789d6073a25e4fee8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/408cd3cb146325d32c377694a89ab26c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/40959e7c6f888ea4eb186ca1b124b5fd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/428727b2cdfffa1fb7a7c9de67a6bd13" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/432c7820b15edc09cfe4b3be27b06a97" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/44dd7db3732232678face2857495383b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/4b2f6c09294099122e644c9ababa4690" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/4e6f9ba6aa0ff049436cf99800ebd33e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/5094b3fe8ba250186379a192b833b5a1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/510386dd78f844a2137338d6e9dbcae4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/56b4346c17365ff4246c1f8f460ee543" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/5d270001715844ee46a4390e4e80c28b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/61db1d78a6c1f4c9d4547cfe4fe7daf7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/641e5d30e0dfdce0838eb80ac1e61c4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/661217de34aaa3ce264fa9bc3326f272" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/68819849d91a34cd7cffcc4c15728688" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/6f0d1da7d31212f95cee29ba1d60eeeb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/721db24e289e3bed7a39e6d14aa040af" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/7bd37aa7cea4bf2860e2f306416c6d81" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/7f7553fde445c5becb3b0c46b262f7e5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/858256bb3d54b17cd60fb58130a73ada" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/8a3d6b05e51d36e7cd6d81c79597cb7b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/8c740f5618bce0956719eae7fda63977" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/8edf84fc988f724bca7532882be8cd01" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/8f36b2a6292186db751589575374fa6f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/9075962fd0312c0c7dd21990f528ad3a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/92b350506f7feb45ed318776409aed39" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/9bbf461ca8266baf66628d9a40e892fa" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/a04dbeb7ee86448e3dba24e519743929" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/a05c590cc5798bf90af3c0478fbb2416" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/a6912818893cdafd669ca58682f5bdfe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/a6b5cd96e61d20bb326d1c0e1751deba" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/ab5d891fb01734eb3f67aac777c32811" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/b1cfa0f3f7f4cbf4d1136343da958c44" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/b2fae7e0014c956ca2e113a0dfa2ca70" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/b48a1c2e67fb775c3d49d40f1d7550d7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/b5c29b27396395ad701629bc7fdbc603" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/b99d3936b0d016d9361cf2b7658a60e5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/bc0f304c089acda9115f08ca54f2802a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/c1badf7d619673477f6f6e05e698dd35" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/c2a807391fffa58dca33fa34faf305ce" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/c6add53a6fbbe6c3c7f3f40b350972af" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/cba19c7f72d3b778c965a3d6e4e2de6c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/cd4432eb54501116745337ef21487536" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/d15d984dc2e0c9a2c331c5984065c29c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/d3193459a7ca7c57795c454b68500888" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/d72b61a6ed2b21f333c4856fd53918ca" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/d8070d20d77da83d5c1482d66a560b86" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/db825fbc780e1c55b7df79d5391b92b8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/ddbee6f7bc794bd9a53b28774539a3c7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/e21485b9a9fbdf9695c4b6aaae82c421" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/e390b61eabbfd0941a74a43f833befac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/e46763ae8e252cc10dc12ef690a2397d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/e512b28612cffba4ec552e3a426c199e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/ed3fe629a095826f1704fb080a611ef5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/eec4f86ad59bfebeafc5cc0e7aeb9492" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/f544b42eeb437f89ddda02f7adb626a2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/fd2afc4f2148ea10547b9e1520082759" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/fe6a5a12fd6ec2836491ffd648a747b9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/ffe7209dbe9dabc4838cd5147a4f3857" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.phpintel/index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.styleci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/author.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/author1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/author2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/edit_detail_hotel.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/new_typeD.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/hotel/detail_blog.blade.php" afterDir="false" />
+    <list default="true" id="570ec89f-5cd5-48d0-9e91-80d0fb69fe4a" name="Default Changelist" comment="about contact">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.phpintel/2e6ea3862f9edad0781c1b89ec3d1b6f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.phpintel/da12592d59fa3b88f29f9269caa28fb4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/hotel/about.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/hotel/blog.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/hotel/contact.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/hotel/service.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/indexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/indexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/postController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/postController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/orange.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/orange.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/edit_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/edit_post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/new_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/new_post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/view_login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/view_login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home_layer/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home_layer/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/hotel/hotel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hotel/hotel.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/hotel/hotel_room.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hotel/hotel_room.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/hotel/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hotel/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/hotel/room.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hotel/room.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -134,32 +51,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/admin.blade.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="199">
+              <caret line="121" column="60" selection-start-line="121" selection-start-column="60" selection-end-line="121" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1008">
+              <caret line="92" column="21" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
               <folding>
-                <element signature="n#style#0;n#table#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#1449#1456#1#HTML" expanded="true" />
+                <element signature="e#40#60#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/hotel.blade.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/hotel/blog.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+            <state relative-caret-position="252">
+              <caret line="345" column="108" selection-start-line="345" selection-start-column="108" selection-end-line="345" selection-end-column="108" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/hotel/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7" />
+            <state relative-caret-position="196">
+              <caret line="186" column="34" selection-start-line="186" selection-start-column="34" selection-end-line="186" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/hotel/login.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="28">
+              <caret line="1" column="6" selection-end-line="1" selection-end-column="20" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -184,6 +120,24 @@
         <option value="$PROJECT_DIR$/resources/views/layer/master.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layer/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layer/menu.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/orange.css" />
+        <option value="$PROJECT_DIR$/resources/views/hotel/about.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/hotel/service.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/view_login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/post.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/new_post.blade.php" />
+        <option value="$PROJECT_DIR$/app/Model/Post.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/postController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/edit_post.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/indexController.php" />
+        <option value="$PROJECT_DIR$/resources/views/hotel/hotel.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/hotel/hotel_room.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/hotel/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/hotel/contact.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/hotel/room.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home_layer/master.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/hotel/blog.blade.php" />
       </list>
     </option>
   </component>
@@ -284,6 +238,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -294,13 +249,66 @@
             <path>
               <item name="project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="D:\xampp\htdocs\project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\xampp\htdocs\project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Http" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\xampp\htdocs\project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Http" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\xampp\htdocs\project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Model" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\xampp\htdocs\project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\xampp\htdocs\project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\xampp\htdocs\project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\xampp\htdocs\project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="home_layer" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\xampp\htdocs\project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="hotel" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\xampp\htdocs\project" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,7 +320,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -353,17 +361,26 @@
       <workItem from="1559501990084" duration="2352000" />
       <workItem from="1559712932993" duration="2124000" />
       <workItem from="1560601760304" duration="2231000" />
-      <workItem from="1567649967728" duration="494000" />
+      <workItem from="1567649967728" duration="5204000" />
+      <workItem from="1567655241403" duration="8360000" />
     </task>
+    <task id="LOCAL-00001" summary="about contact">
+      <created>1567650677308</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1567650677308</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10123000" />
+    <option name="totallyTimeSpent" value="23193000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20067114" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17114094" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -378,6 +395,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32905984" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -386,6 +404,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="about contact" />
+    <option name="LAST_COMMIT_MESSAGE" value="about contact" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
@@ -402,13 +424,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/student/ajaxdata.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="6" column="64" selection-start-line="4" selection-start-column="3" selection-end-line="9" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/student/ajaxdata.blade.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -416,13 +432,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/student/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" selection-start-line="40" selection-end-line="40" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/student/create.blade.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/layer/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -457,11 +467,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/hotel.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
@@ -469,16 +474,186 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/orange.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-190">
+          <caret line="1300" column="86" selection-start-line="1300" selection-start-column="86" selection-end-line="1300" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/hotel/about.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5280">
+          <caret line="264" column="72" selection-start-line="264" selection-start-column="72" selection-end-line="264" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/hotel/service.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-810">
+          <caret line="269" column="55" selection-start-line="269" selection-start-column="55" selection-end-line="269" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/view_login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="76" column="74" selection-start-line="76" selection-start-column="74" selection-end-line="76" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/admin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state>
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/post.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Model/Room.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/adminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="25" column="10" selection-start-line="22" selection-start-column="8" selection-end-line="25" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/new_post.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Model/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#1449#1456#1#HTML" expanded="true" />
+            <element signature="e#28#35#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/postController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="66" column="57" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
+          <folding>
+            <element signature="e#39#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/edit_post.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1187">
+          <caret line="60" column="117" selection-start-line="60" selection-start-column="117" selection-end-line="60" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="121" column="60" selection-start-line="121" selection-start-column="60" selection-end-line="121" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="92" column="21" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
+          <folding>
+            <element signature="e#40#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/hotel/hotel.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="124" column="50" selection-start-line="124" selection-start-column="50" selection-end-line="124" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/hotel/hotel_room.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="132" column="38" selection-start-line="132" selection-start-column="38" selection-end-line="132" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/hotel/contact.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1202">
+          <caret line="162" column="34" selection-start-line="162" selection-start-column="34" selection-end-line="162" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/hotel/room.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="167" column="34" selection-start-line="167" selection-start-column="34" selection-end-line="167" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home_layer/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="144" column="42" selection-start-line="144" selection-start-column="42" selection-end-line="144" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/hotel/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="1" column="6" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/hotel/detail_blog.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/hotel/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="186" column="34" selection-start-line="186" selection-start-column="34" selection-end-line="186" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/hotel/blog.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="345" column="108" selection-start-line="345" selection-start-column="108" selection-end-line="345" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

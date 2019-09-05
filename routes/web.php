@@ -80,8 +80,8 @@ Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"], function(){
 		Route::get("getdata", "postController@getdata")->name("post.getdata");
 		Route::get("view_add", "postController@view_add")->name("post.view_add");
 		Route::post("process_insert", "postController@process_insert")->name("post.process_insert");
-		Route::get("edit", "postController@edit")->name("post.edit");
-		Route::get("update_data", "postController@update_data")->name("post.update_data");
+		Route::get("edit/{id}", "postController@view_edit")->name("post.edit");
+		Route::get("process_update", "postController@update_data")->name("post.process_update");
 		Route::get("removedata", "postController@removedata")->name("post.removedata");
 	});
 // Bill
@@ -116,12 +116,16 @@ Route::post("search_room","indexController@search_room")
 	Route::get('room/{id}',"indexController@rooms")->name('room');
 
 Route::group(["prefix" => "", "middleware" => "CheckUser"], function(){
-Route::post('proocess_booking',"indexController@proocess_booking")->name('proocess_booking'); ;
+Route::post('proocess_booking',"indexController@proocess_booking")->name('proocess_booking');
 
 	});
+Route::get('blogs','indexController@show_blog')->name('blogs');
 Route::get('about', function(){
 	return view('hotel.about');
 });
 Route::get('Contact', function(){
 	return view('hotel.contact');
+});
+Route::get('service', function(){
+	return view('hotel.service');
 });

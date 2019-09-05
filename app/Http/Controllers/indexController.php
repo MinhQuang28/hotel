@@ -89,5 +89,10 @@ class indexController extends Controller {
 		$so_ngay=$diff->format("%a");
 		print_r($so_ngay);
 	}
+	public  function  show_blog(){
+        $show_blog= DB::table('post')
+            ->paginate(3);
+    return view('hotel.blog',['blog'=>$show_blog]);
+    }
 }
 

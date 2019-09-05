@@ -38,15 +38,15 @@
         <table class="table table-bordered" id="post_table" style="width:100%">
             <thead>
                 <tr>
-                    <th>Id Post</th>
-                    <th>Title Post</th>
-                    <th>Type Room</th>
+                    <th>Id</th>
+                    <th>Tiêu đề</th>
+                    <th>Tác giả</th>
+                    <th>Ngày tạo</th>
                     <th> Action</th>
                 </tr>
             </thead>
         </table>
     </section>
-</div>
 
    @push('js')
        <script type="text/javascript">
@@ -58,7 +58,8 @@
         "columns":[
             { "data": "id" },
             { "data": "title" },
-            { "data": "type_name" },
+            {"data":"author"},
+            {"data":"create_at"},
             // { "data": "action1" },
             { "data": "action", orderable:false, searchable: false}
         ]
@@ -95,3 +96,4 @@
    @endpush
     @endsection
 </div>
+

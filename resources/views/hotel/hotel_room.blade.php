@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Hotel Detail Left Sidebar</title>
+    <title>Hotel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="../images/favicon.png" type="image/x-icon">
@@ -130,7 +130,7 @@
             <li class=""><a href="/" >Home<span></span></a>
 
             </li>
-            <li class="dropdown hotel"><a href="{{ url('hotels') }}">Hotels<span></span></a>
+            <li class="dropdown active"><a href="{{ url('hotels') }}">Hotels<span></span></a>
 
             </li>
             <li class="dropdown service"><a href="{{ url('service') }}">Service<span></span></a>
