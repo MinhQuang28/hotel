@@ -39,19 +39,12 @@ function process_insert(Request $request) {
 			
 		$image_name = $request->hidden_image;
 		$image1 = $request->file('image1');
-		// $image2 = $request->file('image2');
-		// $image3 = $request->file('image3');
+
 		if ($image1 !='') {
 
 			$image_name1 = rand() . '.' . $image1->getClientOriginalExtension();
-			// $image_name2 = rand() . '.' . $image2->getClientOriginalExtension();
-			// $image_name3 = rand() . '.' . $image3->getClientOriginalExtension();
 			$image1->move(public_path('images'), $image_name1);
-			// $image2->move(public_path('images'), $image_name2);
-			// $image3->move(public_path('images'), $image_name3);
-
 			$hotel = new Hotel();
-			
 			$hotel->hotel_name = $request->get('name');
 			$hotel->hotel_address = $request->get('address');
 			$hotel->img1 = $image_name1;
@@ -61,8 +54,9 @@ function process_insert(Request $request) {
 			$hotel->insert();
 
 		} else {
+
 			$request->validate([
-				'image1' => 'required|image|max:2048',
+//				'image1' => 'required|image|max:2048',
 				// 'image2' => 'required|image|max:2048',
 				// 'image3' => 'required|image|max:2048',
 				'name' => 'required',
@@ -86,16 +80,13 @@ function process_insert(Request $request) {
 
 		$image_name = $request->hidden_image;
 		$image1 = $request->file('image1');
-		// $image2 = $request->file('image2');
-		// $image3 = $request->file('image3');
+
 		if ($image1 !='') {
 
 			$image_name1 = rand() . '.' . $image1->getClientOriginalExtension();
-			// $image_name2 = rand() . '.' . $image2->getClientOriginalExtension();
-			// $image_name3 = rand() . '.' . $image3->getClientOriginalExtension();
+
 			$image1->move(public_path('images'), $image_name1);
-			// $image2->move(public_path('images'), $image_name2);
-			// $image3->move(public_path('images'), $image_name3);
+
 
 			$hotel = new Hotel();
 			$hotel->hotel_id = $request->get('id');
@@ -106,23 +97,24 @@ function process_insert(Request $request) {
 			// $hotel->img3 = $image_name3;
 			$hotel->describ = $request->get('describ');
 			$hotel->update();
-
+            $request->validate([
+                'image1' => 'required|image|max:2048',
+                // 'image2' => 'required|image|max:2048',
+                // 'image3' => 'required|image|max:2048',
+                'name' => 'required',
+                'address' => 'required',
+		]  );
 		} else {
-			$request->validate([
-				'image1' => 'required|image|max:2048',
-				// 'image2' => 'required|image|max:2048',
-				// 'image3' => 'required|image|max:2048',
-				'name' => 'required',
-				'address' => 'required',
-			]);
-			$hotel = new Hotel();
-			$hotel->hotel_id = $request->get('id');
-			$hotel->hotel_name = $request->get('name');
-			$hotel->hotel_address = $request->get('address');
-			$hotel->describ = $request->get('describ');
-			$hotel->update1();
+            $hotel = new Hotel();
+            $hotel->hotel_id = $request->get('id');
+            $hotel->hotel_name = $request->get('name');
+            $hotel->hotel_address = $request->get('address');
+            $hotel->describ = $request->get('describ');
+            $hotel->update1();
+
+
 		}
-		return redirect('hotel')->with('messages', 'Data is successfully updated');
+		return redirect('admin/hotel')->with('messages', 'Data is successfully updated');
 
 	}
 	function removedata(Request $request) {

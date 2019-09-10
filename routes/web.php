@@ -81,7 +81,7 @@ Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"], function(){
 		Route::get("view_add", "postController@view_add")->name("post.view_add");
 		Route::post("process_insert", "postController@process_insert")->name("post.process_insert");
 		Route::get("edit/{id}", "postController@view_edit")->name("post.edit");
-		Route::get("process_update", "postController@update_data")->name("post.process_update");
+		Route::post("process_update", "postController@process_update")->name("post.process_update");
 		Route::get("removedata", "postController@removedata")->name("post.removedata");
 	});
 // Bill
@@ -95,7 +95,7 @@ Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"], function(){
 		Route::get("last_week", "$controller@get_bill_week")->name("$group.last_week");
 		Route::get("getdata", "$controller@getdata")->name("$group.getdata");
 		Route::get("check_in/{id}", "$controller@viewEdit")->name("$group.check_in");
-		Route::get("process_update", "$controller@process_update")->name("$group.process_update");
+		Route::post("process_update", "$controller@process_update")->name("$group.process_update");
 		Route::get("update/{id}", "$controller@update")->name("$group.update");
 		Route::get("removedata", "$controller@removedata")->name("$group.removedata");
 	});
@@ -117,12 +117,15 @@ Route::post("search_room","indexController@search_room")
 
 Route::group(["prefix" => "", "middleware" => "CheckUser"], function(){
 Route::post('proocess_booking',"indexController@proocess_booking")->name('proocess_booking');
-
+Route::get('thank_you',"indexController@view_comfirm")->name('thank_you');
 	});
 Route::get('blogs','indexController@show_blog')->name('blogs');
+
 Route::get('about', function(){
 	return view('hotel.about');
-});
+
+});Route::get('blog/{id}','indexController@get_one_news')->name('blog');
+
 Route::get('Contact', function(){
 	return view('hotel.contact');
 });

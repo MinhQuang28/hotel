@@ -139,8 +139,21 @@
                 <li class="dropdown contact"><a href="{{ url('Contact') }}">Contact<span></span></a>
 
                 </li>
+ @if (Session::has('ma_us'))
 
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-user"></i></span>  &nbsp; {{Session::get('ten_us')}} </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="hotel-homepage.html"><span><i class="fa fa-user"></i></span> &nbsp; Manager My Account</a></li>
+                                <li><a href="hotel-listing-left-sidebar.html"><span><i class="fa fa-dropbox"></i></span> &nbsp;My Orders</a></li>
+                                <li><a href="hotel-listing-right-sidebar.html"><span><i class="fa  fa-heart"></i></span> &nbsp;My wishlist</a></li>
+                                <li><a href="hotel-grid-left-sidebar.html"><span><i class="fa fa-sign-out"></i></span> &nbsp;Logout</a></li>
+                               
+                            </ul>     
+                            </li>
+                     @else
+                     <li class="dropdown"><a href="{{ url('login') }}"><span><i class="fa fa-user"></i></span>  &nbsp; Account </a></li>@endif
                 <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
+                
             </ul>
         </div><!-- end navbar collapse -->
     </div><!-- end container -->
@@ -222,15 +235,15 @@
                             <div class="side-bar-block instagram">
                                 <h2 class="side-bar-heading">Instagram</h2>
                                 <ul class="list-unstyled list-inline">
-                                    <li><a href="#"><img src="images/sidebar-insta-1.jpg" class="img-responsive" alt="insta-img" /></a></li>
-                                    <li><a href="#"><img src="images/sidebar-insta-2.jpg" class="img-responsive" alt="insta-img" /></a></li>
-                                    <li><a href="#"><img src="images/sidebar-insta-3.jpg" class="img-responsive" alt="insta-img" /></a></li>
-                                    <li><a href="#"><img src="images/sidebar-insta-4.jpg" class="img-responsive" alt="insta-img" /></a></li>
-                                    <li><a href="#"><img src="images/sidebar-insta-5.jpg" class="img-responsive" alt="insta-img" /></a></li>
-                                    <li><a href="#"><img src="images/sidebar-insta-6.jpg" class="img-responsive" alt="insta-img" /></a></li>
-                                    <li><a href="#"><img src="images/sidebar-insta-7.jpg" class="img-responsive" alt="insta-img" /></a></li>
-                                    <li><a href="#"><img src="images/sidebar-insta-8.jpg" class="img-responsive" alt="insta-img" /></a></li>
-                                    <li><a href="#"><img src="images/sidebar-insta-9.jpg" class="img-responsive" alt="insta-img" /></a></li>
+                                    <li><a href="#"><img src="images/insta1.jpg" class="img-responsive" alt="insta-img" /></a></li>
+                                    <li><a href="#"><img src="images/insta2.jpg" class="img-responsive" alt="insta-img" /></a></li>
+                                    <li><a href="#"><img src="images/insta3.jpg" class="img-responsive" alt="insta-img" /></a></li>
+                                    <li><a href="#"><img src="images/insta4.jpg" class="img-responsive" alt="insta-img" /></a></li>
+                                    <li><a href="#"><img src="images/insta5.jpg" class="img-responsive" alt="insta-img" /></a></li>
+                                    <li><a href="#"><img src="images/insta6.jpg" class="img-responsive" alt="insta-img" /></a></li>
+                                    <li><a href="#"><img src="images/insta7.jpg" class="img-responsive" alt="insta-img" /></a></li>
+                                    <li><a href="#"><img src="images/insta8.jpg" class="img-responsive" alt="insta-img" /></a></li>
+                                    <li><a href="#"><img src="images/insta9.jpg" class="img-responsive" alt="insta-img" /></a></li>
                                 </ul>
                             </div><!-- end side-bar-block -->
                         </div><!-- end columns -->
@@ -260,7 +273,9 @@
                         <div class="col-xs-12 col-sm-6 col-md-12">
                             <div class="side-bar-block recent-post">
                                 <h2 class="side-bar-heading">Recent Post</h2>
-
+                              {{--   @foreach ($blog as $element) --}}
+                                    {{-- expr --}}
+                              
                                 <div class="recent-block">
                                     <div class="recent-img">
                                         <a href="blog-detail-left-sidebar.html"><img src="images/recent-post-1.jpg" class="img-reponsive" alt="recent-blog-image" /></a>
@@ -268,31 +283,11 @@
 
                                     <div class="recent-text">
                                         <a href="blog-detail-left-sidebar.html"><h5>Host a Family  Party</h5></a>
-                                        <span class="date">27 May, 2017</span>
+                                        <span class="date">27 May, 2019</span>
                                     </div><!-- end recent-text -->
                                 </div><!-- end recent-block -->
 
-                                <div class="recent-block">
-                                    <div class="recent-img">
-                                        <a href="blog-detail-left-sidebar.html"><img src="images/recent-post-2.jpg" class="img-reponsive" alt="recent-blog-image" /></a>
-                                    </div><!-- end recent-img -->
-
-                                    <div class="recent-text">
-                                        <a href="blog-detail-left-sidebar.html"><h5>Host a Family  Party</h5></a>
-                                        <span class="date">27 May, 2017</span>
-                                    </div><!-- end recent-text -->
-                                </div><!-- end recent-block -->
-
-                                <div class="recent-block">
-                                    <div class="recent-img">
-                                        <a href="blog-detail-left-sidebar.html"><img src="images/recent-post-3.jpg" class="img-reponsive" alt="recent-blog-image" /></a>
-                                    </div><!-- end recent-img -->
-
-                                    <div class="recent-text">
-                                        <a href="blog-detail-left-sidebar.html"><h5>Host a Family  Party</h5></a>
-                                        <span class="date">27 May, 2017</span>
-                                    </div><!-- end recent-text -->
-                                </div><!-- end recent-block -->
+                                {{--   @endforeach --}}
 
                             </div><!-- end side-bar-block -->
                         </div><!-- end columns -->
@@ -343,7 +338,7 @@
                                 </a>
                                 <div class="main-mask blog-post-info">
                                     <ul class="list-inline list-unstyled blog-post-info">
-                                        <li><span><i class="fa fa-calendar"></i></span> {{ date('M d,Y H:m:s', strtotime($blog1->create_at)) }}<p></p></li>
+                                        <li><span><i class="fa fa-calendar"></i></span> {{ date('d M,Y H:m:s', strtotime($blog1->create_at)) }}<p></p></li>
                                         <li><span><i class="fa fa-user"></i></span>By: <a href="#">John Smith</a></li>
                                     </ul>
                                 </div>
@@ -352,7 +347,7 @@
                             <div class="blog-post-detail">
                                 <h2 class="blog-post-title"><a href="blog-detail-left-sidebar.html">{{$blog1->title}}</a></h2>
                                          {!! substr($blog1->content, 0,400) !!}<p></p>
-                                        <a href="blog-detail-left-sidebar.html" class="btn btn-orange">View More</a>
+                                        <a href="{{route('blog',[$blog1->url_post])}}" class="btn btn-orange">View More</a>
                             </div><!-- end blog-post-detail -->
                         </div><!-- end blog-post -->
                              @endforeach

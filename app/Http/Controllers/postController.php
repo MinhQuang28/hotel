@@ -93,7 +93,7 @@ class postController extends Controller {
         }
         else{
             $request->validate([
-                'image1' => 'required|image|max:2048',
+               
                 'title' => 'required',
                 'url_post' => 'required',
             ]);

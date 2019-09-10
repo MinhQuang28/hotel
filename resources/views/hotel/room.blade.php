@@ -143,8 +143,21 @@
             <li class="dropdown contact"><a href="{{ url('Contact') }}">Contact<span></span></a>
 
             </li>
-
+@if (Session::has('ma_us'))
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-user"></i></span>  &nbsp; {{Session::get('ten_us')}} </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="hotel-homepage.html"><span><i class="fa fa-user"></i></span> &nbsp; Manager My Account</a></li>
+                                <li><a href="hotel-listing-left-sidebar.html"><span><i class="fa fa-dropbox"></i></span> &nbsp;My Orders</a></li>
+                                <li><a href="hotel-listing-right-sidebar.html"><span><i class="fa  fa-heart"></i></span> &nbsp;My wishlist</a></li>
+                                <li><a href="hotel-grid-left-sidebar.html"><span><i class="fa fa-sign-out"></i></span> &nbsp;Logout</a></li>
+                               
+                            </ul>     
+                            </li>
+                     @else
+                     <li class="dropdown"><a href="{{ url('login') }}"><span><i class="fa fa-user"></i></span>  &nbsp; Account </a></li>@endif
             <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
+          
+
         </ul>
     </div><!-- end navbar collapse -->
 </div><!-- end container -->
@@ -216,18 +229,18 @@
 
 
                         <div class="form-group">
-                          <input type="text" class="form-control" value="{{ Session::get('ten_us') }}" placeholder="Name" required/>                                       
+                          <input type="text" class="form-control" value="{{ Session::get('ten_us') }}" name="name" placeholder="Name" required/>
                       </div>
                       <input type="number" name="tong_tien" id="tong_tien" value="" hidden="hidden">
+                      <input type="number" name="cus"  value="{{ Session::get('ma_us') }}" hidden>
+                      <input type="number" name="type_room"  value="{{$room->type_id}}" hidden>
                       <div class="form-group">
-                          <input type="email" class="form-control"  placeholder="Email" required/>                                       
+                          <input type="email" class="form-control" name="email"  placeholder="Email" required/>
                       </div>
 
                       <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Phone" required/>                                       
+                          <input type="text" class="form-control" name="phone" placeholder="Phone" required/>
                       </div>
-
-
 
                       <div class="form-group">
                           <input type="text" class="form-control dpd1" name="check_in" value="{{ Session::get('check_in') }}" placeholder="Check-in Date" required/>                                       		<i class="fa fa-calendar"></i>
@@ -238,7 +251,7 @@
                       </div>
 
                       <div class="form-group right-icon">
-                        <select id="select-room" required class="form-control"   onchange="myFunction()">
+                        <select id="select-room" required class="form-control" name="so_phong"   onchange="myFunction()">
                             <option>Room</option>
                             <option value="1">1</option>
                             <option value='2'>2</option>
@@ -257,7 +270,7 @@
                     </div>
 
                     <div class="checkbox custom-check">
-                       <input type="checkbox" id="check01" name="checkbox"/>
+                       <input type="checkbox" checked id="check01" name="checkbox"/>
                        <label for="check01"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="#">Terms & Conditions.</a></label>
                    </div>
 
@@ -401,7 +414,7 @@ document.getElementById("price_select").innerHTML=s;
 </div><!-- end detail-tabs -->
 
 <div class="available-blocks" id="available-tours">
-   <h2>Available Tours</h2>
+   <h2>Available hotel</h2>
    @foreach (  $hotel as $value)
 
 

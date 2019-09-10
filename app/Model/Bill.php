@@ -89,25 +89,34 @@ function new_oder(){
     		]);
     	return $array;
     }
+    public function get_one_bill($id) {
+        $array = DB::select("SELECT * from $this->bill  INNER JOIN customer on customer.id=bill.cus_id inner join type_room on bill.type_id=type_room.type_id
+left join hotel on hotel.hotel_id=type_room.hotel_id
 
-	public function update() {
-		DB::update("update $this->table
-            set
-            name = ?,
-            email = ?,
-            pass = ?,
-            gender=?,
-            birth=?,
-            status=?
-            where id = ?", [
+            where bill_id = ?
+            ORDER by bill.bill_id DESC
+            limit 1", [$id]);
+
+        return $array[0];
+    }
+	public function insert_bill() {
+		DB::insert("INSERT INTO  bill(name,email,phone,cus_id,total_money,check_in,check_out,type_id,so_luong,status)
+            VALUES (?,?,?,?,?,?,?,?,?,?)"
+          , [
 			$this->name,
 			$this->email,
-			$this->pass,
-			$this->gender,
-			$this->birth,
-			$this->status,
-			$this->id,
+			$this->phone,
+			$this->cus_id,
+			$this->total_money,
+			$this->check_in,
+			$this->check_out,
+			$this->type_id,
+			$this->so_luong,
+			0
 		]);
+	}
+	public function update_bill(){
+		DB::update('UPDATE bill set name=? ,phone=?,email=?,total_money=?,so_luong=?,check_in=?,check_out=?,status=? where bill_id = ?', [$this->name,$this->phone,$this->email,$this->money,$this->so_luong,$this->check_in,$this->check_out,$this->status,$this->bill_id]);
 	}
 
 }

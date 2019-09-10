@@ -59,10 +59,10 @@ Support Team
                         <!-- Menu toggle button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-bell-o"></i>
-                            <span class="label label-warning">10</span>
+                            <span class="label label-warning">2</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header">You have 10 notifications</li>
+                            <li class="header">You have 2 notifications</li>
                             <li>
                                 <!-- Inner Menu: contains the notifications -->
                                 <ul class="menu">

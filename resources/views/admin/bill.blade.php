@@ -16,7 +16,11 @@
 
     <!-- Main content -->
     <section class="content container-fluid">
-     <div class="row">
+     <div class="row">   @if (session('messages'))
+        <div class="callout callout-info">
+         {{ session('messages') }}
+     </div>
+     @endif
         <div class="col-xs-2 form-group">
           {{--   <label>Hotel</label> --}}
           <select data-column="5" class="form-control filter-select">
@@ -32,6 +36,8 @@
     </div>
      
        
+     
+
     <div class="col-xs-offset-10" align="right">
     <button type="button" name="add" id="add_data" class="btn btn-success btn-sm">Add BIll</button>
 </div>

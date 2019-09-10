@@ -128,9 +128,10 @@
               <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
             </div>
             <!-- /.box-footer -->
-          </div>
+        
           <!-- /.box -->
-        </div>
+       </div>
+
 </script>
 <script type="text/javascript">
   $(document).ready(function() {

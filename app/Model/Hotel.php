@@ -11,7 +11,7 @@ class Hotel {
 		return $array;
 	}
 	public function insert() {
-		DB::insert("INSERT into $this->table(hotel_name,hotel_address,img1,img2,img3,describ)
+		DB::insert("INSERT into $this->table(hotel_name,hotel_address,img1,describ)
             values
            (?,?,?,?,?,?)"
             ,[

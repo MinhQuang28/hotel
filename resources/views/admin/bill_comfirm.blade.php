@@ -35,6 +35,31 @@
              </div>
              <p class="help-block"></p>
            </div>
+         </div>   
+            <div class="row">
+              <div class="col-xs-12 form-group">
+                <label for="text" class="control-label">Phone</label>
+                <div class="input-group">
+                 <span class="input-group-addon">
+                   <i class="fa fa-user"></i>
+                 </span>
+                 <input class="form-control" placeholder="Name" value="{{$bill->phone }}" type="text" name="phone">
+               </input>
+             </div>
+             <p class="help-block"></p>
+           </div>
+         </div>            <div class="row">
+              <div class="col-xs-12 form-group">
+                <label for="text" class="control-label">email</label>
+                <div class="input-group">
+                 <span class="input-group-addon">
+                   <i class="fa fa-user"></i>
+                 </span>
+                 <input class="form-control" placeholder="Name" value="{{$bill->email }}" type="text" name="email">
+               </input>
+             </div>
+             <p class="help-block"></p>
+           </div>
          </div>
          <div class="row">
           <div class="col-xs-12 form-group">
@@ -60,7 +85,7 @@
           <label for="email" class="control-label">Total Money</label>
           <div class="input-group">
             <span class="input-group-addon">
-              <i class="fa fa-envelope">
+              <i class="fa fa-money">
               </i>
             </span>
             <input class="form-control" placeholder="Email" type="text" value="{{ $bill->total_money }}" name="monney">
@@ -88,7 +113,7 @@
         <div class="input-group-addon">
           <i class="fa fa-calendar"></i>
         </div>
-        <input class="form-control date" placeholder="date" id="" type="date" value="{{ $bill->check_out }}" name="check_in">
+        <input class="form-control date" placeholder="date" id="" type="date" value="{{ $bill->check_out }}" name="check_out">
       </input>
     </div>
     <p class="help-block"></p>
@@ -114,15 +139,28 @@
     <label for="monney" class="control-label"> Status:</label>
     <div class="form-group">
       Hủy
-      <input  class="minimal-red" name="status" value="1" type="radio">
+      <input  class="minimal-red" name="status" value="4" type="radio">
       Duyệt
-      <input class="minimal-red" name="status" value="0" type="radio" checked="checked">
+      <input class="minimal-red" name="status" value="1" type="radio" checked="checked">
     </input>
+    Check_in<input class="minimal-red" name="status" value="3" type="radio">
   </div>
   <p class="help-block"></p>
 </div>
 </div>
 
+<div class="row">
+  <div class="col-xs-12 form-group">
+    <label for="text" class="control-label">Total_room </label>
+    <div class="input-group">
+     <span class="input-group-addon">
+       <i class="fa fa-home"></i>
+     </span>
+     <input class="form-control" placeholder="enter" value="{{$bill->so_luong }}" type="text" name="so_luong"
+ </div>
+ <p class="help-block"></p>
+</div>
+</div>
 
  @for ($i = 1; $i <=$bill->so_luong ; $i++)
 <div class="row">
@@ -133,6 +171,7 @@
               <i class="fa fa-home"></i>
             </span>
         <select class="form-control" name="room{{ $i }}">
+          <option value=''>--chọn phòng-- </option>
           @foreach ($room1 as $room21)
            
             <option value="{{ $room21->room_id }}">{{ $room21->room_name }}</option>

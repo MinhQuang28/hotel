@@ -18,6 +18,7 @@ class Post {
 			$this->url_post
 		]);
 	}
+
 	public function delete() {
 		DB::delete("delete from $this->table
             where ma_sinh_vien = ?", [$this->ma_sinh_vien]);
@@ -25,6 +26,12 @@ class Post {
 	public function getOne($id) {
 		$array =DB::select("select * from $this->table
             where id = ?
+            limit 1", [$id]);
+		return $array[0];
+	}
+	public function getOne1($id) {
+		$array =DB::select("select * from $this->table
+            where url_post = ?
             limit 1", [$id]);
 		return $array[0];
 	}

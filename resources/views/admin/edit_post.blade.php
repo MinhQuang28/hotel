@@ -24,7 +24,7 @@
             @endif
             <div class="row">
                 <div class="col-md-12">
-                    <form action="{{ route('post.process_update') }}" enctype="multipart/form-data" method="post" role="form">
+                    <form action="{{ route('post.process_update') }}" method="post" enctype="multipart/form-data"  role="form">
                         @csrf
                         <div class="panel panel-default">
                             <div class="panel-heading"> Create New  </div>

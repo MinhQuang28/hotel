@@ -1,31 +1,25 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <title>statravel</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <head>
+        <title>Dashboard</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
-    <!-- Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Bootstrap Stylesheet -->
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
-    <!-- Font Awesome Stylesheet -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+        <!-- Font Awesome Stylesheet -->
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 
-    <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" id="cpswitch" href="css/orange.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <!-- Owl Carousel Stylesheet -->
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-
-    <!-- Magnific Gallery -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
+        <!-- Custom Stylesheets -->
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" id="cpswitch" href="{{ asset('css/orange.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    </head>
 </head>
 
 
@@ -142,11 +136,24 @@
                 <li class="dropdown about"><a href="{{ url('about') }}">About<span></span></a>
 
                 </li>
-                <li class="dropdown active"><a href="{{ url('Contact') }}">Contact<span></span></a>
+                <li class="dropdown "><a href="{{ url('Contact') }}">Contact<span></span></a>
 
                 </li>
-
+ @if (Session::has('ma_us'))
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-user"></i></span>  &nbsp; {{Session::get('ten_us')}} </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="hotel-homepage.html"><span><i class="fa fa-user"></i></span> &nbsp; Manager My Account</a></li>
+                                <li><a href="hotel-listing-left-sidebar.html"><span><i class="fa fa-dropbox"></i></span> &nbsp;My Orders</a></li>
+                                <li><a href="hotel-listing-right-sidebar.html"><span><i class="fa  fa-heart"></i></span> &nbsp;My wishlist</a></li>
+                                <li><a href="hotel-grid-left-sidebar.html"><span><i class="fa fa-sign-out"></i></span> &nbsp;Logout</a></li>
+                               
+                            </ul>     
+                            </li>
+                   @else
+                     <li class="dropdown"><a href="{{ url('login') }}"><span><i class="fa fa-user"></i></span>  &nbsp; Account </a></li>  @endif 
                 <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
+
+                
             </ul>
         </div><!-- end navbar collapse -->
     </div><!-- end container -->
@@ -163,7 +170,7 @@
 
             <div class="list-group panel">
 
-                <a href="lav.com" class="list-group-item" ><span><i class="fa fa-home link-icon"></i></span>Home<span></span></a>
+                <a href="/" class="list-group-item" ><span><i class="fa fa-home link-icon"></i></span>Home<span></span></a>
 
                 <a href="{{ url('hotels') }}" class="list-group-item active" ><span><i class="fa fa-building link-icon"></i></span>Hotels<span></span></a>
 
@@ -261,12 +268,12 @@
         
         
         <!-- Page Scripts Starts -->
-    
 
-        <script src="{{ asset('js/jquery-ui.min.js') }}"></script> 
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('js/custom-navigation.js') }}"></script>
-        <script src="{{ asset('js/custom-price-slider.js') }}"></script>
+<!-- Page Scripts Starts -->
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/custom-navigation.js') }}"></script>
+<!-- Page Scripts Ends -->
         <!-- Page Scripts Ends -->
     </body>
 </html>

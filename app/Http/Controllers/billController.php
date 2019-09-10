@@ -170,7 +170,7 @@ class billController extends Controller {
 		}elseif ($bill->status==3){
 			return ' <a href="bill/update/' . $bill->bill_id . '"class="btn btn-sm btn-primary edit"><i class="glyphicon glyphicon-edit"></i> Thanh toán</a>';
 		}elseif ($bill->status==1){
-			return ' <a href="bill/check_in/' . $bill->bill_id . '"class="btn btn-sm btn-primary edit"><i class="glyphicon glyphicon-edit"></i> Duyệt ngay</a>
+			return ' <a href="bill/check_in/' . $bill->bill_id . '"class="btn btn-sm btn-primary edit"><i class="glyphicon glyphicon-edit"></i> CheckIn KH</a>
 			<a href="#" class="btn btn-sm btn-danger delete" id="' . $bill->bill_id . '"><i class="glyphicon glyphicon-remove"></i> Hủy</a>';
 		}
 		})
@@ -239,10 +239,28 @@ class billController extends Controller {
 	 	$bill= new Bill();
 	 	$bill->bill_id=$request->get('id');
 	 	$bill->name=$request->get('name');
-	 	$bill->monney=$request->get('monney');
+	 	$bill->money=$request->get('monney');
 	 	$bill->check_in=$request->get('check_in');
 	 	$bill->check_out=$request->get('check_out');
-
+	 	$bill->status=$request->get('status');
+	 	$bill->so_luong=$request->get('so_luong');
+	 	$bill->phone=$request->get('phone');
+	 	$bill->email=$request->get('email');
+	 	$bill->update_bill();
+	 	if(!empty($request->room3)){ 
+	 		$bill->room1=$request->room1;
+	 		$bil->room2=$request->room2;
+	 		$bill->room3=$request->room3;
+	 		$bill->update_bill1();
+	 }elseif (!empty($request->room2)) {
+	 	$bill->room1=$request->room1;
+	 		$bill->room2=$request->room2;
+	 		$bill->update_bill2();
+	 }elseif(!empty($request->room1)) {
+	 	$bill->room1=$request->room1;
+	 	// $bill->update_bill3();
+	 }
+ return redirect('admin/bill')->with('messages', 'Data is successfully inserted');
 	 }
 
 
