@@ -139,17 +139,15 @@
                         <li class="dropdown blog"><a href="{{ url('blogs') }}">Blog<span></span></a>
                                   
                         </li>
-                        <li class="dropdown about"><a href="{{ url('about') }}">About<span></span></a>
+                        <li class="dropdown active"><a href="{{ url('about') }}">About<span></span></a>
                                    
                         </li>
                         <li class="dropdown contact"><a href="{{ url('Contact') }}">Contact<span></span></a>
                                     
                         </li>
-                        
-                        <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
-                         @if (Session::has('ma_us'))
+                             @if (Session::has('ma_us'))
 
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-user"></i></span>  &nbsp; Account's {{Session::get('ten_us')}} </a>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-user"></i></span>  &nbsp; {{Session::get('ten_us')}} </a>
                             <ul class="dropdown-menu">
                                 <li><a href="hotel-homepage.html"><span><i class="fa fa-user"></i></span> &nbsp; Manager My Account</a></li>
                                 <li><a href="hotel-listing-left-sidebar.html"><span><i class="fa fa-dropbox"></i></span> &nbsp;My Orders</a></li>
@@ -158,8 +156,10 @@
                                
                             </ul>     
                             </li>
-                     @endif 
-                     <li class="dropdown"><a href="{{ url('login') }}"><span><i class="fa fa-user"></i></span>  &nbsp; Account </a></li>
+                     @else
+                     <li class="dropdown"><a href="{{ url('login') }}"><span><i class="fa fa-user"></i></span>  &nbsp; Account </a></li>@endif
+                        <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
+                    
                     </ul>
                 </div><!-- end navbar collapse -->
             </div><!-- end container -->
@@ -178,7 +178,7 @@
                     
                         <a href="lav.com" class="list-group-item" ><span><i class="fa fa-home link-icon"></i></span>Home<span></span></a>
                       
-                        <a href="{{ url('hotels') }}" class="list-group-item active" ><span><i class="fa fa-building link-icon"></i></span>Hotels<span></span></a>
+                        <a href="{{ url('hotels') }}" class="list-group-item " ><span><i class="fa fa-building link-icon"></i></span>Hotels<span></span></a>
                         
                         <a href="{{ url('Service') }}" class="list-group-item" ><span><i class="fa fa-globe link-icon"></i></span>Service<span></span></a>
                         
@@ -187,7 +187,7 @@
                         
                         <a href="{{ url('contact') }}" class="list-group-item" ><span><i class="fa fa-car link-icon"></i></span>Contact<span></span></a>
                         
-                        <a href="{{ url('about') }}" class="list-group-item" ><span><i class="fa fa-clone link-icon"></i></span>About<span></span></a>
+                        <a href="{{ url('about') }}" class="list-group-item active" ><span><i class="fa fa-clone link-icon"></i></span>About<span></span></a>
                         
                     </div><!-- end list-group -->
                 </div><!-- end main-menu -->

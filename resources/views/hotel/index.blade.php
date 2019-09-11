@@ -150,7 +150,7 @@
                     <li class=""><a href="{{ url('hotels') }}" class="" data-toggle="">Hotels<span></span></a>
 
                     </li>
-                    <li class=""><a href="{{ url('services') }}" >Services<span></span></a>
+                    <li class=""><a href="{{ url('service') }}" >Services<span></span></a>
 
                     </li>
                     <li class=""><a href="{{ url('blogs') }}" >Blog<span></span></a>
@@ -164,7 +164,7 @@
 
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-user"></i></span>  &nbsp;{{Session::get('ten_us')}} </a>
                             <ul class="dropdown-menu">
-                                <li><a href="hotel-homepage.html"><span><i class="fa fa-user"></i></span> &nbsp; Manager My Account</a></li>
+                                <li><a href="{{ route('profile') }}"><span><i class="fa fa-user"></i></span> &nbsp; Manager My Account</a></li>
                                 <li><a href="hotel-listing-left-sidebar.html"><span><i class="fa fa-dropbox"></i></span> &nbsp;My Orders</a></li>
                                 <li><a href="hotel-listing-right-sidebar.html"><span><i class="fa  fa-heart"></i></span> &nbsp;My wishlist</a></li>
                                 <li><a href="hotel-grid-left-sidebar.html"><span><i class="fa fa-sign-out"></i></span> &nbsp;Logout</a></li>

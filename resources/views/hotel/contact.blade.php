@@ -135,7 +135,7 @@
                 <li class="dropdown about"><a href="{{ url('about') }}">About<span></span></a>
 
                 </li>
-                <li class="dropdown contact"><a href="{{ url('Contact') }}">Contact<span></span></a>
+                <li class="dropdown active"><a href="{{ url('Contact') }}">Contact<span></span></a>
 
                 </li>
 

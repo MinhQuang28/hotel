@@ -48,6 +48,13 @@ class Customer {
             limit 1", [$this->ma_sinh_vien]);
 		return $array[0];
 	}
+	public function get_info($id) {
+		$array = DB::select("select * from $this->table
+            where id = ?
+            limit 1", [$id]);
+		
+		return $array[0];
+	}
 	public function update() {
 		DB::update("update $this->table
             set

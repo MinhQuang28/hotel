@@ -106,21 +106,35 @@ Route::get("/", "indexController@index")->name('home');
 Route::get('hotels',"indexController@hotels")->name('indexController.hotels');
 Route::get("autocomplete", "AutoCompleteController@search");
 Route::get('hotel/{id}',"indexController@hotel")->name('indexController@hotel');
+Route::get('room/{id}',"indexController@rooms")->name('room');
+//login & đăng kí
 Route::get('login',"Controller@login_user")->name('login');
 Route::post("process_login_user","Controller@process_login_user")
 ->name("process_login_user");
+
+//tìm kiếm
 Route::post("search","indexController@search")
 ->name("search");
 Route::post("search_room","indexController@search_room")
 ->name("search_room");
-	Route::get('room/{id}',"indexController@rooms")->name('room');
-
+// account booking sau khi đăng nhập
 Route::group(["prefix" => "", "middleware" => "CheckUser"], function(){
-Route::post('proocess_booking',"indexController@proocess_booking")->name('proocess_booking');
-Route::get('thank_you',"indexController@view_comfirm")->name('thank_you');
-	});
+	Route::post('proocess_booking',"indexController@proocess_booking")->name('proocess_booking');
+	Route::get('thank_you',"indexController@view_comfirm")->name('thank_you');
+	Route::get('profile','indexController@profile_account')->name('profile');
+	Route::get('booking','indexController@booking')->name('booking');
+	Route::get('booking_status','indexController@booking_status')->name('booking_status');
+});
+
+
 Route::get('blogs','indexController@show_blog')->name('blogs');
 
+
+
+
+
+
+// chỉnh sủa sau
 Route::get('about', function(){
 	return view('hotel.about');
 

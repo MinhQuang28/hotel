@@ -11,6 +11,7 @@ use App\Model\Hotel;
 use Session;
 use App\Model\Type;
 use App\Model\Post;
+use App\Model\Customer;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -91,38 +92,77 @@ class indexController extends Controller {
 		$so_ngay=$diff->format("%a");
 		$total_money=$so_ngay*($request->get('tong_tien'));
 		if($total_money !='') {
-            $bill = new Bill();
-            $bill->name = $request->get('name');
-            $bill->email=$request->get('email');
-            $bill->phone=$request->get('phone');
-            $bill->cus_id=$request->get('cus');
-            $bill->check_in = $check_in;
-            $bill->check_out = $check_out;
-            $bill->so_luong=$request->get('so_phong');
-            $bill->room = $request->get('so_phong');
-            $bill->total_money=$total_money;
-            $bill->type_id=$request->get('type_room');
-            $bill->insert_bill();
-        }
+			$bill = new Bill();
+			$bill->name = $request->get('name');
+			$bill->email=$request->get('email');
+			$bill->phone=$request->get('phone');
+			$bill->cus_id=$request->get('cus');
+			$bill->check_in = $check_in;
+			$bill->check_out = $check_out;
+			$bill->so_luong=$request->get('so_phong');
+			$bill->room = $request->get('so_phong');
+			$bill->total_money=$total_money;
+			$bill->type_id=$request->get('type_room');
+			$bill->insert_bill();
+		}
 
-        return redirect()->route('thank_you');
+		return redirect()->route('thank_you');
 	}
 	public  function view_comfirm(Request $request){
-	    $value=$request->session()->get('ma_us');
-	   $bill = new Bill();
-	   $get_bill=$bill->get_one_bill($value);
-	   return view('hotel.thank_you',['info'=>$get_bill]);
-    }
-	public  function  show_blog(){
-        $show_blog= DB::table('post')
-            ->paginate(3);
-    return view('hotel.blog',['blog'=>$show_blog]);
-    }
-    public function get_one_news($id){
-    	$blog= new Post();
-    	$get_one=$blog->getOne1($id);
-		 return view('hotel.blog_detail',['blog'=>$get_one]);
+		$value=$request->session()->get('ma_us');
+		$bill = new Bill();
+		$get_bill=$bill->get_one_bill($value);
+		return view('hotel.thank_you',['info'=>$get_bill]);
+	}
 
-    }
+	public  function  show_blog(){
+		$show_blog= DB::table('post')
+		->paginate(3);
+		return view('hotel.blog',['blog'=>$show_blog]);
+	}
+
+	public function get_one_news($id){
+		$blog= new Post();
+		$get_one=$blog->getOne1($id);
+		return view('hotel.blog_detail',['blog'=>$get_one]);
+
+	}
+	public function profile_account(Request $request){
+		$id=$request->session()->get('ma_us');
+		$cus= new Customer();
+		$info_cus= $cus->get_info($id);
+		return view('hotel.use_profile',['info'=>$info_cus]);
+	}
+	public function booking( Request $request){
+		$cus_id=$request->session()->get('ma_us');
+		$get_bill= DB::table('bill')
+		->where('cus_id',$cus_id)
+		->paginate(4);
+		return view('hotel.booking',['bill'=>$get_bill]);
+	}
+	public function booking_status(Request $request){
+		$type=$request->get('type');
+		$cus_id=$request->session()->get('ma_us');
+		$bill= new Bill();
+		// 1 all bill
+		if($type==1){
+		
+		$get_bill=$bill->get_all_byId();
+		}
+		// 2 waiting
+		elseif($type==2){
+			$get_bill=$bill->get_bill_wait($cus_id);
+		}
+		// 3 received
+		elseif($type==3){
+			$get_bill=$bill->get_bill_received($cus_id);
+			// 4 cancel
+		}elseif ($type==4) {
+			$get_bill=$bill->get_bill_canceled($cus_id);
+		}
+		
+		return view('hotel.booking_status',['bill'=>$get_bill]);
+	}
+
 }
 

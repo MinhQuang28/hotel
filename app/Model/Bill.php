@@ -118,5 +118,22 @@ left join hotel on hotel.hotel_id=type_room.hotel_id
 	public function update_bill(){
 		DB::update('UPDATE bill set name=? ,phone=?,email=?,total_money=?,so_luong=?,check_in=?,check_out=?,status=? where bill_id = ?', [$this->name,$this->phone,$this->email,$this->money,$this->so_luong,$this->check_in,$this->check_out,$this->status,$this->bill_id]);
 	}
+	public function get_all_byId(){
+		$arr=DB::select("SELECT * FROM $this->bill  limit 0,4");
+		return $arr;
+	}
+	public function get_bill_wait($id){
+		$arr=DB::select("SELECT * FROM $this->bill where cus_id= ? and status=?  limit 0,4",[$id,0]);
+		return $arr;
+	}
+	public function get_bill_received($id){
+		$arr=DB::select("SELECT * FROM $this->bill where cus_id= ? and status <>? and status <> ?   limit 0,4",[$id,0,4]);
+		return $arr;
+	}
+	public function get_bill_canceled($id){
+		$arr=DB::select("SELECT * FROM $this->bill  limit 0,4");
+		return $arr;
+	}
+
 
 }
