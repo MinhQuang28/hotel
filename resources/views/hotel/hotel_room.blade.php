@@ -57,7 +57,7 @@
 <div id="top-bar" class="tb-text-white">
     <div class="container">
         <div class="row">          
-         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div id="info">
                 <ul class="list-unstyled list-inline">
                     <li><span><i class="fa fa-map-marker"></i></span>29 tran hung dao, Ha Noi, VN</li>
@@ -69,15 +69,15 @@
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div id="links">
                 <ul class="list-unstyled list-inline">
-                   @if (Session::has('ma_us'))
+                 @if (Session::has('ma_us'))
 
-                   <li><a href="profile"><span>Welcome<i class="fa fa-user"></i> {{Session::get('ten_us')}} </span></a></li>
-                   @else
-                   <li><a href="{{ url('login') }}"><span><i class="fa fa-lock"></i></span>Login</a></li>
-                   <li><a href="registration.html"><span><i class="fa fa-plus"></i></span>Sign Up</a></li>
-                   @endif
+                 <li><a href="profile"><span>Welcome<i class="fa fa-user"></i> {{Session::get('ten_us')}} </span></a></li>
+                 @else
+                 <li><a href="{{ url('login') }}"><span><i class="fa fa-lock"></i></span>Login</a></li>
+                 <li><a href="registration.html"><span><i class="fa fa-plus"></i></span>Sign Up</a></li>
+                 @endif
 
-                   <li>
+                 <li>
                     <form>
                         <ul class="list-inline">
                             <li>
@@ -145,18 +145,18 @@
             <li class="dropdown contact"><a href="{{ url('Contact') }}">Contact<span></span></a>
 
             </li>
-@if (Session::has('ma_us'))
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-user"></i></span>  &nbsp; Account's {{Session::get('ten_us')}} </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="hotel-homepage.html"><span><i class="fa fa-user"></i></span> &nbsp; Manager My Account</a></li>
-                                <li><a href="hotel-listing-left-sidebar.html"><span><i class="fa fa-dropbox"></i></span> &nbsp;My Orders</a></li>
-                                <li><a href="hotel-listing-right-sidebar.html"><span><i class="fa  fa-heart"></i></span> &nbsp;My wishlist</a></li>
-                                <li><a href="hotel-grid-left-sidebar.html"><span><i class="fa fa-sign-out"></i></span> &nbsp;Logout</a></li>
-                               
-                            </ul>     
-                            </li>
-                     @else
-                     <li class="dropdown"><a href="{{ url('login') }}"><span><i class="fa fa-user"></i></span>  &nbsp; Account </a></li>@endif
+            @if (Session::has('ma_us'))
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-user"></i></span>  &nbsp; Account's {{Session::get('ten_us')}} </a>
+                <ul class="dropdown-menu">
+                    <li><a href="hotel-homepage.html"><span><i class="fa fa-user"></i></span> &nbsp; Manager My Account</a></li>
+                    <li><a href="hotel-listing-left-sidebar.html"><span><i class="fa fa-dropbox"></i></span> &nbsp;My Orders</a></li>
+                    <li><a href="hotel-listing-right-sidebar.html"><span><i class="fa  fa-heart"></i></span> &nbsp;My wishlist</a></li>
+                    <li><a href="hotel-grid-left-sidebar.html"><span><i class="fa fa-sign-out"></i></span> &nbsp;Logout</a></li>
+
+                </ul>     
+            </li>
+            @else
+            <li class="dropdown"><a href="{{ url('login') }}"><span><i class="fa fa-user"></i></span>  &nbsp; Account </a></li>@endif
             <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
         </ul>
     </div><!-- end navbar collapse -->
@@ -226,11 +226,11 @@
                                 @csrf
                                 <input type="number" name="id" value="{{ $hotel->hotel_id }}" hidden="hidden">
                                 <div class="form-group">
-                                    <input type="text" class="form-control dpd1" value="{{Session::get('check_in')}}"  placeholder="Check-in Date" required/>                                              <i class="fa fa-calendar"></i>
+                                    <input type="text" class="form-control dpd1" value="{{Session::get('check_in')}}"  placeholder="Check-in Date" name="check_in" required/>                                              <i class="fa fa-calendar"></i>
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control dpd2" placeholder="check-out Date" value="{{Session::get('check_in')}}" required/>                                            <i class="fa fa-calendar"></i>
+                                    <input type="text" class="form-control dpd2" placeholder="check-out Date" value="{{Session::get('check_out')}}" name="check_out" required/>                                            <i class="fa fa-calendar"></i>
                                 </div>
 
                                 <div class="row">
@@ -425,7 +425,7 @@
                                     </a>
                                     <div class="main-mask">
                                         <ul class="list-unstyled list-inline offer-price-1">
-                                            <li class="price">${{ $rooms->price }}<span class="divider">|</span><span class="pkg">1 Nights</span></li>
+                                            <li class="price">${{ $rooms->price }}<span class="divider">|</span><span class="pkg">1 Day</span></li>
                                             <li class="rating">
                                                 <span><i class="fa fa-star orange"></i></span>
                                                 <span><i class="fa fa-star orange"></i></span>
@@ -451,13 +451,13 @@
 
 
                     <div class="pages">
-                     {{ $room->links() }}
-                 </div><!-- end pages -->
-             </div><!-- end columns -->
+                       {{ $room->links() }}
+                   </div><!-- end pages -->
+               </div><!-- end columns -->
 
-         </div><!-- end row -->
-     </div><!-- end container -->
- </div><!-- end hotel-details -->
+           </div><!-- end row -->
+       </div><!-- end container -->
+   </div><!-- end hotel-details -->
 </section><!-- end innerpage-wrapper -->
 
 

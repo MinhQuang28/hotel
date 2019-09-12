@@ -37,6 +37,45 @@
            </div>
          </div>
          <div class="row">
+              <div class="col-xs-12 form-group">
+                <label for="text" class="control-label">Phone</label>
+                <div class="input-group">
+                 <span class="input-group-addon">
+                   <i class="fa fa-user"></i>
+                 </span>
+                 <input class="form-control" placeholder="name" value="{{$bill->phone }}" type="text" name="phone">
+               </input>
+             </div>
+             <p class="help-block"></p>
+           </div>
+         </div>
+         <div class="row">
+              <div class="col-xs-12 form-group">
+                <label for="text" class="control-label">Email</label>
+                <div class="input-group">
+                 <span class="input-group-addon">
+                   <i class="fa fa-user"></i>
+                 </span>
+                 <input class="form-control" placeholder="name" value="{{$bill->email }}" type="text" name="email">
+               </input>
+             </div>
+             <p class="help-block"></p>
+           </div>
+         </div>
+         <div class="row">
+              <div class="col-xs-12 form-group">
+                <label for="text" class="control-label">total room</label>
+                <div class="input-group">
+                 <span class="input-group-addon">
+                   <i class="fa fa-user"></i>
+                 </span>
+                 <input class="form-control" placeholder="name" value="{{$bill->so_luong }}" type="text" name="so_luong">
+               </input>
+             </div>
+             <p class="help-block"></p>
+           </div>
+         </div>
+         <div class="row">
           <div class="col-xs-12 form-group">
             <label for="text" class="control-label">Hotel</label>
             <div class="input-group">
@@ -88,7 +127,7 @@
         <div class="input-group-addon">
           <i class="fa fa-calendar"></i>
         </div>
-        <input class="form-control date" placeholder="date" id="" type="date" value="{{ $bill->check_out }}" name="check_in">
+        <input class="form-control date" placeholder="date" id="" type="date" value="{{ $bill->check_out }}" name="check_out">
       </input>
     </div>
     <p class="help-block"></p>
@@ -101,7 +140,7 @@
      <span class="input-group-addon">
        <i class="fa fa-user"></i>
      </span>
-     <input class="form-control" placeholder="Name" value="{{$bill->deposit }}" type="text" name="name">
+     <input class="form-control" placeholder="Name" value="{{$bill->deposit }}" type="text" name="deposit">
    </input>
  </div>
  <p class="help-block"></p>

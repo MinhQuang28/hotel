@@ -1,6 +1,9 @@
 @extends('home_layer.master')
 @section('content1')
-
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 
 <!--================= PAGE-COVER ================-->
 <section class="page-cover" id="cover-blog-details">
@@ -180,67 +183,26 @@
                             </div><!-- end blog-post-detail -->
 
                         </div><!-- end blog-post -->
-                        <div id="comments">
-
-                            <div class="comment-block">
+                        <div id="comments"  >
+                            @foreach ($comment as $val)
+                                {{-- expr --}}
+                           
+                               <div class="comment-block">
                                 <div class="user-img">
-                                   <img src="../images/avatar_user.png" height="98" width="98" class="img-responsive" alt="user-img" />
+                                   <img src="../images/avatar_user.jpg" height="98" width="98" class="img-responsive" alt="user-img" />
                                 </div><!-- end user-img -->
 
                                 <div class="user-text">
                                     <ul class="list-inline list-unstyled">
-                                        <li class="user-name">Jhon Smith</li>
-                                        <li class="date">27 May, 2017</li>
+                                        <li class="user-name">{{ $val->comment_name }}</li>
+                                        <li class="date">{{ date('M d,Y', strtotime($val->date)) }}</li>
                                     </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+                                    <p>{{ $val->comment }}.</p>
                                     <a href="#"><span><i class="fa fa-reply"></i></span> Reply</a>
                                 </div><!-- end user-text -->
 
-                                <div class="comment-block reply-block">
-                                    <div class="user-img">
-                                       <img src="../images/avatar_user.png" height="98" width="98" class="img-responsive" alt="user-img" />
-                                    </div><!-- end user-img -->
-
-                                    <div class="user-text">
-                                        <ul class="list-inline list-unstyled">
-                                            <li class="user-name">Jhon Smith</li>
-                                            <li class="date">27 May, 2017</li>
-                                        </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
-                                        <a href="#"><span><i class="fa fa-reply"></i></span> Reply</a>
-                                    </div><!-- end user-text -->
-                                </div><!-- end reply-block -->
                             </div><!-- end comment-block -->
-
-                            <div class="comment-block">
-                                <div class="user-img">
-                                    <img src="../images/avatar_user.png" height="98" width="98" class="img-responsive" alt="user-img" />
-                                </div><!-- end user-img -->
-
-                                <div class="user-text">
-                                    <ul class="list-inline list-unstyled">
-                                        <li class="user-name">Jhon Smith</li>
-                                        <li class="date">27 May, 2017</li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
-                                    <a href="#"><span><i class="fa fa-reply"></i></span> Reply</a>
-                                </div><!-- end user-text -->
-                            </div><!-- end comment-block -->
-
-                            <div class="comment-block">
-                                <div class="user-img">
-                                   <img src="../images/avatar_user.png" height="98" width="98" class="img-responsive" alt="user-img" />-
-                                </div><!-- end user-img -->
-
-                                <div class="user-text">
-                                    <ul class="list-inline list-unstyled">
-                                        <li class="user-name">Jhon Smith</li>
-                                        <li class="date">27 May, 2017</li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
-                                    <a href="#"><span><i class="fa fa-reply"></i></span> Reply</a>
-                                </div><!-- end user-text -->
-                            </div><!-- end comment-block -->
+                            @endforeach
 
                         </div><!-- end comments -->
 
@@ -249,26 +211,28 @@
                                 <h1>Add Comment</h1>
                             </div><!-- end innerpage-heading -->
 
-                            <form>
+                            <form id="comment_form" method="post">
+                                @csrf
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-6 col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control input input-lg" placeholder="Your Name"  required/>
+                                            <input type="text" class="form-control input input-lg" placeholder="Your Name" name="name" id="name"  required/>
+                                            <input type="number" name="id_post" id="id_post" hidden="hidden" value="{{ $blog->id }}">
                                         </div>
                                     </div><!-- end columns -->
 
                                     <div class="col-xs-12 col-sm-6 col-md-6">
                                         <div class="form-group">
-                                            <input type="email" class="form-control input input-lg" placeholder="Your Email"  required/>
+                                            <input type="email" class="form-control input input-lg" placeholder="Your Email"  name="email" id="email" required/>
                                         </div>
                                     </div><!-- end columns -->
                                 </div><!-- end row -->
 
                                 <div class="form-group">
-                                    <textarea class="form-control input-lg" rows="5" placeholder="Your Message"></textarea>
+                                    <textarea class="form-control input-lg" name="comment" id="comment" rows="5" placeholder="Your Message"></textarea>
                                 </div>
 
-                                <button class="btn btn-orange">Submit</button>
+                                <input type="submit" name="submit" id="submit" class="btn btn-orange" value="Submit">
                             </form>
                         </div><!-- end comment-form -->
 
@@ -340,7 +304,29 @@
         </div><!-- end row -->
     </div><!-- end container -->
 </section><!-- end newsletter-1 -->
+<script type="text/javascript">
+$(document).ready(function(){
+ 
+ $('#comment_form').on('submit', function(event){
+  event.preventDefault();
+  var id=$("#id_post").val();
+  var form_data = $(this).serialize();
+  $.ajax({
+   url:"../add_comment",
+   method:"POST",
+   data:form_data,
+   dataType:"JSON",
+   success:function(data)
+   {
+     alert('success');
+   }
+  })
 
-
+    $.get('view_comment',{id_post:id},function(data){
+         $("#comments").html(data);
+                });
+ });
+ });
+ </script>
 <!--======================= FOOTER =======================-->
 @endsection

@@ -15,11 +15,11 @@ class customerController extends Controller {
 	}
 
 	function getdata() {
-		$customer = DB::table('customer')->select('id', 'name', 'email', 'brith', 'gender', 'phone', 'access');
+		$customer = DB::table('customer')->select('id', 'name', 'email', 'birth', 'gender', 'phone', 'access');
 		return Datatables::of($customer)
-			->editColumn('brith', function ($customer) {
+			->editColumn('birth', function ($customer) {
 				//change over here
-				return date('d/m/Y', strtotime($customer->brith));
+				return date('d/m/Y', strtotime($customer->birth));
 			})
 		// ->editColumn('img1', function ($customer) {
 		// 	return 'img/' . $customer->img1 . '';

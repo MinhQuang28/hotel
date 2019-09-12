@@ -124,10 +124,14 @@ Route::group(["prefix" => "", "middleware" => "CheckUser"], function(){
 	Route::get('profile','indexController@profile_account')->name('profile');
 	Route::get('booking','indexController@booking')->name('booking');
 	Route::get('booking_status','indexController@booking_status')->name('booking_status');
+	Route::get('logout_user','controller@logout_user')->name('logout_user');
 });
 
-
+// blog and comment
 Route::get('blogs','indexController@show_blog')->name('blogs');
+Route::post('add_comment','indexController@add_comment')->name('add_comment');
+Route::get('blog/view_comment','indexController@view_comment')->name('view/add_comment');
+
 
 
 

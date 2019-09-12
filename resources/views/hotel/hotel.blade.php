@@ -119,7 +119,7 @@
                 
                 <div class="collapse navbar-collapse" id="myNavbar1">
                     <ul class="nav navbar-nav navbar-right navbar-search-link">
-                        <li class=""><a href="/" >Home<span></span></a>
+                        <li class=""><a href="{{ route('home') }}" >Home<span></span></a>
                                      
                         </li>
                         <li class="dropdown active"><a href="{{ url('hotels') }}">Hotels<span></span></a>

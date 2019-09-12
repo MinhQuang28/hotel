@@ -10,8 +10,12 @@ use Yajra\Datatables\Datatables;
 
 class adminController extends Controller {
 
-	function index() {
+	function index(Request $request) {
+		$access=$request->session()->get('access');
+		if($access==1){
 		return view('admin.admin');
+	}
+		return redirect()->route('welcome')->with('messages',' bạn không được truy cập Admin với tài khoản: ');
 	}
 
 	function getdata() {

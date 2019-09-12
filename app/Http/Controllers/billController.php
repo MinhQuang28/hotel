@@ -219,7 +219,7 @@ class billController extends Controller {
 		$inf_room=$room->get_roomID($id);
 		$inf_room1=$room->get_roomID1($id);
 		return view("admin/bill_update", [
-			'hotel' => $hotel,'bill'=>$bill1,'room'=>$room1,'room1'=>$inf_room]);
+			'hotel' => $hotel,'bill'=>$bill1,'room'=>$room1,'room1'=>$inf_room,'room2'=>$inf_room1]);
 	}
 	else {
 		$inf_room=$room->get_roomID($id);
@@ -246,6 +246,7 @@ class billController extends Controller {
 	 	$bill->so_luong=$request->get('so_luong');
 	 	$bill->phone=$request->get('phone');
 	 	$bill->email=$request->get('email');
+	 	
 	 	$bill->update_bill();
 	 	if(!empty($request->room3)){ 
 	 		$bill->room1=$request->room1;
@@ -255,6 +256,7 @@ class billController extends Controller {
 	 }elseif (!empty($request->room2)) {
 	 	$bill->room1=$request->room1;
 	 		$bill->room2=$request->room2;
+	 		dd($request->room1);
 	 		$bill->update_bill2();
 	 }elseif(!empty($request->room1)) {
 	 	$bill->room1=$request->room1;

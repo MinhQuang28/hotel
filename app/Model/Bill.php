@@ -10,14 +10,14 @@ class Bill {
 	public $room = 'room';
 	public $customer = 'customer';
 	public function get_all() {
-		$array = DB::select("SELECT * FROM bill INNER JOIN customer on customer.id=bill.cus_id  ");
+		$array = DB::select("SELECT * FROM bill   ");
 		return $array;
 	}
 	public function get_today() {
-		$array = DB::select("SELECT * FROM bill INNER JOIN customer on customer.id=bill.cus_id Where status=0 or status=1 and check_in=CURDATE() or check_out=CURDATE() and status=3 ");
+		$array = DB::select("SELECT * FROM bill  Where status=0 or status=1 and check_in=CURDATE() or check_out=CURDATE() and status=3 ");
 		return $array;
 	}public function get_week() {
-		$array = DB::select("SELECT * FROM `bill`INNER JOIN customer on customer.id=bill.cus_id WHERE create_at>=CURRENT_DATE()-7  ");
+		$array = DB::select("SELECT * FROM `bill` WHERE create_at>=CURRENT_DATE()-7  ");
 		return $array;
 	}
 	public function get_hotel() {
@@ -41,7 +41,7 @@ class Bill {
             where ma_sinh_vien = ?", [$this->ma_sinh_vien]);
 	}
 	public function get_one() {
-		$array = DB::select("SELECT * from $this->bill  INNER JOIN customer on customer.id=bill.cus_id inner join type_room on bill.type_id=type_room.type_id
+		$array = DB::select("SELECT * from $this->bill   inner join type_room on bill.type_id=type_room.type_id
 
             where bill_id = ?
             limit 1", [$this->bill_id]);

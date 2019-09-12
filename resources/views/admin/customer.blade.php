@@ -76,7 +76,7 @@ $(document).ready(function() {
         "columns":[
             { "data": "name" },
             {"data": "email"},
-            { "data": "brith" },
+            { "data": "birth" },
             { "data": "access" },
             { "data": "action", orderable:false, searchable: false}
         ]

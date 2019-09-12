@@ -72,6 +72,8 @@ class indexController extends Controller {
 		$room=$request->get('room');
 		$bed=$request->get('bed');
 		$id=$request->get('id');
+		Session::put('check_in',$request->get('check_in'));
+		Session::put('check_out',$request->get('check_out'));
 		Session::put('room',$room);
 		$hotel= new Hotel();
 		$one_hotel=$hotel->get_hotel($id);
@@ -124,7 +126,9 @@ class indexController extends Controller {
 	public function get_one_news($id){
 		$blog= new Post();
 		$get_one=$blog->getOne1($id);
-		return view('hotel.blog_detail',['blog'=>$get_one]);
+		$comment=DB::select('select comment,comment_name,date from comment inner join post on post.id=comment.id_post where url_post = ?', [$id]);
+		
+		return view('hotel.blog_detail',['blog'=>$get_one,'comment'=>$comment]);
 
 	}
 	public function profile_account(Request $request){
@@ -162,6 +166,18 @@ class indexController extends Controller {
 		}
 		
 		return view('hotel.booking_status',['bill'=>$get_bill]);
+	}
+	function add_comment(Request $request){
+		DB::insert('insert into comment (comment_name,comment_email,comment,id_post) values (?, ?,?,?)', [$request->get('name'),$request->get('email'),$request->get('comment'),$request->get('id_post') ]);
+
+		
+
+	}
+	function view_comment(Request $request){
+	$arr=DB::select('select * from comment where id_post = ?', [$request->get('id_post')]);
+
+		return view('hotel.fetch_comment',['comment'=>$arr]);
+
 	}
 
 }

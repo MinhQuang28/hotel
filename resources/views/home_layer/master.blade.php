@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Dashboard</title>
+        <title>starTravel</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
@@ -121,7 +121,7 @@
 
         <div class="collapse navbar-collapse" id="myNavbar1">
             <ul class="nav navbar-nav navbar-right navbar-search-link">
-                <li class=""><a href="/" >Home<span></span></a>
+                <li class=""><a href=" {{ route('home') }}" >Home<span></span></a>
 
                 </li>
                 <li class="dropdown hotel"><a href="{{ url('hotels') }}">Hotels<span></span></a>

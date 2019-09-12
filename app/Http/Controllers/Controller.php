@@ -36,6 +36,7 @@ class Controller extends BaseController
 		if(count($admin)==1&& $admin[0]->status==0){
 			Session::put('ma_admin',$admin[0]->id);
 			Session::put('ten_admin',$admin[0]->name);
+			Session::put('access',$admin[0]->access);
 
 			return redirect()->route("welcome")->with('messages',' Welcome Admin: ');
 		}
@@ -78,7 +79,15 @@ class Controller extends BaseController
 
 		Session::flush();
 
-		return redirect()->route('view_login')->with('success','Đăng xuất đúng');
+		return redirect()->route('view_login')->with('success','Đăng xuất thành công');
+	}
+	public function logout_user()
+	{
+		Session::forget('ma_us');
+
+		// Session::flush();
+
+		return redirect()->route('home')->with('success','Đăng xuất thành công');
 	}
 }
 
