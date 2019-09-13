@@ -209,24 +209,26 @@ class billController extends Controller {
 		$room->type_id=$type_id;
 		$room1=$room->get_all_in_type();
 		$count=$bill->count_booking($id);
+		$id22=$bill->get_id_bill($id);
+		
 		if($count==1){
 		$inf_room=$room->get_roomID($id);
 	
 			return view("admin/bill_update", [
-			'hotel' => $hotel,'bill'=>$bill1,'room'=>$room1,'room1'=>$inf_room]
+			'hotel' => $hotel,'bill'=>$bill1,'room'=>$room1,'room1'=>$inf_room,'id'=>$id22]
 	);
 	}elseif($count==2){
 		$inf_room=$room->get_roomID($id);
 		$inf_room1=$room->get_roomID1($id);
 		return view("admin/bill_update", [
-			'hotel' => $hotel,'bill'=>$bill1,'room'=>$room1,'room1'=>$inf_room,'room2'=>$inf_room1]);
+			'hotel' => $hotel,'bill'=>$bill1,'room'=>$room1,'room1'=>$inf_room,'room2'=>$inf_room1,'id'=>$id22]);
 	}
 	else {
 		$inf_room=$room->get_roomID($id);
 		$inf_room1=$room->get_roomID1($id);
 		$inf_room2=$room->get_roomID2($id);
 		return view("admin/bill_update", [
-			'hotel' => $hotel,'bill'=>$bill1,'room'=>$room1,'room1'=>$inf_room,'room2'=>$inf_room1,'room3'=>$inf_room2]);
+			'hotel' => $hotel,'bill'=>$bill1,'room'=>$room1,'room1'=>$inf_room,'room2'=>$inf_room1,'room3'=>$inf_room2,'id'=>$id22]);
 	}
 		date_default_timezone_set('Asia/Macau');
 		$date=date('Y-m-d H:i:s T', time());
@@ -246,21 +248,26 @@ class billController extends Controller {
 	 	$bill->so_luong=$request->get('so_luong');
 	 	$bill->phone=$request->get('phone');
 	 	$bill->email=$request->get('email');
-	 	
 	 	$bill->update_bill();
+	 	$id_1=$request->get('id_bill');
+	 	$id_2=$id_1+1;
+	 	$id_3=$id_2+1;
+	 	
+
 	 	if(!empty($request->room3)){ 
-	 		$bill->room1=$request->room1;
-	 		$bil->room2=$request->room2;
-	 		$bill->room3=$request->room3;
-	 		$bill->update_bill1();
+	 		$bill->room1=$request->get('room1');
+	 		$bill->room2=$request->get('room2');
+	 		$bill->room3=$request->get('room3');
+	 		$bill->update_bill3($id_3);
+	 		$bill->update_bill1($id_1);
+	 		$bill->update_bill2($id_2);
 	 }elseif (!empty($request->room2)) {
-	 	$bill->room1=$request->room1;
-	 		$bill->room2=$request->room2;
-	 		dd($request->room1);
-	 		$bill->update_bill2();
+	 	$bill->room1=$request->get('room1');
+	 		$bill->room2=$request->get('room2');
+	 		$bill->update_bill2($id_2);$bill->update_bill1($id_1);
 	 }elseif(!empty($request->room1)) {
-	 	$bill->room1=$request->room1;
-	 	// $bill->update_bill3();
+	 	$bill->room1=$request->get('room1');
+	  $bill->update_bill1($id_1);
 	 }
  return redirect('admin/bill')->with('messages', 'Data is successfully inserted');
 	 }

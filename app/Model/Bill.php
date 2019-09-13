@@ -118,6 +118,14 @@ left join hotel on hotel.hotel_id=type_room.hotel_id
 	public function update_bill(){
 		DB::update('UPDATE bill set name=? ,phone=?,email=?,total_money=?,so_luong=?,check_in=?,check_out=?,status=? where bill_id = ?', [$this->name,$this->phone,$this->email,$this->money,$this->so_luong,$this->check_in,$this->check_out,$this->status,$this->bill_id]);
 	}
+	public function update_bill1($id){
+		DB::update('update bill_detail set room_id=? where id = ?', [$this->room1,$id]);
+	}public function update_bill2($id){
+		
+		DB::update('update bill_detail set room_id=? where id = ?', [$this->room2,$id]);
+	}public function update_bill3($id){
+		DB::update('update bill_detail set room_id=? where id = ?', [$this->room3,$id]);
+	}
 	public function get_all_byId(){
 		$arr=DB::select("SELECT * FROM $this->bill  limit 0,4");
 		return $arr;
@@ -133,6 +141,10 @@ left join hotel on hotel.hotel_id=type_room.hotel_id
 	public function get_bill_canceled($id){
 		$arr=DB::select("SELECT * FROM $this->bill  limit 0,4");
 		return $arr;
+	}
+	public function get_id_bill($id){
+		$arr=DB::select('SELECT * from bill_detail where id_bill = ? limit 0,1', [$id]);
+		return $arr[0];
 	}
 
 

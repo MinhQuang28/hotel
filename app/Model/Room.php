@@ -35,7 +35,7 @@ class Room {
 		return $array;
 	}
 	public function get_roomID($id){
-		 $array=DB::select("SELECT * FROM bill_detail where id_bill='$id' limit 0,1");
+		 $array=DB::select("SELECT * FROM bill_detail where id_bill=? limit 0,1",[$id]);
 				
 		return $array[0];
 	}

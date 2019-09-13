@@ -44,6 +44,7 @@
         <tr>
            <th>ID</th>
            <th>Khách hàng</th>
+           <th>SDT</th>
            <th>Tổng tiền</th>
            <th>ngày đặt</th>
            <th>Ngày trả ho</th>
@@ -65,6 +66,7 @@
         "columns":[
         { "data": "bill_id" },
         { "data": "name" },
+        { "data": "phone" },
         { "data": "total_money" , render: $.fn.dataTable.render.number( ',', '.', 1, ' $' )},
         { "data": "check_in" },
         { "data": "check_out" },

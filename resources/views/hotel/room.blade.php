@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Cruise Detail Left Sidebar</title>
+    <title>Startravel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="../images/favicon.png" type="image/x-icon">
@@ -197,10 +197,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-               <h1 class="page-title">Cruise Detail Left Sidebar</h1>
+               <h1 class="page-title">Room {{ $room->type_name }}</h1>
                <ul class="breadcrumb">
                 <li><a href="#">Home</a></li>
-                <li class="active">Cruise Detail Left Sidebar</li>
+                <li class="active">Room</li>
             </ul>
         </div><!-- end columns -->
     </div><!-- end row -->
@@ -365,8 +365,8 @@ document.getElementById("price_select").innerHTML=s;
               </div><!-- end columns -->
 
               <div class="col-sm-8 col-md-8 tab-text">
-                  <h3>Cruise Information</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                  <h3>Room Information</h3>
+                  <p>{{ $room->overview }}</p>
               </div><!-- end columns -->
           </div><!-- end row -->
       </div><!-- end cruise-information -->
@@ -378,8 +378,8 @@ document.getElementById("price_select").innerHTML=s;
           </div><!-- end columns -->
 
           <div class="col-sm-8 col-md-8 tab-text">
-              <h3>Features</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+              <h3>Service</h3>
+              <p>{{ $room->service }}</p>
           </div><!-- end columns -->
       </div><!-- end row -->
   </div><!-- end crs-features -->
@@ -392,7 +392,7 @@ document.getElementById("price_select").innerHTML=s;
 
       <div class="col-sm-8 col-md-8 tab-text">
           <h3>Cabins</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.<br/> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <p>{{ $room->content }}.</p>
       </div><!-- end columns -->
   </div><!-- end row -->
 </div><!-- end cabins -->

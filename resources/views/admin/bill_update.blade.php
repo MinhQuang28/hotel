@@ -21,6 +21,7 @@
          <div class="panel panel-default">
           <div class="panel-heading"> Edit </div>
           <input type="text" hidden="hidden" name="id" value="{{ $bill->bill_id }}">
+          <input type="number" name="id_bill" value="{{ $id->id }}" hidden>
           <div class="panel-body">
 
             <div class="row">
@@ -69,7 +70,7 @@
                  <span class="input-group-addon">
                    <i class="fa fa-user"></i>
                  </span>
-                 <input class="form-control" placeholder="name" value="{{$bill->so_luong }}" type="text" name="so_luong">
+                 <input class="form-control" placeholder="name" readonly="readonly" value="{{$bill->so_luong }}" type="text" name="so_luong">
                </input>
              </div>
              <p class="help-block"></p>
@@ -152,12 +153,12 @@
   <div class="col-xs-12 form-group">
     <label for="monney" class="control-label"> Status:</label>
     <div class="form-group">
-      Hủy
-      <input  class="minimal-red" name="status" value="1" type="radio">
+      Cancel
+      <input  class="minimal-red" name="status" value="4" type="radio">
       Check In
-      <input class="minimal-red" name="status" value="0" type="radio" checked="checked">
-      Thanh Toan
-      <input class="minimal-red" name="status" value="0" type="radio" >
+      <input class="minimal-red" name="status" value="3" type="radio" checked="checked">
+      Paid
+      <input class="minimal-red" name="status" value="2" type="radio" >
 
     </div>
     <p class="help-block"></p>
@@ -205,6 +206,8 @@
          <p class="help-block"></p>
        </div>
      </div>
+
+
      @elseif($bill->so_luong==2)
      <div class="row">
       <div class="col-xs-12 form-group">
@@ -226,6 +229,7 @@
        <p class="help-block"></p>
      </div>
    </div>
+
    <div class="row">
     <div class="col-xs-12 form-group">
       <label>Room 2</label>
@@ -246,6 +250,7 @@
      <p class="help-block"></p>
    </div>
  </div>
+
  @elseif($bill->so_luong==3)
  <div class="row">
   <div class="col-xs-12 form-group">
@@ -269,6 +274,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12 form-group">
+
     <label>Room 2</label>
     <div class="input-group">
      <span class="input-group-addon">
