@@ -147,5 +147,39 @@ left join hotel on hotel.hotel_id=type_room.hotel_id
 		return $arr[0];
 	}
 
+	// thong ke
+	public function bill_done($month1,$month2){
+		$count = DB::table('bill')->where('create_at','>',$month1)->where('create_at','<',$month2)->count();
+		return $count;
+	}
+	public function bill_cancel($month1,$month2){
+		$count = DB::table('bill')->where('create_at','>',$month1)->where('create_at','<',$month2)->count();
+		return $count;
+	}
+	public function total_bill1($month1,$month2){
+		$count = DB::table('bill')->where('create_at','>',$month1)->where('create_at','<',$month2)->count();
+		return $count;
+	}
+		public function user_reg($month1,$month2){
+		$count = DB::table('customer')->where('create','>',$month1)->where('create','<',$month2)->count();
+		return $count;
+	}
+
+public function total_money(){
+	$total_money = DB::table('bill')->sum('total_money');
+	return $total_money;
+}
+public function total_hotel(){
+	$total_hotel = DB::table('hotel')->count();
+	return $total_hotel;
+}
+public function total_cus(){
+	$total_cus = DB::table('customer')->count();
+	return $total_cus;
+}
+public function total_bill(){
+	$total_cus = DB::table('bill')->count();
+	return $total_cus;
+}
 
 }

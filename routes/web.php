@@ -17,7 +17,7 @@ Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"], function(){
 		return view('admin.profile');
 	});
 	//thong ke 
-	Route::get('thong_ke','Controller@thong_ke')->name('thong_ke');
+	Route::get('Thong_ke','Controller@thong_ke')->name('Thong_ke');
 	Route::get('feed_back','Controller@wfeed_back')->name('feed_back');
 	Route::group(["prefix" => "user"], function () {
 		$group="user";
@@ -145,6 +145,9 @@ Route::get('about', function(){
 
 Route::get('Contact', function(){
 	return view('hotel.contact');
+});
+Route::get('registration', function(){
+	return view('hotel.registration')->name('registration');
 });
 Route::get('service', function(){
 	return view('hotel.service');
