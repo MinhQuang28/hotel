@@ -17,10 +17,8 @@ use App\Model\Customer;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    public function view_login()
-	{
-		return view('admin.view_login');
-	} public function login_user()
+   
+	 public function login_user()
 	{
 		return view('hotel.login');
 	}
@@ -88,6 +86,15 @@ class Controller extends BaseController
 		// Session::flush();
 
 		return redirect()->route('home')->with('success','Đăng xuất thành công');
+	}
+	 public function view_login(Request $request)
+	{
+		if(Session::get('ma_admin')!=''){
+			return  redirect()->route('welcome')->with('messages','bạn đã đăng nhập với tài khoản'); 
+		}else {
+			return view('admin.view_login');
+		}
+		
 	}
 }
 

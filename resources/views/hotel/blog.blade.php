@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Blog Listings Left Sidebar</title>
+    <title>Blog</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
@@ -141,7 +141,7 @@
                 </li>
  @if (Session::has('ma_us'))
 
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-user"></i></span>  &nbsp; {{Session::get('ten_us')}} </a>
+                        <li class="dropdown"><a href=" {{ route('home') }} " class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-user"></i></span>  &nbsp; {{Session::get('ten_us')}} </a>
                             <ul class="dropdown-menu">
                                 <li><a href="hotel-homepage.html"><span><i class="fa fa-user"></i></span> &nbsp; Manager My Account</a></li>
                                 <li><a href="hotel-listing-left-sidebar.html"><span><i class="fa fa-dropbox"></i></span> &nbsp;My Orders</a></li>
@@ -260,12 +260,12 @@
 
                                 <div class="c-list">
                                     <div class="icon"><span><i class="fa fa-phone"></i></span></div>
-                                    <div class="text"><p>+222 – 5548 656</p></div>
+                                    <div class="text"><p>+88.66.43.465</p></div>
                                 </div><!-- end c-list -->
 
                                 <div class="c-list">
                                     <div class="icon"><span><i class="fa fa-map-marker"></i></span></div>
-                                    <div class="text"><p>Street No: 1234/A, Blu Vard Area, Main Double Road, UK</p></div>
+                                    <div class="text"><p>Street No: 29 tran hung dao, Hanoi, VN</p></div>
                                 </div><!-- end c-list -->
                             </div><!-- end side-bar-block -->
                         </div><!-- end columns -->
@@ -374,7 +374,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-dollar"></i></span>
                     <h3>Best Price Guarantee</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -382,7 +382,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-lock"></i></span>
                     <h3>Safe and Secure</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -390,7 +390,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-thumbs-up"></i></span>
                     <h3>Best Travel Agents</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -398,7 +398,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-bars"></i></span>
                     <h3>Travel Guidelines</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
         </div><!-- end row -->
@@ -437,8 +437,8 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 footer-widget ftr-contact">
                     <h3 class="footer-heading">CONTACT US</h3>
                     <ul class="list-unstyled">
-                        <li><span><i class="fa fa-map-marker"></i></span>29 Land St, Lorem City, CA</li>
-                        <li><span><i class="fa fa-phone"></i></span>+00 123 4567</li>
+                        <li><span><i class="fa fa-map-marker"></i></span>29 tran hung dao, Ha noi, VN</li>
+                        <li><span><i class="fa fa-phone"></i></span>+88.66.43.465</li>
                         <li><span><i class="fa fa-envelope"></i></span>info@starhotel.com</li>
                     </ul>
                 </div><!-- end columns -->
@@ -446,9 +446,9 @@
                 <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 footer-widget ftr-links">
                     <h3 class="footer-heading">COMPANY</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
                         <li><a href="#">Flight</a></li>
-                        <li><a href="#">Hotel</a></li>
+                        <li><a href="{{ url('hotels') }}">Hotel</a></li>
                         <li><a href="#">Tours</a></li>
                         <li><a href="#">Cruise</a></li>
                         <li><a href="#">Cars</a></li>
@@ -458,9 +458,9 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 footer-widget ftr-links ftr-pad-left">
                     <h3 class="footer-heading">RESOURCES</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Blogs</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="{{ url('blogs') }}">Blogs</a></li>
+                        <li><a href="{{ url('contact') }}">Contact Us</a></li>
+                        <li><a href="{{ url('login') }}">Login</a></li>
                         <li><a href="#">Register</a></li>
                         <li><a href="#">Site Map</a></li>
                     </ul>
@@ -468,7 +468,7 @@
 
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 footer-widget ftr-about">
                     <h3 class="footer-heading">ABOUT US</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.</p>
+                    <p>The best booking website ever will make your dream trip come true and make sure that your trip will be very safe and having a lot of fun.</p>
                     <ul class="social-links list-inline list-unstyled">
                         <li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
                         <li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>

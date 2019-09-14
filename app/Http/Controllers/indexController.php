@@ -179,6 +179,9 @@ class indexController extends Controller {
 		return view('hotel.fetch_comment',['comment'=>$arr]);
 
 	}
+	 function update_profile(){
+	 	
+	 }
 
 }
 

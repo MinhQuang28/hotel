@@ -140,7 +140,7 @@
                   <div class="header-search hidden-lg">
                     <a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a>
                 </div>
-                <a href="{{ url('lav.com') }}" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>
+                <a href="{{ route('hotel') }}" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>
             </div><!-- end navbar-header -->
 
             <div class="collapse navbar-collapse" id="myNavbar1">
@@ -166,7 +166,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('profile') }}"><span><i class="fa fa-user"></i></span> &nbsp; Manager My Account</a></li>
                                 <li><a href="{{ route('booking') }}"><span><i class="fa fa-dropbox"></i></span> &nbsp;My Orders</a></li>
-                                <li><a href="hotel-listing-right-sidebar.html"><span><i class="fa  fa-heart"></i></span> &nbsp;My wishlist</a></li>
+                                <li><a href="{{ route('wishlist') }}"><span><i class="fa  fa-heart"></i></span> &nbsp;My wishlist</a></li>
                                 <li><a href="{{ route('logout_user') }}"><span><i class="fa fa-sign-out"></i></span> &nbsp;Logout</a></li>
                                
                             </ul>     
@@ -195,7 +195,7 @@
 
             <div class="list-group panel">
 
-                <a href="/" class="list-group-item active" ><span><i class="fa fa-home link-icon"></i></span>Home<span></span></a>
+                <a href=" {{ route('home') }}" class="list-group-item active" ><span><i class="fa fa-home link-icon"></i></span>Home<span></span></a>
 
                 <a href="{{ url('hotels') }}" class="list-group-item " ><span><i class="fa fa-building link-icon"></i></span>Hotels<span></span></a>
 
@@ -207,6 +207,15 @@
                 <a href="{{ url('contact') }}" class="list-group-item" ><span><i class="fa fa-car link-icon"></i></span>Contact<span></span></a>
 
                 <a href="{{ url('about') }}" class="list-group-item" ><span><i class="fa fa-clone link-icon"></i></span>About<span></span></a>
+                S
+    
+    @if (Session::has('ma_us'))
+
+        <a href="#" class="list-group-item"><span><i class="fa fa-user"></i></span>  &nbsp;{{Session::get('ten_us')}} </a>
+                          
+                   @else
+                    <a href="{{ url('login') }}" class="list-group-item"><span><i class="fa fa-user"></i></span>  &nbsp; Account </a>
+                       @endif 
 
 
 
@@ -407,7 +416,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-dollar"></i></span>
                     <h3>Best Price Guarantee</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>You will find the best prices with us and we are willing to match any lower price.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -415,7 +424,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-lock"></i></span>
                     <h3>Safe and Secure</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -423,7 +432,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-thumbs-up"></i></span>
                     <h3>Best Travel Agents</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -431,7 +440,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-bars"></i></span>
                     <h3>Travel Guidelines</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
         </div><!-- end row -->

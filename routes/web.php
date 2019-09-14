@@ -16,6 +16,9 @@ Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"], function(){
 	Route::get('profile', function() {
 		return view('admin.profile');
 	});
+	//thong ke 
+	Route::get('thong_ke','Controller@thong_ke')->name('thong_ke');
+	Route::get('feed_back','Controller@wfeed_back')->name('feed_back');
 	Route::group(["prefix" => "user"], function () {
 		$group="user";
 		$controller="adminController";
@@ -125,6 +128,7 @@ Route::group(["prefix" => "", "middleware" => "CheckUser"], function(){
 	Route::get('booking','indexController@booking')->name('booking');
 	Route::get('booking_status','indexController@booking_status')->name('booking_status');
 	Route::get('logout_user','controller@logout_user')->name('logout_user');
+	Route::post('update_profile','indexController@update_profile')->name('update_profile');
 });
 
 // blog and comment
@@ -134,14 +138,9 @@ Route::get('blog/view_comment','indexController@view_comment')->name('view/add_c
 
 
 
-
-
-
-
 // chỉnh sủa sau
 Route::get('about', function(){
 	return view('hotel.about');
-
 });Route::get('blog/{id}','indexController@get_one_news')->name('blog');
 
 Route::get('Contact', function(){
@@ -150,3 +149,6 @@ Route::get('Contact', function(){
 Route::get('service', function(){
 	return view('hotel.service');
 });
+Route::get('wishlist', function(){
+	return view('hotel.service');
+})->name('wishlist');
