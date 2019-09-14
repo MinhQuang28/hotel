@@ -43,10 +43,9 @@ class Customer {
 	}
 	public function get_one() {
 		$array = DB::select("select * from $this->table
-            join lop on $this->table.ma_lop = lop.ma_lop
-            where ma_sinh_vien = ?
-            limit 1", [$this->ma_sinh_vien]);
-		return $array[0];
+            where id = ?
+            limit 1", [$this->id]);
+		return $customer[0];
 	}
 	public function get_info($id) {
 		$array = DB::select("select * from $this->table

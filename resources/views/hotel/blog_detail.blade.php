@@ -10,10 +10,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="page-title">Blog Details Left Sidebar</h1>
+                <h1 class="page-title">Blog</h1>
                 <ul class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li class="active">Blog Details Left Sidebar</li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li class="active">Blog</li>
                 </ul>
             </div><!-- end columns -->
         </div><!-- end row -->
@@ -81,7 +81,7 @@
 
                                 <div class="c-list">
                                     <div class="icon"><span><i class="fa fa-map-marker"></i></span></div>
-                                    <div class="text"><p>Street No: 1234/A, Blu Vard Area, Main Double Road, UK</p></div>
+                                    <div class="text"><p>Street No: 29 tran hung dao, Hanoi, VN</p></div>
                                 </div><!-- end c-list -->
                             </div><!-- end side-bar-block -->
                         </div><!-- end columns -->
@@ -253,7 +253,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-dollar"></i></span>
                     <h3>Best Price Guarantee</h3>
-                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
+                    <p>You will find the best prices with us and we are willing to match any lower price.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -261,7 +261,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-lock"></i></span>
                     <h3>Safe and Secure</h3>
-                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
+                    <p>The best security teams will keep you and your trip safe despite all situations.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -269,7 +269,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-thumbs-up"></i></span>
                     <h3>Best Travel Agents</h3>
-                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
+                    <p>Contact with us for more information and more promotion. We always update more. If you concern, give us your email</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -277,7 +277,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-bars"></i></span>
                     <h3>Travel Guidelines</h3>
-                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
+                    <p>Read about guidelines of contact with us for have more advices before booking your trip</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
         </div><!-- end row -->

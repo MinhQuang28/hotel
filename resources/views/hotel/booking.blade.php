@@ -28,7 +28,7 @@
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         	<div class="dashboard-heading">
                                 <h2>Travel <span>Profile</span></h2>
-                                <p>Hi Lisa, Welcome to Star Travels!</p>
+                                <p>Hi {{Session::get('ten_us')}}, Welcome to Star Travels!</p>
                                 <p>All your trips booked with us will appear here and you'll be able to manage everything!</p>
                             </div><!-- end dashboard-heading -->
                             
@@ -37,11 +37,10 @@
                                 
                                 	<div class="col-xs-12 col-sm-2 col-md-2 dashboard-nav">
                                 		<ul class="nav nav-tabs nav-stacked text-center">
-                                    		<li><a href="dashboard.html"><span><i class="fa fa-cogs"></i></span>Dashboard</a></li>
-                                        	<li><a href="user-profile.html"><span><i class="fa fa-user"></i></span>Profile</a></li>
+                                        	<li><a href="{{ url('profile') }}"><span><i class="fa fa-user"></i></span>Profile</a></li>
                                             <li  class="active"><a href="#"><span><i class="fa fa-briefcase"></i></span>Booking</a></li>
-                                            <li><a href="wishlist.html"><span><i class="fa fa-heart"></i></span>Wishlist</a></li>
-                                            <li><a href="cards.html"><span><i class="fa fa-credit-card"></i></span>My Cards</a></li>
+                                            <li><a href="{{ url('wishlist') }}"><span><i class="fa fa-heart"></i></span>Wishlist</a></li>
+                                            <li><a href="{{ url('card') }}"><span><i class="fa fa-credit-card"></i></span>My Cards</a></li>
                                         </ul>
                                     </div><!-- end columns -->
                                     

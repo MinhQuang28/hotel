@@ -140,7 +140,7 @@
                   <div class="header-search hidden-lg">
                     <a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a>
                 </div>
-                <a href="{{ route('hotel') }}" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>
+                <a href="{{ route('home') }}" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>
             </div><!-- end navbar-header -->
 
             <div class="collapse navbar-collapse" id="myNavbar1">
@@ -207,11 +207,10 @@
                 <a href="{{ url('contact') }}" class="list-group-item" ><span><i class="fa fa-car link-icon"></i></span>Contact<span></span></a>
 
                 <a href="{{ url('about') }}" class="list-group-item" ><span><i class="fa fa-clone link-icon"></i></span>About<span></span></a>
-                S
-    
+                
     @if (Session::has('ma_us'))
 
-        <a href="#" class="list-group-item"><span><i class="fa fa-user"></i></span>  &nbsp;{{Session::get('ten_us')}} </a>
+        <a href="{{ route('profile') }}" class="list-group-item"><span><i class="fa fa-user"></i></span>  &nbsp;{{Session::get('ten_us')}} </a>
                           
                    @else
                     <a href="{{ url('login') }}" class="list-group-item"><span><i class="fa fa-user"></i></span>  &nbsp; Account </a>
@@ -424,7 +423,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-lock"></i></span>
                     <h3>Safe and Secure</h3>
-                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
+                    <p>The best security teams will keep you and your trip safe despite all situations.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -432,7 +431,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-thumbs-up"></i></span>
                     <h3>Best Travel Agents</h3>
-                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
+                    <p>Contact with us for more information and more promotion. We always update more. If you concern, give us your email</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -440,7 +439,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-bars"></i></span>
                     <h3>Travel Guidelines</h3>
-                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
+                    <p>Read about guidelines of contact with us for have more advices before booking your trip</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
         </div><!-- end row -->
@@ -802,7 +801,8 @@ Room was good size Night staff are better than day - male attendant brought us n
 
                 <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 footer-widget ftr-about ftr-our-company">
                     <h3 class="footer-heading">OUR COMPANY</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.</p>
+                    <p>Choose us and enjoy your trip</p>
+                    <p>We love you and we hope you will have a lot of fun</p>
                     <ul class="social-links list-inline list-unstyled">
                         <li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
                         <li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>

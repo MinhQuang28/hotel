@@ -115,7 +115,7 @@
             <div class="header-search hidden-lg">
                 <a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a>
             </div>
-            <a href="#" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>
+            <a href="{{ route('home') }}" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>
         </div><!-- end navbar-header -->
 
         <div class="collapse navbar-collapse" id="myNavbar1">
@@ -138,6 +138,19 @@
                 <li class="dropdown active"><a href="{{ url('Contact') }}">Contact<span></span></a>
 
                 </li>
+                @if (Session::has('ma_us'))
+
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-user"></i></span>  &nbsp; {{Session::get('ten_us')}} </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('profile') }}"><span><i class="fa fa-user"></i></span> &nbsp; Manager My Account</a></li>
+                                <li><a href="{{ route('booking') }}"><span><i class="fa fa-dropbox"></i></span> &nbsp;My Orders</a></li>
+                                <li><a href="{{ route('wishlist') }}"><span><i class="fa  fa-heart"></i></span> &nbsp;My wishlist</a></li>
+                                <li><a href="{{ route('logout_user') }}"><span><i class="fa fa-sign-out"></i></span> &nbsp;Logout</a></li>
+                               
+                            </ul>     
+                            </li>
+                     @else
+                     <li class="dropdown"><a href="{{ url('login') }}"><span><i class="fa fa-user"></i></span>  &nbsp; Account </a></li>@endif
 
                 <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li>
             </ul>
@@ -168,6 +181,13 @@
                 <a href="{{ url('contact') }}" class="list-group-item" ><span><i class="fa fa-car link-icon"></i></span>Contact<span></span></a>
 
                 <a href="{{ url('about') }}" class="list-group-item" ><span><i class="fa fa-clone link-icon"></i></span>About<span></span></a>
+                 @if (Session::has('ma_us'))
+
+        <a href="{{ route('profile') }}" class="list-group-item"><span><i class="fa fa-user"></i></span>  &nbsp;{{Session::get('ten_us')}} </a>
+                          
+                   @else
+                    <a href="{{ url('login') }}" class="list-group-item"><span><i class="fa fa-user"></i></span>  &nbsp; Account </a>
+                       @endif 
 
             </div><!-- end list-group -->
         </div><!-- end main-menu -->
@@ -248,7 +268,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-dollar"></i></span>
                     <h3>Best Price Guarantee</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>You will find the best prices with us and we are willing to match any lower price.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -256,7 +276,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-lock"></i></span>
                     <h3>Safe and Secure</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>The best security teams will keep you and your trip safe despite all situations.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -264,7 +284,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-thumbs-up"></i></span>
                     <h3>Best Travel Agents</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>Contact with us for more information and more promotion. We always update more. If you concern, give us your email</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -272,7 +292,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-bars"></i></span>
                     <h3>Travel Guidelines</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>Read about guidelines of contact with us for have more advices before booking your trip</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
         </div><!-- end row -->
@@ -301,7 +321,7 @@
 </section><!-- end newsletter-1 -->
 
 
-<!--======================= FOOTER =======================-->
+<<!--======================= FOOTER =======================-->
 <section id="footer" class="ftr-heading-o ftr-heading-mgn-1">
 
     <div id="footer-top" class="banner-padding ftr-top-black ftr-text-white">
@@ -311,8 +331,8 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 footer-widget ftr-contact">
                     <h3 class="footer-heading">CONTACT US</h3>
                     <ul class="list-unstyled">
-                        <li><span><i class="fa fa-map-marker"></i></span>29 Land St, Lorem City, CA</li>
-                        <li><span><i class="fa fa-phone"></i></span>+00 123 4567</li>
+                        <li><span><i class="fa fa-map-marker"></i></span>29 tran hung dao, Ha noi, VN</li>
+                        <li><span><i class="fa fa-phone"></i></span>+88.66.43.465</li>
                         <li><span><i class="fa fa-envelope"></i></span>info@starhotel.com</li>
                     </ul>
                 </div><!-- end columns -->
@@ -320,9 +340,9 @@
                 <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 footer-widget ftr-links">
                     <h3 class="footer-heading">COMPANY</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
                         <li><a href="#">Flight</a></li>
-                        <li><a href="#">Hotel</a></li>
+                        <li><a href="{{ url('hotels') }}">Hotel</a></li>
                         <li><a href="#">Tours</a></li>
                         <li><a href="#">Cruise</a></li>
                         <li><a href="#">Cars</a></li>
@@ -332,9 +352,9 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 footer-widget ftr-links ftr-pad-left">
                     <h3 class="footer-heading">RESOURCES</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#">Blogs</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="{{ url('blogs') }}">Blogs</a></li>
+                        <li><a href="{{ url('contact') }}">Contact Us</a></li>
+                        <li><a href="{{ url('login') }}">Login</a></li>
                         <li><a href="#">Register</a></li>
                         <li><a href="#">Site Map</a></li>
                     </ul>
@@ -342,7 +362,7 @@
 
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 footer-widget ftr-about">
                     <h3 class="footer-heading">ABOUT US</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.</p>
+                    <p>The best booking website ever will make your dream trip come true and make sure that your trip will be very safe and having a lot of fun.</p>
                     <ul class="social-links list-inline list-unstyled">
                         <li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
                         <li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>

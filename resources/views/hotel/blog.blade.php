@@ -116,12 +116,12 @@
             <div class="header-search hidden-lg">
                 <a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a>
             </div>
-            <a href="#" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>
+            <a href="{{ route('home') }}" class="navbar-brand"><span><i class="fa fa-plane"></i>STAR</span>TRAVELS</a>
         </div><!-- end navbar-header -->
 
         <div class="collapse navbar-collapse" id="myNavbar1">
             <ul class="nav navbar-nav navbar-right navbar-search-link">
-                <li class=""><a href="/" >Home<span></span></a>
+                <li class=""><a href="{{ route('home') }}" >Home<span></span></a>
 
                 </li>
                 <li class="dropdown hotel"><a href="{{ url('hotels') }}">Hotels<span></span></a>
@@ -143,10 +143,10 @@
 
                         <li class="dropdown"><a href=" {{ route('home') }} " class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-user"></i></span>  &nbsp; {{Session::get('ten_us')}} </a>
                             <ul class="dropdown-menu">
-                                <li><a href="hotel-homepage.html"><span><i class="fa fa-user"></i></span> &nbsp; Manager My Account</a></li>
-                                <li><a href="hotel-listing-left-sidebar.html"><span><i class="fa fa-dropbox"></i></span> &nbsp;My Orders</a></li>
-                                <li><a href="hotel-listing-right-sidebar.html"><span><i class="fa  fa-heart"></i></span> &nbsp;My wishlist</a></li>
-                                <li><a href="hotel-grid-left-sidebar.html"><span><i class="fa fa-sign-out"></i></span> &nbsp;Logout</a></li>
+                                <li><a href="{{ route('profile') }}"><span><i class="fa fa-user"></i></span> &nbsp; Manager My Account</a></li>
+                                <li><a href="{{ route('booking') }}"><span><i class="fa fa-dropbox"></i></span> &nbsp;My Orders</a></li>
+                                <li><a href="{{ route('wishlist') }}"><span><i class="fa  fa-heart"></i></span> &nbsp;My wishlist</a></li>
+                                <li><a href="{{ route('logout_user') }}"><span><i class="fa fa-sign-out"></i></span> &nbsp;Logout</a></li>
                                
                             </ul>     
                             </li>
@@ -182,6 +182,13 @@
                 <a href="{{ url('contact') }}" class="list-group-item" ><span><i class="fa fa-car link-icon"></i></span>Contact<span></span></a>
 
                 <a href="{{ url('about') }}" class="list-group-item" ><span><i class="fa fa-clone link-icon"></i></span>About<span></span></a>
+                 @if (Session::has('ma_us'))
+
+        <a href="{{ route('profile') }}" class="list-group-item"><span><i class="fa fa-user"></i></span>  &nbsp;{{Session::get('ten_us')}} </a>
+                          
+                   @else
+                    <a href="{{ url('login') }}" class="list-group-item"><span><i class="fa fa-user"></i></span>  &nbsp; Account </a>
+                       @endif 
 
             </div><!-- end list-group -->
         </div><!-- end main-menu -->
@@ -374,7 +381,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-dollar"></i></span>
                     <h3>Best Price Guarantee</h3>
-                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
+                    <p>You will find the best prices with us and we are willing to match any lower price.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -382,7 +389,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-lock"></i></span>
                     <h3>Safe and Secure</h3>
-                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
+                    <p>The best security teams will keep you and your trip safe despite all situations.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -390,7 +397,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-thumbs-up"></i></span>
                     <h3>Best Travel Agents</h3>
-                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
+                    <p>Contact with us for more information and more promotion. We always update more. If you concern, give us your email</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -398,7 +405,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-bars"></i></span>
                     <h3>Travel Guidelines</h3>
-                    <p>The best of our security team will make sure that your trip is going to be safe and sound.</p>
+                    <p>Read about guidelines of contact with us for have more advices before booking your trip</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
         </div><!-- end row -->
@@ -446,7 +453,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 footer-widget ftr-links">
                     <h3 class="footer-heading">COMPANY</h3>
                     <ul class="list-unstyled">
-                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
                         <li><a href="#">Flight</a></li>
                         <li><a href="{{ url('hotels') }}">Hotel</a></li>
                         <li><a href="#">Tours</a></li>

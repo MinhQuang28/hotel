@@ -6,6 +6,7 @@ use DB;
 use Illuminate\Http\Request;
 use Validator;
 use Yajra\Datatables\Datatables;
+use App\Model\Customer;
 
 class customerController extends Controller {
 
@@ -67,8 +68,11 @@ class customerController extends Controller {
 		}
 
 	}
-	function edit() {
-		return view('customer.edit_customer');
+	function edit($id) {
+		$customer = new Customer();
+		$customer->id = $id;
+		$customer = $customer->get_one();
+		return view('edit_customer', ['customer'=>$customer]);
 
 	}
 

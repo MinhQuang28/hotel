@@ -179,7 +179,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-dollar"></i></span>
                     <h3>Best Price Guarantee</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>You will find the best prices with us and we are willing to match any lower price.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -187,7 +187,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-lock"></i></span>
                     <h3>Safe and Secure</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>The best security teams will keep you and your trip safe despite all situations.</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -195,7 +195,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-thumbs-up"></i></span>
                     <h3>Best Travel Agents</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>Contact with us for more information and more promotion. We always update more. If you concern, give us your email</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
 
@@ -203,7 +203,7 @@
                 <div class="b-feature-block">
                     <span><i class="fa fa-bars"></i></span>
                     <h3>Travel Guidelines</h3>
-                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                    <p>Read about guidelines of contact with us for have more advices before booking your trip</p>
                 </div><!-- end b-feature-block -->
             </div><!-- end columns -->
         </div><!-- end row -->
