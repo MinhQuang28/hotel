@@ -34,7 +34,7 @@ class Type {
 		return $array[0];
 	}
 	public function get_room($id){
-		$room= DB::select("SELECT * from type_room inner join info_room on type_room.type_id=info_room.id_type where type_id = ?
+		$room= DB::select("SELECT * from type_room inner join info_room on type_room.type_id=info_room.id_type where url_type = ?
             limit 1", [$id]);
 		return $room[0];
 	}

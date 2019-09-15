@@ -365,11 +365,11 @@
                                                 <span><i class="fa fa-star lightgrey"></i></span>
                                             </div><!-- end rating -->
                                             
-                                            <h3 class="block-title"><a href=" {{ url('hotel',[$hotels->hotel_id]) }}">{{ $hotels->hotel_name }}</a></h3>
+                                            <h3 class="block-title"><a href=" {{ url('hotel',[$hotels->url_hotel]) }}">{{ $hotels->hotel_name }}</a></h3>
                                             <p class="block-minor">From: {{ $hotels->city }}</p>
                                             <p>{{ $hotels->hotel_address }} </p>
                                             <div class="grid-btn">
-                                                <a href=" {{ url('hotel',[$hotels->hotel_id]) }} " class="btn btn-orange btn-block btn-lg">View More</a>
+                                                <a href=" {{ url('hotel',[$hotels->url_hotel]) }} " class="btn btn-orange btn-block btn-lg">View More</a>
                                             </div><!-- end grid-btn -->
                                          </div><!-- end h-grid-info -->
                                     </div><!-- end h-grid-block -->

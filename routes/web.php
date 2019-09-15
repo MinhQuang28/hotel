@@ -13,9 +13,9 @@ Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"], function(){
 	Route::get("logout","Controller@logout")
 	->name("logout");
 	Route::get("welcome","Controller@welcome")->name('welcome');
-	Route::get('profile', function() {
-		return view('admin.profile');
-	});
+	Route::get('profile','adminController@profile')->name('profile');
+	Route::post('profile_update','adminController@profile_update')->name('profile_update');
+	
 	//feed_back
 Route::get('fetchdata_feed_back','adminController@getdata_feed_back')->name('fetchdata_feed_back');
 	//thong ke 
@@ -76,7 +76,8 @@ Route::get('fetchdata_feed_back','adminController@getdata_feed_back')->name('fet
 		Route::get("/", "customerController@index")->name("customer");
 		Route::get("getdata", "customerController@getdata")->name("customer.getdata");
 		Route::post("postdata", "customerController@postdata")->name("customer.postdata");
-		Route::get("edit", "customerController@edit")->name("customer.edit");
+		Route::get("edit/{id}", "customerController@edit")->name("customer.edit");
+		Route::post("process_update", "customerController@process_update")->name("customer.process_update");
 		Route::get("fetchdata", "customerController@fetchdata")->name("customer.fetchdata");
 		Route::get("removedata", "customerController@removedata")->name("customer.removedata");
 	});
@@ -102,6 +103,7 @@ Route::get('fetchdata_feed_back','adminController@getdata_feed_back')->name('fet
 		Route::get("getdata", "$controller@getdata")->name("$group.getdata");
 		Route::get("check_in/{id}", "$controller@viewEdit")->name("$group.check_in");
 		Route::post("process_update", "$controller@process_update")->name("$group.process_update");
+		Route::post("process_update1", "$controller@process_update1")->name("$group.process_update1");
 		Route::get("update/{id}", "$controller@update")->name("$group.update");
 		Route::get("removedata", "$controller@removedata")->name("$group.removedata");
 	});
@@ -141,6 +143,7 @@ Route::get('blog/view_comment','indexController@view_comment')->name('view/add_c
 
 
 
+
 // chỉnh sủa sau
 Route::get('about', function(){
 	return view('hotel.about');
@@ -152,12 +155,15 @@ Route::post('insert_feed_back','indexController@insert_feed_back')->name('insert
 Route::get('blog/{id}','indexController@get_one_news')->name('blog');
 
 Route::get('Contact', 'indexController@contact')->name('Contact');
+// cancel booking
+route::get('view_info/{id}','indexController@view_bill')->name('view_info');
+Route::get('cancel_booking/{id}','indexController@cancel_booking')->name('cancel_booking');
 
-Route::get('registration', 'indexController@hotel')->name('registration');
+Route::get('registration', function(){
+	return view('hotel.registration');
+})->name('registration');
 
-Route::get('service', function(){
-	return view('hotel.service');
-});
+Route::get('service', 'indexController@service')->name('service');
 Route::get('wishlist', function(){
-	return view('hotel.service');
+	return view('hotel.wishlist');
 })->name('wishlist');

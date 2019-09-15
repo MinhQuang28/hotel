@@ -1,7 +1,49 @@
 @extends('home_layer.master')
 @section('content1')
 
+<script type="text/javascript">
+ function login() {
+    var name = document.getElementById("txtAccount").value;
+    var pass = document.getElementById("txtPass").value;
+    var errAccount = document.getElementById("errAccount");
+    var errPass = document.getElementById("errPass");
+    var regName =/^.+@[^\.].*\.[a-z]{2,}$/;
+    var regPass =/^(?=.*\d).{4,8}$/;
 
+    var count = 0;
+    if(name.length==0){
+      errAccount.innerHTML = "Enter your account!";
+    }else {
+      var resName = regName.test(name);
+      if (resName) {
+        errAccount.innerHTML = "";
+        count++;
+      }else {
+        errAccount.innerHTML = "*eg:examp@gmail.com";
+      }
+    }
+
+    if (pass.length==0) {
+      errPass.innerHTML = "Enter your password!"
+    }else{
+      var resPass = regPass.test(pass);
+      if (resPass) {
+        errPass = "";
+        count++;
+      }else {
+        errPass.innerHTML = "it must contain at least 4 : number and letter";
+      }
+    }
+if(count !=2){
+   return false;
+}
+    if(count ==2){
+      return true;
+      document.getElementById("frm").submit();
+    }
+       
+  }
+</script>
 <!--============= PAGE-COVER =============-->
 <section class="page-cover" id="cover-login">
     <div class="container">
@@ -39,17 +81,19 @@
                         @endif
 </h3>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                      <form action="{{ route('process_login_user') }}" method="post">
+                      <form action="{{ route('process_login_user') }}" method="post"  onsubmit="return login()">
                         @csrf
                         <div class="form-group">
-                         <input type="text" class="form-control" name="email" placeholder="Username"  required/>
+                         <input type="text" class="form-control" id="txtAccount" name="email" placeholder="Username"  required/>
                          <span><i class="fa fa-user"></i></span>
+                         <span id="errAccount" class="help-block" style="color: red"></span>
                      </div>
 
                      <div class="form-group">
-                         <input type="password" class="form-control" placeholder="Password"
+                         <input type="password" id="txtPass" class="form-control" placeholder="Password"
                          name="pass"  required/>
                          <span><i class="fa fa-lock"></i></span>
+                         <span id="errPass" class="help-block" style="color: red"></span>
                      </div>
 
                      <div class="checkbox">
@@ -60,7 +104,7 @@
                  </form>
 
                  <div class="other-links">
-                     <p class="link-line">New Here ? <a href="#">Signup</a></p>
+                     <p class="link-line">New Here ? <a href=" {{ route('registration') }}">Signup</a></p>
                      <a class="simple-link" href="#">Forgot Password ?</a>
                  </div><!-- end other-links -->
              </div><!-- end custom-form -->
@@ -137,6 +181,6 @@
 </div><!-- end container -->
 </section><!-- end newsletter-1 -->
 
-
+ 
 <!--======================= FOOTER =======================-->
 @endsection

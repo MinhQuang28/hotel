@@ -5,10 +5,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="page-title">Thank You</h1>
+                <h1 class="page-title">Bill Detail</h1>
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li class="active">Thank You</li>
+                    <li class="active">Bill detail</li>
                 </ul>
             </div><!-- end columns -->
         </div><!-- end row -->
@@ -24,65 +24,70 @@
 
                 <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 content-side">
                     <div class="space-right">
-                        <div class="thank-you-note">
-                            <h3>Your Booking is confirmed now. Thank You!</h3>
-                            <p>Lorem ipsum dolor sit amet, conse adipiscing elit curabitur.</p>
-                            <a href="#" class="btn btn-orange">Print Details</a>
-                        </div><!-- end thank-you-note -->
+                            <h3>Here is your bill's details</h3>
+                            <p>Contact us if you found out anything wrong</p>
 
                         <div class="traveler-info">
-                            <h3 class="t-info-heading"><span><i class="fa fa-info-circle"></i></span>Traveler Information</h3>
+                            <h3 class="t-info-heading"><span><i class="fa fa-info-circle"></i></span>Bill Information</h3>
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
                                     <tr>
                                         <td>Booking Number:</td>
-                                        <td>#00-{{$get_bill->bill_id}}</td>
+                                        <td>#00-{{$array_details->bill_id}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Created on:</td>
-                                        <td>{{$get_bill->create_at}}</td>
+                                        <td>Created at:</td>
+                                        <td>{{$array_details->create_at}}</td>
                                     </tr>
                                     <tr>
                                         <td>Customer's Name:</td>
-                                        <td>{{$get_bill->name}}</td>
+                                        <td>{{$array_details->name}}</td>
                                     </tr>
-                                   
+                                    <tr>
+                                        <td>Check in:</td>
+                                        <td>{{$array_details->check_in}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Check out:</td>
+                                        <td>{{$array_details->check_out}}</td>
+                                    </tr>
                                     <tr>
                                         <td>Email Address:</td>
-                                        <td>{{$get_bill->email}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Hotel Address:</td>
-                                        <td>{{$get_bill->hotel_address}}</td>
+                                        <td>{{$array_details->email}}</td>
                                     </tr>
                                     <tr>
                                         <td>Phone Number:</td>
-                                        <td>{{$get_bill->phone}}</td>
+                                        <td>{{$array_details->phone}}</td>
                                     </tr>
                                     <tr>
                                         <td>Hotel's Name:</td>
-                                        <td>{{$get_bill->hotel_name}}</td>
+                                        <td>{{$array_details->hotel_name}}</td>
                                     </tr>
                                     <tr>
                                         <td>Hotel's Address:</td>
-                                        <td>{{$get_bill->hotel_address}}</td>
+                                        <td>{{$array_details->hotel_address}}</td>
                                     </tr>
                                     <tr>
                                         <td>Type Room & Price:</td>
-                                        <td>{{$get_bill->type_name}}/{{$get_bill->price}}</td>
+                                        <td>{{$array_details->type_name}}/{{$array_details->price}}</td>
                                     </tr>
                                     <tr>
                                         <td>Number Of Rooms:</td>
-                                        <td>{{$get_bill->so_luong}}</td>
+                                        <td>{{$array_details->so_luong}}</td>
                                     </tr>
                                     <tr>
                                         <td>Total Price:</td>
-                                        <td>{{$get_bill->total_money}}</td>
+                                        <td>{{$array_details->total_money}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Deposit:</td>
-                                        <td>{{$get_bill->deposit}}</td>
+                                        <td>Action</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="center">
+                                            
+                                        </td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -92,10 +97,10 @@
                                 <h3 class="t-info-heading"><span><i class="fa fa-credit-card"></i></span>Payment</h3>
                                 <p>Payment is made by the use of:</p>
                                 <ul class="list-inline">
-                                    <li><img src="images/payment-1.png" class="img-responsive" alt="payment-img" /></li>
-                                    <li><img src="images/payment-2.png" class="img-responsive" alt="payment-img" /></li>
-                                    <li  class="active"><img src="images/payment-3.png" class="img-responsive" alt="payment-img" /></li>
-                                    <li><img src="images/payment-4.png" class="img-responsive" alt="payment-img" /></li>
+                                    <li><img src="../images/payment-1.png" class="img-responsive" alt="payment-img" /></li>
+                                    <li><img src="../images/payment-2.png" class="img-responsive" alt="payment-img" /></li>
+                                    <li  class="active"><img src="../images/payment-3.png" class="img-responsive" alt="payment-img" /></li>
+                                    <li><img src="../images/payment-4.png" class="img-responsive" alt="payment-img" /></li>
                                 </ul>
                             </div><!-- end payment-method -->
                         </div><!-- end traveler-info -->

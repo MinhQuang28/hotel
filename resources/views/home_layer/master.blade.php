@@ -68,7 +68,7 @@
                             <li><a href="{{ url('profile') }}"><span>Welcome<i class="fa fa-user"></i> {{Session::get('ten_us')}} </span></a></li>
                         @else
                             <li><a href="{{ url('login') }}"><span><i class="fa fa-lock"></i></span>Login</a></li>
-                            <li><a href="registration.html"><span><i class="fa fa-plus"></i></span>Sign Up</a></li>
+                            <li><a href="{{ route('registration') }}"><span><i class="fa fa-plus"></i></span>Sign Up</a></li>
                         @endif
 
                         <li>

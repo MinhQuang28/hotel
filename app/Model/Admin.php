@@ -66,4 +66,29 @@ class Admin {
 			$this->id,
 		]);
 	}
+	public function get_info($id)
+	{
+		$array_info = DB::select("select * from $this->table
+            where id = ?
+            limit 1", [$id]);
+		
+		return $array_info[0];
+	}
+
+	public function profile_update()
+	{
+		DB::update("update $this->table
+            set
+            name = ?,
+            email = ?,
+            birth=?,
+            SDT = ?
+            where id = ?", [
+			$this->name,
+			$this->email,
+			$this->birth,
+			$this->SDT,
+			$this->id,
+		]);
+	}
 }

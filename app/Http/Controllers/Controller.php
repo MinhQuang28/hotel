@@ -51,6 +51,8 @@ class Controller extends BaseController
 		if(count($cus)==1&& $cus[0]->access==0){
 			Session::put('ma_us',$cus[0]->id);
 			Session::put('ten_us',$cus[0]->name);
+				Session::put('email',$cus[0]->email);
+					Session::put('phone',$cus[0]->phone);
 
 			return redirect()->route("home")->with('messages',' Welcome user: ');
 		}
@@ -133,6 +135,7 @@ class Controller extends BaseController
 			$hoadon['bill_done']['11']=$bill->bill_done($month11,$month12);
 			$hoadon['bill_done']['12']=$bill->bill_done($month12,$month13);
 // hoa dơn bị huỷ
+			$hoadon['bill_cancel_year']=$bill->bill_cancel($month1,$month13);
 			$hoadon['bill_cancel']['1']=$bill->bill_cancel($month1,$month2);
 			$hoadon['bill_cancel']['2']=$bill->bill_cancel($month2,$month3);
 			$hoadon['bill_cancel']['3']=$bill->bill_cancel($month3,$month4);
@@ -146,6 +149,7 @@ class Controller extends BaseController
 			$hoadon['bill_cancel']['11']=$bill->bill_cancel($month11,$month12);
 			$hoadon['bill_cancel']['12']=$bill->bill_cancel($month12,$month13);
 			//total bill
+			$hoadon['total_bill_done']=$bill->total_bill3($month1,$month13);
 			$hoadon['total_bill1']['1']=$bill->total_bill1($month1,$month2);
 			$hoadon['total_bill1']['2']=$bill->total_bill1($month2,$month3);
 			$hoadon['total_bill1']['3']=$bill->total_bill1($month3,$month4);

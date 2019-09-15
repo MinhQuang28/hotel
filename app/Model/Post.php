@@ -52,4 +52,10 @@ class Post {
 			$this->id,
 		]);
 	}
+
+	public function get_recent()
+	{
+		$recent_blog = DB::select("select * from $this->table limit 3");
+		return $recent_blog;
+	}
 }

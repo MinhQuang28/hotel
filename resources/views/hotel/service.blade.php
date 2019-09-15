@@ -135,40 +135,20 @@
 
                         <div class="col-xs-12 col-sm-6 col-md-12">
                             <div class="side-bar-block recent-post">
-                                <h2 class="side-bar-heading">Holiday Deals</h2>
-
+                                <h2 class="side-bar-heading">Recent Blogs</h2>
+                                @foreach ($service as $blog)
+                                    {{-- expr --}}
                                 <div class="recent-block">
                                     <div class="recent-img">
-                                        <a href="blog-detail-left-sidebar.html"><img src="images/holiday-deal-1.jpg" class="img-reponsive" alt="holiday-deal-image" /></a>
+                                        <a href="blog-detail-left-sidebar.html"><img src="{{ URL::to('/') }}/images/{{ $blog->img1 }}" class="img-reponsive" alt="holiday-deal-image" /></a>
                                     </div><!-- end recent-img -->
 
                                     <div class="recent-text">
-                                        <a href="blog-detail-left-sidebar.html"><h5>Jakarta Holidays</h5></a>
-                                        <span class="date">$200 Per Person</span>
+                                        <a href="blog-detail-left-sidebar.html"><h5>{{ $blog->title }}</h5></a>
+                                        <span class="date">{{ $blog->create_at }}</span>
                                     </div><!-- end recent-text -->
                                 </div><!-- end recent-block -->
-
-                                <div class="recent-block">
-                                    <div class="recent-img">
-                                        <a href="blog-detail-left-sidebar.html"><img src="images/holiday-deal-2.jpg" class="img-reponsive" alt="holiday-deal-image" /></a>
-                                    </div><!-- end recent-img -->
-
-                                    <div class="recent-text">
-                                        <a href="blog-detail-left-sidebar.html"><h5>Prague Holidays</h5></a>
-                                        <span class="date">$343 Per Person</span>
-                                    </div><!-- end recent-text -->
-                                </div><!-- end recent-block -->
-
-                                <div class="recent-block">
-                                    <div class="recent-img">
-                                        <a href="blog-detail-left-sidebar.html"><img src="images/holiday-deal-3.jpg" class="img-reponsive" alt="holiday-deal-image" /></a>
-                                    </div><!-- end recent-img -->
-
-                                    <div class="recent-text">
-                                        <a href="blog-detail-left-sidebar.html"><h5>Africa Holidays</h5></a>
-                                        <span class="date">$150 Per Person</span>
-                                    </div><!-- end recent-text -->
-                                </div><!-- end recent-block -->
+                                 @endforeach
 
                             </div><!-- end side-bar-block -->
                         </div><!-- end columns -->

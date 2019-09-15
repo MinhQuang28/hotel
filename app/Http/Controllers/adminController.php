@@ -142,4 +142,23 @@ class adminController extends Controller {
 		
 	}
 
+	function profile(Request $request){
+		$id=$request->session()->get('ma_admin');
+		$admin= new Admin();
+		$array_info= $admin->get_info($id);
+		return view('admin/profile',['array_info'=>$array_info]);
+	}
+
+	function profile_update(Request $request){
+		$admin = new Admin();
+		$admin->id = Session::get('ma_admin');
+		$admin->name = $request->get('name');
+		$admin->email = $request->get('email');
+		$admin->SDT = $request->get('SDT');
+		$admin->birth = $request->get('birth');
+		$admin->profile_update();
+		return redirect('admin/profile')->with('messages', 'Data is successfully updated');
+	}
+
+
 }

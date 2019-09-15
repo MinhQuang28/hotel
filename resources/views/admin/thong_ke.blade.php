@@ -99,6 +99,7 @@
 
        <div id="chart_div" style="width: 100%; height: 400px; margin-top: 20px "></div>
 <div id="chart_div1" style="width: 100%; height: 400px;"></div>
+ <div id="piechart" style="width: 100%; height: 500px;"></div>
     </section>
      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -133,6 +134,27 @@
         };
 
         var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+     <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Year'],
+          ['thành công',     {{ $hoadon['total_bill_done'] }}],
+          ['đã huỷ',    {{  $hoadon['bill_cancel_year'] }}]
+        ]);
+
+        var options = {
+          title: 'Tỷ lệ bùng của khách hàng trong năm'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
         chart.draw(data, options);
       }
     </script>

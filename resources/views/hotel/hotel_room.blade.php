@@ -240,11 +240,10 @@
                                     <input type="text" class="form-control dpd2" placeholder="check-out Date" value="{{Session::get('check_out')}}" name="check_out" required/>                                            <i class="fa fa-calendar"></i>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-12 col-lg-6 no-sp-r">
+                             
                                         <div class="form-group right-icon">
                                             <select name="room" class="form-control">
-                                                <option selected>Rooms</option>
+                                                <option selected>Beds</option>
                                                 <option @if (Session::get('room')==1)
                                                 selected="selected"
                                                 @endif  value='1'>1</option>
@@ -257,21 +256,7 @@
                                             </select>
                                             <i class="fa fa-angle-down"></i>
                                         </div>
-                                    </div>
-
-                                    <div class="col-sm-6 col-md-12 col-lg-6 no-sp-l">    
-                                        <div class="form-group right-icon">
-                                            <select name="bed" class="form-control">
-                                                <option  selected>Beds</option>
-                                                <option value='1'>1</option>
-                                                <option value='2'>2</option>
-                                                <option value='3'>3</option>
-                                            </select>
-                                            <i class="fa fa-angle-down"></i>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                   
                                 <div class="form-group right-icon">
                                     <select class="form-control">
                                         <option selected>Payment Method</option>
@@ -445,10 +430,10 @@
                                 </div><!-- end room-img -->
 
                                 <div class="list-info room-info">
-                                    <h3 class="block-title"><a href="{{ url('room',[$rooms->type_id]) }}">{{ $rooms->type_name}}</a></h3>
+                                    <h3 class="block-title"><a href="{{ url('room',[$rooms->url_type]) }}">{{ $rooms->type_name}}</a></h3>
                                     <p class="block-minor">Bed:{{ $rooms->bed }}</p>
                                     <p>{{ $rooms->short_des}}.</p>
-                                    <a href="{{ url('room',[$rooms->type_id]) }}" class="btn btn-orange btn-lg">View More</a>
+                                    <a href="{{ url('room',[$rooms->url_type]) }}" class="btn btn-orange btn-lg">View More</a>
                                 </div><!-- end room-info -->
                             </div><!-- end list-content -->
                         </div><!-- end room-block -->

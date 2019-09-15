@@ -72,7 +72,7 @@
                    <li><a href="{{ url('profile') }}"><span>Welcome<i class="fa fa-user"></i> {{Session::get('ten_us')}} </span></a></li>
                    @else
                    <li><a href="{{ url('login') }}"><span><i class="fa fa-lock"></i></span>Login</a></li>
-                   <li><a href="registration.html"><span><i class="fa fa-plus"></i></span>Sign Up</a></li>
+                   <li><a href="{{ route('registration') }}"><span><i class="fa fa-plus"></i></span>Sign Up</a></li>
                    @endif
 
                    <li>
@@ -230,7 +230,7 @@
                        <h3>Book Cruise</h3>
                        <p>Find your dream cruise today</p>
 
-                       <form @if (Session::has('ma_us')) action="{{ route('proocess_booking') }}"  @endif method="post" >
+                        @if (Session::has('ma_us')) <form action="{{ route('proocess_booking') }}" method="post" >  @endif 
 
                             @csrf
 
@@ -242,11 +242,11 @@
                       <input type="number" name="cus"  value="{{ Session::get('ma_us') }}" hidden>
                       <input type="number" name="type_room"  value="{{$room->type_id}}" hidden>
                       <div class="form-group">
-                          <input type="email" class="form-control" name="email"  placeholder="Email" required/>
+                          <input type="email" class="form-control" name="email" value='{{ Session::get('email') }}' placeholder="Email" required/>
                       </div>
 
                       <div class="form-group">
-                          <input type="text" class="form-control" name="phone" placeholder="Phone" required/>
+                          <input type="text" class="form-control" name="phone" value="{{ Session::get('phone') }}" placeholder="Phone" required/>
                       </div>
 
                       <div class="form-group">
@@ -446,10 +446,10 @@ document.getElementById("price_select").innerHTML=s;
         </div><!-- end crs-list-img -->
 
         <div class="list-info crs-list-info">
-            <h3 class="block-title"><a href="cruise-detail-left-sidebar.html">{{ $value->hotel_name }}</a></h3>
-            <p class="block-minor">{{ $value->hotel_address }}</p>
+            <h3 class="block-title"><a href="cruise-detail-left-sidebar.html">{{ $value->url_hotel }}</a></h3>
+            <p class="block-minor">{!! $value->hotel_address !!}</p>
             <p>{{ $value->describ }}.</p>
-            <a href="{{ url('hotel',[$value->hotel_id]) }}" class="btn btn-orange btn-lg">View More</a>
+            <a href="{{ url('hotel',[$value->url_hotel]) }}" class="btn btn-orange btn-lg">View More</a>
         </div><!-- end crs-list-info -->
     </div><!-- end list-content -->
 </div><!-- end crs-list-block -->

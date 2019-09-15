@@ -61,7 +61,8 @@ class indexController extends Controller {
 		$one_hotel=$hotel->get_hotel($id);
 		$info=$hotel->info_hotel($id);
 		$show_rooms = DB::table('type_room')
-		->where('hotel_id',$id )
+		->leftJoin('hotel', 'hotel.hotel_id', '=', 'type_room.hotel_id')
+		->where('url_hotel',$id )
 		->paginate(3);
 
 		return view('hotel.hotel_room',['hotel'=>$one_hotel,'info'=>$info,'room'=>$show_rooms]);
@@ -114,7 +115,9 @@ class indexController extends Controller {
 		$value=$request->session()->get('ma_us');
 		$bill = new Bill();
 		$get_bill=$bill->get_one_bill($value);
-		return view('hotel.thank_you',['info'=>$get_bill]);
+		
+		$get_blog=DB::select('select * from post limit 0,3');
+		return view('hotel.thank_you',['get_bill'=>$get_bill,'get_blog'=>$get_blog]);
 	}
 
 	public  function  show_blog(){
@@ -140,6 +143,9 @@ class indexController extends Controller {
 	public function booking( Request $request){
 		$cus_id=$request->session()->get('ma_us');
 		$get_bill= DB::table('bill')
+		  ->join('type_room', 'bill.type_id', '=', 'type_room.type_id')
+            ->join('hotel', 'hotel.hotel_id', '=', 'type_room.hotel_id')
+            ->select('bill.name','bill.bill_id','bill.email','bill.phone','bill.so_luong','bill.create_at','bill.check_in','hotel.hotel_name','bill.status')
 		->where('cus_id',$cus_id)
 		->paginate(4);
 		return view('hotel.booking',['bill'=>$get_bill]);
@@ -190,6 +196,29 @@ return redirect()->route('Contact')->with('mes','Chúng tôi đã nhận đượ
 	 function contact(){
 	 	return view('hotel.contact');
 	 }
+
+	 function service(){
+	 	$blog = new Post();
+	 	$service = $blog->get_recent();
+	 	return view('hotel.service', ['service'=>$service]);
+	 }
+	 function view_bill($id){
+$blog = new Post();
+$get_blog = $blog->get_recent();
+
+		$bill = new Bill();
+		$bill->bill_id = $id;
+		$array_details = $bill->get_details($id);
+		return view('hotel.bill_detail', [
+			'array_details' => $array_details,
+			'get_blog' => $get_blog
+		]);
+	}
+	function cancel_booking($id){
+		DB::update('update bill set status = 4 where bill_id = ?', [$id]);
+
+return redirect()->route('booking')->with('mes','đơn hàng đã được huỷ. Xin cảm ơn');
+	}
 
 }
 

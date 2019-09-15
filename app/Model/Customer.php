@@ -45,7 +45,7 @@ class Customer {
 		$array = DB::select("select * from $this->table
             where id = ?
             limit 1", [$this->id]);
-		return $customer[0];
+		return $array[0];
 	}
 	public function get_info($id) {
 		$array = DB::select("select * from $this->table
@@ -54,17 +54,55 @@ class Customer {
 		
 		return $array[0];
 	}
+	
 	public function update() {
 		DB::update("update $this->table
             set
-            ten_sinh_vien = ?,
-            tuoi = ?,
-            ma_lop = ?
-            where ma_sinh_vien = ?", [
-			$this->ten_sinh_vien,
-			$this->tuoi,
-			$this->ma_lop,
-			$this->ma_sinh_vien,
+            name = ?,
+            birth = ?,
+            gender = ?,
+            phone = ?,
+            address = ?,
+            email = ?,
+            pass = ?,
+            access = ?,
+            avatar_user = ?
+            where id = ?", [
+			$this->name,
+			$this->birth,
+			$this->gender,
+			$this->phone,
+			$this->address,
+			$this->email,
+			$this->pass,
+			$this->access,
+			$this->avatar_user,
+			$this->id,
+		]);
+	}
+	public function update1() {
+		DB::update("update $this->table
+            set
+            name = ?,
+            birth = ?,
+            gender = ?,
+            phone = ?,
+            address = ?,
+            email = ?,
+            pass = ?,
+            access = ?,
+            avatar_user = ?
+            where id = ?", [
+			$this->name,
+			$this->birth,
+			$this->gender,
+			$this->phone,
+			$this->address,
+			$this->email,
+			$this->pass,
+			$this->access,
+			$this->avatar_user,
+			$this->id,
 		]);
 	}
 }

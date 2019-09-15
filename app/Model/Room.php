@@ -29,9 +29,10 @@ class Room {
 	}
 
 	public function get_all_in_type() {
-		$array = DB::select("SELECT * from $this->table
-
-            where room_status=0 and type_id = ?", [$this->type_id]);
+		$array = DB::select("SELECT * FROM  room  WHERE room_status=0 and room.type_id =? ", [$this->type_id]);
+		return $array;
+	}public function get_all_in_type1() {
+		$array = DB::select("SELECT * FROM  room  WHERE room_status=1 and room.type_id =? ", [$this->type_id]);
 		return $array;
 	}
 	public function get_roomID($id){

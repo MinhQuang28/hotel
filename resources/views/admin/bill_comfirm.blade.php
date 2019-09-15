@@ -16,7 +16,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <form method="POST" action="{{ route('bill.process_update') }}" >
+        <form method="POST" action="{{ route('bill.process_update1') }}" >
          @csrf
          <div class="panel panel-default">
           <div class="panel-heading"> Edit </div>

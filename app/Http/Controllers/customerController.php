@@ -33,7 +33,7 @@ class customerController extends Controller {
 				}
 			})
 			->addColumn('action', function ($customer) {
-				return '<a href="customer/edit" class="btn btn-sm btn-primary edit" id="' . $customer->id . '"><i class="glyphicon glyphicon-edit"></i> Edit</a><a href="#" class="btn btn-sm btn-danger delete" id="' . $customer->id . '"><i class="glyphicon glyphicon-remove"></i> Delete</a>';
+				return '<a href="customer/edit/' . $customer->id . '" class="btn btn-sm btn-primary edit" id=""><i class="glyphicon glyphicon-edit"></i> Edit</a><a href="#" class="btn btn-sm btn-danger delete" id="' . $customer->id . '"><i class="glyphicon glyphicon-remove"></i> Delete</a>';
 			})
 		->rawColumns(['access'], ['action'])
 
@@ -68,13 +68,7 @@ class customerController extends Controller {
 		}
 
 	}
-	function edit($id) {
-		$customer = new Customer();
-		$customer->id = $id;
-		$customer = $customer->get_one();
-		return view('edit_customer', ['customer'=>$customer]);
 
-	}
 
 	function fetchdata(Request $request) {
 		$id = $request->input('id');
@@ -92,5 +86,72 @@ class customerController extends Controller {
 		if ($que) {
 			echo 'Data Deleted';
 		}
+	}
+	function edit($id) {
+		$customer = new Customer();
+		$customer->id = $id;
+		$customer = $customer->get_one();
+		return view('admin.edit_customer', ['customer'=>$customer]);
+
+	}
+
+	function process_update(Request $request) {
+		$avatar_name = $request->hidden_image;
+		$avatar_user = $request->file('avatar_user');
+
+		if ($avatar_user !='') {
+
+			$avatar_name1 = rand() . '.' . $avatar_user->getClientOriginalExtension();
+
+			$avatar_user->move(public_path('images'), $avatar_name1);
+			$customer = new Customer();
+			$customer->id = $request->get('id');
+			$customer->name = $request->get('name');
+			$customer->birth = $request->get('birth');
+			$customer->gender = $request->get('gender');
+			$customer->phone = $request->get('phone');
+			$customer->address = $request->get('address');
+			$customer->email = $request->get('email');
+			$customer->pass = $request->get('pass');
+			$customer->access = $request->get('access');
+			$customer->avatar_user = $avatar_name1;
+			$customer->update();
+			$request->validate([
+                'avatar_user' => 'required|image|max:2048',
+                'name' => 'required',
+                'birth' => 'required',
+                'gender' => 'required',
+                'phone' => 'required',
+                'address' => 'required',
+                'email' => 'required',
+                'pass' => 'required',
+                'access' => 'required'
+            ]);
+         } else {
+         	$customer = new Customer();
+			$customer->id = $request->get('id');
+			$customer->name = $request->get('name');
+			$customer->birth = $request->get('birth');
+			$customer->gender = $request->get('gender');
+			$customer->phone = $request->get('phone');
+			$customer->address = $request->get('address');
+			$customer->email = $request->get('email');
+			$customer->pass = $request->get('pass');
+			$customer->access = $request->get('access');
+			$customer->avatar_user = $request->get('avatar_user');
+			$customer->update1();
+			$request->validate([
+                'avatar_user' => 'required|image|max:2048',
+                'name' => 'required',
+                'birth' => 'required',
+                'gender' => 'required',
+                'phone' => 'required',
+                'address' => 'required',
+                'email' => 'required',
+                'pass' => 'required',
+                'access' => 'required'
+            ]);
+         }
+		return redirect('admin/customer')->with('messages', 'Data is successfully updated');
 	}
 }

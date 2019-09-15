@@ -90,10 +90,10 @@ function new_oder(){
     	return $array;
     }
     public function get_one_bill($id) {
-        $array = DB::select("SELECT * from $this->bill  INNER JOIN customer on customer.id=bill.cus_id inner join type_room on bill.type_id=type_room.type_id
+        $array = DB::select("SELECT * from $this->bill  inner join type_room on bill.type_id=type_room.type_id
 left join hotel on hotel.hotel_id=type_room.hotel_id
 
-            where bill_id = ?
+            where cus_id = ?
             ORDER by bill.bill_id DESC
             limit 1", [$id]);
 
@@ -127,19 +127,19 @@ left join hotel on hotel.hotel_id=type_room.hotel_id
 		DB::update('update bill_detail set room_id=? where id = ?', [$this->room3,$id]);
 	}
 	public function get_all_byId($id){
-		$arr=DB::select("SELECT * FROM $this->bill  where cus_id= ? limit 0,4",[$id]);
+		$arr=DB::select("SELECT bill.name,bill.bill_id,bill.status,bill.email,bill.phone,bill.so_luong,bill.create_at,bill.check_in,hotel.hotel_name FROM `bill` inner join type_room ON bill.type_id=type_room.type_id INNER join hotel on hotel.hotel_id=type_room.hotel_id   where cus_id= ? limit 0,4",[$id]);
 		return $arr;
 	}
 	public function get_bill_wait($id){
-		$arr=DB::select("SELECT * FROM $this->bill where cus_id= ? and status=?  limit 0,4",[$id,0]);
+		$arr=DB::select("SELECT bill.name,bill.bill_id,bill.status,bill.email,bill.phone,bill.so_luong,bill.create_at,bill.check_in,hotel.hotel_name FROM `bill` inner join type_room ON bill.type_id=type_room.type_id INNER join hotel on hotel.hotel_id=type_room.hotel_id WHERE  cus_id= ? and status=?  limit 0,4",[$id,0]);
 		return $arr;
 	}
 	public function get_bill_received($id){
-		$arr=DB::select("SELECT * FROM $this->bill where cus_id= ? and status <>? and status <> ?   limit 0,4",[$id,0,4]);
+		$arr=DB::select("SELECT bill.name,bill.bill_id,bill.status,bill.email,bill.phone,bill.so_luong,bill.create_at,bill.check_in,hotel.hotel_name FROM `bill` inner join type_room ON bill.type_id=type_room.type_id INNER join hotel on hotel.hotel_id=type_room.hotel_id WHERE  bill.cus_id= ? and bill.status <>? and bill.status <> ?   limit 0,4",[$id,0,4]);
 		return $arr;
 	}
 	public function get_bill_canceled($id){
-		$arr=DB::select("SELECT * FROM $this->bill  where cus_id= ? and status >=? limit 0,4",[$id,4]);
+		$arr=DB::select("SELECT bill.name,bill.bill_id,bill.status,bill.email,bill.phone,bill.so_luong,bill.create_at,bill.check_in,hotel.hotel_name FROM `bill` inner join type_room ON bill.type_id=type_room.type_id INNER join hotel on hotel.hotel_id=type_room.hotel_id   where cus_id= ? and status >=? limit 0,4",[$id,4]);
 		return $arr;
 	}
 	public function get_id_bill($id){
@@ -153,11 +153,14 @@ left join hotel on hotel.hotel_id=type_room.hotel_id
 		return $count;
 	}
 	public function bill_cancel($month1,$month2){
-		$count = DB::table('bill')->where('create_at','>',$month1)->where('create_at','<',$month2)->count();
+		$count = DB::table('bill')->where('create_at','>',$month1)->where('create_at','<',$month2)->where('status',4)->count();
 		return $count;
 	}
 	public function total_bill1($month1,$month2){
 		$count = DB::table('bill')->where('create_at','>',$month1)->where('create_at','<',$month2)->count();
+		return $count;
+	}public function total_bill3($month1,$month13){
+		$count = DB::table('bill')->where('create_at','>',$month1)->where('create_at','<',$month13)->where('status',2)->count();
 		return $count;
 	}
 		public function user_reg($month1,$month2){
@@ -181,5 +184,46 @@ public function total_bill(){
 	$total_cus = DB::table('bill')->count();
 	return $total_cus;
 }
+
+public function bill_detail3(){
+	DB::insert('insert into bill_detail (id_bill, room_id) values (?, ?)', [$this->bill_id, $this->room3]);
+	DB::update('update room set room_status = 1 where room_id = ?', [$this->room3]);
+}
+public function bill_detail2(){
+	DB::insert('insert into bill_detail (id_bill, room_id) values (?, ?)', [$this->bill_id, $this->room2]);
+	DB::update('update room set room_status = 1 where room_id = ?', [$this->room2]);
+
+}
+public function bill_detail1(){
+	DB::insert('insert into bill_detail (id_bill, room_id) values (?, ?)', [$this->bill_id, $this->room1]);
+	DB::update('update room set room_status = 1 where room_id = ?', [$this->room1]);
+}
+public function update_bill_detail3(){ 
+	DB::update('update room set room_status = 0 where room_id = ?', [$this->room1]);
+
+}
+public function update_bill_detail2(){ 
+	DB::update('update room set room_status = 0 where room_id = ?', [$this->room1]);
+	DB::update('update room set room_status = 0 where room_id = ?', [$this->room2]);
+
+}
+public function update_bill_detail1(){ 
+	DB::update('update room set room_status = 0 where room_id = ?', [$this->room1]);
+	DB::update('update room set room_status = 0 where room_id = ?', [$this->room2]);
+	DB::update('update room set room_status = 0 where room_id = ?', [$this->room3]);
+
+}
+public function get_details()
+{
+	$array_details = DB::select("SELECT bill_id, bill.name, total_money, check_in, check_out, create_at, bill.phone, hotel_address, bill.email, hotel_name, type_name, so_luong, price from $this->bill  INNER JOIN customer on customer.id=bill.cus_id inner join type_room on bill.type_id=type_room.type_id
+left join hotel on hotel.hotel_id=type_room.hotel_id
+
+            where bill_id = ?
+            ORDER by bill.bill_id DESC
+            limit 1", [$this->bill_id]);
+
+        return $array_details[0];
+    }
+
 
 }

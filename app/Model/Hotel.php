@@ -69,11 +69,11 @@ class Hotel {
 		return $array;
 	}
 	public function get_hotel($id){
-		$array= DB::select("SELECT * from hotel where hotel_id='$id'");
+		$array= DB::select("SELECT * from hotel where url_hotel='$id'");
 		return $array[0];
 	}
 	public function info_hotel($id){
-		$array=DB::select('select * from info_hotel where id_hotel = ?', [$id]);
+		$array=DB::select('select info_hotel.img,info_hotel.img1,info_hotel.img2,info_hotel.img3,overview,info_hotel.service,info_hotel.restaurant from info_hotel inner join hotel on hotel.hotel_id=info_hotel.id_hotel where url_hotel = ?', [$id]);
 		return $array[0];
 	}
 	public function get_info($id){ 

@@ -187,10 +187,12 @@ class billController extends Controller {
 		$bill= new Bill();
 		$bill->bill_id=$id;
 		$bill1= $bill->get_one();
+		
 		$type_id=$bill1->type_id;
 		$room=new Room();
 		$room->type_id=$type_id;
 		$room1=$room->get_all_in_type();
+		
 		return view("admin/bill_comfirm", [
 			'hotel' => $hotel,'bill'=>$bill1,'room1'=>$room1]
 	);
@@ -203,11 +205,13 @@ class billController extends Controller {
 		$bill->bill_id=$id;
 		$bill1= $bill->get_one();
 		$bill->id_bill=$id;
+		
 		$room_id=$bill->get_id_room();
 		$type_id=$bill1->type_id;
 		$room=new Room();
 		$room->type_id=$type_id;
-		$room1=$room->get_all_in_type();
+		$room1=$room->get_all_in_type1();
+
 		$count=$bill->count_booking($id);
 		$id22=$bill->get_id_bill($id);
 		
@@ -253,7 +257,10 @@ class billController extends Controller {
 	 	$id_2=$id_1+1;
 	 	$id_3=$id_2+1;
 	 	
+	 	if($request->get('status')==2){ 
 
+
+	 	}
 	 	if(!empty($request->room3)){ 
 	 		$bill->room1=$request->get('room1');
 	 		$bill->room2=$request->get('room2');
@@ -261,13 +268,65 @@ class billController extends Controller {
 	 		$bill->update_bill3($id_3);
 	 		$bill->update_bill1($id_1);
 	 		$bill->update_bill2($id_2);
+	 		if($request->get('status')==2){ 
+	 		$bill->update_bill_detail();
+
+	 	}
+	 		
 	 }elseif (!empty($request->room2)) {
 	 	$bill->room1=$request->get('room1');
 	 		$bill->room2=$request->get('room2');
-	 		$bill->update_bill2($id_2);$bill->update_bill1($id_1);
+	 		$bill->update_bill2($id_2);
+	 		$bill->update_bill1($id_1);
+	 			if($request->get('status')==2){ 
+	 		$bill->update_bill_detail2();
+
+	 	}
+	 		
 	 }elseif(!empty($request->room1)) {
 	 	$bill->room1=$request->get('room1');
 	  $bill->update_bill1($id_1);
+	  	if($request->get('status')==2){ 
+	 		$bill->update_bill_detail3();
+
+	 	}
+	 
+	 }
+ return redirect('admin/bill')->with('messages', 'Data is successfully inserted');
+	 }
+	  function process_update1(Request $request){
+	 	$bill= new Bill();
+	 	$bill->bill_id=$request->get('id');
+	 	$bill->name=$request->get('name');
+	 	$bill->money=$request->get('monney');
+	 	$bill->check_in=$request->get('check_in');
+	 	$bill->check_out=$request->get('check_out');
+	 	$bill->status=$request->get('status');
+	 	$bill->so_luong=$request->get('so_luong');
+	 	$bill->phone=$request->get('phone');
+	 	$bill->email=$request->get('email');
+	 	$bill->update_bill();
+	 
+	 	
+
+	 	if(!empty($request->room3)){ 
+	 		$bill->room1=$request->get('room1');
+	 		$bill->room2=$request->get('room2');
+	 		$bill->room3=$request->get('room3');
+	 		$bill->bill_detail3();
+	 		$bill->bill_detail2();
+	 		$bill->bill_detail1();
+	 		
+	 }elseif (!empty($request->room2)) {
+	 	$bill->room1=$request->get('room1');
+	 		$bill->room2=$request->get('room2');
+	 		$bill->bill_detail2();
+	 		$bill->bill_detail1();
+	 		
+	 }elseif(!empty($request->room1)) {
+	 	$bill->room1=$request->get('room1');
+	  $bill->bill_detail1();
+	 
 	 }
  return redirect('admin/bill')->with('messages', 'Data is successfully inserted');
 	 }

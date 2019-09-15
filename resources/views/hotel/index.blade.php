@@ -87,7 +87,7 @@
                            <li><a href="{{ url('profile') }}"><span>Welcome<i class="fa fa-user"></i> {{Session::get('ten_us')}} </span></a></li>
                            @else
                            <li><a href="{{ url('login') }}"><span><i class="fa fa-lock"></i></span>Login</a></li>
-                           <li><a href="registration.html"><span><i class="fa fa-plus"></i></span>Sign Up</a></li>
+                           <li><a href="{{ route('registration') }}"><span><i class="fa fa-plus"></i></span>Sign Up</a></li>
                            @endif
 
                            <li>
@@ -251,8 +251,9 @@
 
                 <div class="tab-content">
 
+
                     <div id="flights" class="tab-pane active">
-                        <form action="{{ route('search') }}" method="post">
+                        <form id="frm" action="{{ route('search') }}" method="post"  >
                             @csrf
                             <div class="row">
 
@@ -264,7 +265,7 @@
                                         <div class="col-xs-12 col-sm-12 col-md-12">
                                             <div class="form-group left-icon">
                                                 <label>To</label>
-                                                <input type="text" id="search" name="city" class="form-control" placeholder="City, Country" >
+                                                <input type="text" id="search"  name="city" class="form-control" placeholder="City, Country" >
                                                 <i class="fa fa-map-marker"></i>
                                             </div>
                                         </div><!-- end columns -->
@@ -308,7 +309,7 @@
                                 </div><!-- end columns -->
 
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 search-btn">
-                                    <button class="btn btn-orange">Search</button>
+                                    <button class="btn btn-orange" onclick="search()">Search</button>
                                 </div><!-- end columns -->
 
                             </div><!-- end row -->
@@ -317,69 +318,6 @@
 
                     <!-- end cruises -->
 
-                    <div id="cars" class="tab-pane">
-                        <form>                  
-                            <div class="row">
-
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="row">
-
-                                        <div class="col-sm-6 col-md-6">
-                                            <div class="form-group left-icon">
-                                                <label>Country</label>
-                                                <input type="text" class="form-control" placeholder="Country" />
-                                                <i class="fa fa-globe"></i>
-                                            </div>
-                                        </div><!-- end columns -->
-
-                                        <div class="col-sm-6 col-md-6">
-                                            <div class="form-group left-icon">
-                                                <label>City</label>
-                                                <input type="text" class="form-control" placeholder="City" />
-                                                <i class="fa fa-map-marker"></i>
-                                            </div>
-                                        </div><!-- end columns -->
-
-                                        <div class="col-sm-12 col-md-12">
-                                            <div class="form-group left-icon">
-                                                <label>Your Location</label>
-                                                <input type="text" class="form-control" placeholder="Location" />
-                                                <i class="fa fa-street-view"></i>
-                                            </div>
-                                        </div><!-- end columns -->
-
-                                    </div><!-- end row -->
-                                </div><!-- end columns -->
-
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="row">
-
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <div class="form-group left-icon">
-                                                <label>Check In</label>
-                                                <input type="text" class="form-control dpd1" placeholder="mm/dd/yy" >
-                                                <i class="fa fa-calendar"></i>
-                                            </div>
-                                        </div><!-- end columns -->
-
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <div class="form-group left-icon">
-                                                <label>Check Out</label>
-                                                <input type="text" class="form-control dpd2" placeholder="mm/dd/yy" >
-                                                <i class="fa fa-calendar"></i>
-                                            </div>
-                                        </div><!-- end columns -->
-
-                                    </div><!-- end row -->
-                                </div><!-- end columns -->
-
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 search-btn">
-                                    <button class="btn btn-orange">Search</button>
-                                </div><!-- end columns -->
-
-                            </div><!-- end row -->                  
-                        </form>
-                    </div><!-- end cars -->
 
 
                 </div><!-- end tab-content -->
@@ -871,6 +809,31 @@ Room was good size Night staff are better than day - male attendant brought us n
   });
 
 </script>   
+<script type="text/javascript">
+ function search() {
+    var name = document.getElementById("search").value;
+   alert(name);
+    var regName =/^[a-zA-z]+/;
+    var count = 0;
+    if(name.length==0){
+      document.getElementById("search").border.color = 'red';
+    }else {
+      var resName = regName.test(name);
+      if (resName) {
+        errAccount.innerHTML = "";
+        count++;
+      }
+  }
+if(count !=0){
+   return false;
+}
+    if(count ==1){
+      return true;
+      document.getElementById("frm").submit();
+    }
+       
+  }
+</script>
 
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
