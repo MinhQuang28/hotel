@@ -363,7 +363,7 @@
 
                                     <div class="col-sm-8 col-md-8 tab-text">
                                         <h3>Hotel Overview</h3>
-                                        <p>{{ $info->overview }}</p>
+                                        <p>{!! $info->overview !!}</p>
                                     </div><!-- end columns -->
                                 </div><!-- end row -->
                             </div><!-- end hotel-overview -->
