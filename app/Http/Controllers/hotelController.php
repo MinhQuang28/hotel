@@ -125,6 +125,11 @@ function process_insert(Request $request) {
 		}
 	}
 	function edit_detail($id){
-		return view('admin.edit_detail_hotel');
+		$hotel= new Hotel();
+		$hotel->hotel_id = $id;
+		$hotel_name = $hotel->get_one();
+		$info_hotel=$hotel->get_info($id);
+		
+		return view('admin.edit_detail_hotel',['hotel'=>$info_hotel,'hotel_name'=>$hotel_name]);
 	}
 }

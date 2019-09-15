@@ -26,8 +26,7 @@ class Controller extends BaseController
 	{
 		$admin           = new Admin();
 		$admin->email    = Request::get('email');
-		$admin->pass = Request::get('mat_khau');
-
+		$admin->pass = md5(Request::get('mat_khau'));
 		$admin           = $admin->get_login();
 		
 
@@ -44,7 +43,7 @@ class Controller extends BaseController
 	{
 		$cus           = new Customer();
 		$cus->email    = Request::get('email');
-		$cus->pass = Request::get('pass');
+		$cus->pass = md5(Request::get('pass'));
 
 		$cus           = $cus->get_login();
 		

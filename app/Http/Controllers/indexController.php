@@ -126,7 +126,7 @@ class indexController extends Controller {
 	public function get_one_news($id){
 		$blog= new Post();
 		$get_one=$blog->getOne1($id);
-		$comment=DB::select('select comment,comment_name,date from comment inner join post on post.id=comment.id_post where url_post = ?', [$id]);
+		$comment=DB::select('SELECT comment,comment_name,date from comment inner join post on post.id=comment.id_post where url_post = ?', [$id]);
 		
 		return view('hotel.blog_detail',['blog'=>$get_one,'comment'=>$comment]);
 
@@ -151,7 +151,7 @@ class indexController extends Controller {
 		// 1 all bill
 		if($type==1){
 		
-		$get_bill=$bill->get_all_byId();
+		$get_bill=$bill->get_all_byId($cus_id);
 		}
 		// 2 waiting
 		elseif($type==2){
@@ -181,6 +181,14 @@ class indexController extends Controller {
 	}
 	 function update_profile(){
 	 	
+	 }
+	 function insert_feed_back(Request $request){
+	 	DB::insert('insert into feed_back ( name,email,phone,mes) values (?, ?,?,?)', [$request->get('name'), $request->get('email'),$request->get('phone'),$request->get('mes')]);
+
+return redirect()->route('Contact')->with('mes','Chúng tôi đã nhận được phản hồi của bạn. Xin cảm ơn');
+	 }
+	 function contact(){
+	 	return view('hotel.contact');
 	 }
 
 }

@@ -126,8 +126,8 @@ left join hotel on hotel.hotel_id=type_room.hotel_id
 	}public function update_bill3($id){
 		DB::update('update bill_detail set room_id=? where id = ?', [$this->room3,$id]);
 	}
-	public function get_all_byId(){
-		$arr=DB::select("SELECT * FROM $this->bill  limit 0,4");
+	public function get_all_byId($id){
+		$arr=DB::select("SELECT * FROM $this->bill  where cus_id= ? limit 0,4",[$id]);
 		return $arr;
 	}
 	public function get_bill_wait($id){
@@ -139,7 +139,7 @@ left join hotel on hotel.hotel_id=type_room.hotel_id
 		return $arr;
 	}
 	public function get_bill_canceled($id){
-		$arr=DB::select("SELECT * FROM $this->bill  limit 0,4");
+		$arr=DB::select("SELECT * FROM $this->bill  where cus_id= ? and status >=? limit 0,4",[$id,4]);
 		return $arr;
 	}
 	public function get_id_bill($id){
@@ -149,7 +149,7 @@ left join hotel on hotel.hotel_id=type_room.hotel_id
 
 	// thong ke
 	public function bill_done($month1,$month2){
-		$count = DB::table('bill')->where('create_at','>',$month1)->where('create_at','<',$month2)->count();
+		$count = DB::table('bill')->where('create_at','>',$month1)->where('create_at','<',$month2)->where('status',2)->count();
 		return $count;
 	}
 	public function bill_cancel($month1,$month2){

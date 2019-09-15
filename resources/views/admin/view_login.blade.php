@@ -57,8 +57,11 @@
         errPass.innerHTML = "it must contain at least 4 : number and letter";
       }
     }
-
+if(count !=2){
+   return false;
+}
     if(count ==2){
+      return true;
       document.getElementById("frm").submit();
     }
        
@@ -83,7 +86,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form id="frm" action="{{route('process_login')}}" method="post">
+    <form id="frm" action="{{route('process_login')}}" method="post" onsubmit="return login()">
       @csrf
       <div class="form-group has-feedback">
         <input type="text" class="form-control" id="txtAccount" name="email" placeholder="Email">
@@ -99,13 +102,13 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> Remember Me
+              <input type="checkbox" checked=""> Remember Me
             </label>
           </div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <input type="button"  onclick="login()" value="Signin" class="btn btn-primary btn-block btn-flat">
+          <input type="submit"   value="Signin" class="btn btn-primary btn-block btn-flat">
         </div>
         <!-- /.col -->
       </div>

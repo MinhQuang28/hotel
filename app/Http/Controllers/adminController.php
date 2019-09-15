@@ -117,4 +117,29 @@ class adminController extends Controller {
 			echo 'Data Deleted';
 		}
 	}
+	function feed_back() {
+				return view('admin.feed_back');
+			}
+	function getdata_feed_back() {
+		// $admin = DB::table('admin')->select('id', 'name', 'email', 'birth', 'gender', 'access', 'status');
+		$getall = new Admin();
+		$f_back=$getall->get_feed_back();
+		return Datatables::of($f_back)
+ 		// ->setRowAttr(['align'=>'center'])
+		->editColumn('create_at', function ($f_back) {
+				//change over here
+			return date('d/m/Y H:m:s', strtotime($f_back->create_at));
+		})
+		
+		
+		->addColumn('action', function ($f_back) {
+			return '<a href="#" class="btn btn-sm btn-primary edit" id="' . $f_back->id . '"><i class="glyphicon glyphicon-edit"></i> View More</a> ';
+		})
+		// ->rawColumns(['action1'], ['action'])
+		->rawColumns(['action'])
+
+		->make(true);
+		
+	}
+
 }

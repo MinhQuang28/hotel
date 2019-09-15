@@ -35,16 +35,16 @@
             @csrf
              <div class="panel panel-default">
             <div class="panel-heading"> Edit </div>
-                <input hidden="hidden" name="id" type="text" value="{{-- {{ $hotel->hotel_id }} --}}">
+                <input hidden="hidden" name="id" type="text" value="{{ $hotel->id_if }}">
                    <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-12 form-group">
-                        <label for="text" class="control-label">hotel</label>
+                        <label for="text" class="control-label"></label>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="fa fa-user"></i>
                         </span>
-                        <input class="form-control" name="name" placeholder="Name" type="text" value="">
+                        <input class="form-control" name="name" placeholder="Name" type="text" value="{{ $hotel_name->hotel_name }}">
                     </div>
                      <p class="help-block"></p>
                 </div>
@@ -55,12 +55,12 @@
 <div class="row">
     <div class="col-xs-12 form-group">
         <label for="photo" class="control-label">Photo 1</label>
-        <br> <a data-toggle="modal" data-target="#myModal"><img height="50px" src="{{-- {{ URL::to('/') }}/images/{{ $hotel->img1 }} --}}" with="100px"></a>
+        <br> <a data-toggle="modal" data-target="#myModal"><img height="50px" src="{{ URL::to('/') }}/images/{{ $hotel->img }} " with="100px"></a>
         <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-body">
-            <img  src="{{-- {{ URL::to('/') }}/images/{{ $hotel->img1 }} --}}" height="600" width="700" >
+            <img  src=" {{ URL::to('/') }}/images/{{ $hotel->img }} " height="600" width="700" >
         </div>
     </div>
   </div>
@@ -73,12 +73,12 @@
 <div class="row">
     <div class="col-xs-12 form-group">
         <label for="photo" class="control-label">Photo 2</label>
-        <br> <a data-toggle="modal" data-target="#myModal"><img height="50px" src="{{-- {{ URL::to('/') }}/images/{{ $hotel->img1 }} --}}" with="100px"></a>
+        <br> <a data-toggle="modal" data-target="#myModal"><img height="50px" src="{{ URL::to('/') }}/images/{{ $hotel->img1 }} " with="100px"></a>
         <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-body">
-            <img  src="{{-- {{ URL::to('/') }}/images/{{ $hotel->img1 }} --}}" height="600" width="700" >
+            <img  src="{{ URL::to('/') }}/images/{{ $hotel->img1 }}" height="600" width="700" >
         </div>
     </div>
   </div>
@@ -91,12 +91,12 @@
 <div class="row">
     <div class="col-xs-12 form-group">
         <label for="photo" class="control-label">Photo 3</label>
-        <br> <a data-toggle="modal" data-target="#myModal"><img height="50px" src="{{-- {{ URL::to('/') }}/images/{{ $hotel->img1 }} --}}" with="100px"></a>
+        <br> <a data-toggle="modal" data-target="#myModal"><img height="50px" src="{{ URL::to('/') }}/images/{{ $hotel->img2 }}" with="100px"></a>
         <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-body">
-            <img  src="{{-- {{ URL::to('/') }}/images/{{ $hotel->img1 }} --}}" height="600" width="700" >
+            <img  src="{{ URL::to('/') }}/images/{{ $hotel->img2 }}" height="600" width="700" >
         </div>
     </div>
   </div>
@@ -106,24 +106,7 @@
     </div>
 
 </div>
-<div class="row">
-    <div class="col-xs-12 form-group">
-        <label for="photo" class="control-label">Photo 4</label>
-        <br> <a data-toggle="modal" data-target="#myModal"><img height="50px" src="{{-- {{ URL::to('/') }}/images/{{ $hotel->img1 }} --}}" with="100px"></a>
-        <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-body">
-            <img  src="{{-- {{ URL::to('/') }}/images/{{ $hotel->img1 }} --}}" height="600" width="700" >
-        </div>
-    </div>
-  </div>
-</div>
-        <input class="form-control" style="margin-top: 4px;" name="image3" type="file" id="photo">
-        <p class="help-block"></p>
-    </div>
 
-</div>
 
 
 
@@ -134,7 +117,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-map-o"></i>
                         </span>
-                        <input class="form-control" name="address" placeholder="Enter ..." type="text" value=" {{-- {{ $hotel->hotel_address }} --}}">
+                        <input class="form-control" name="address" placeholder="Enter ..." type="text" value="  {{ $hotel->overview }}">
                     </div>
                 </div>
             </div><div class="row">
@@ -144,7 +127,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-map-o"></i>
                         </span>
-                        <input class="form-control" name="address" placeholder="Enter ..." type="text" value=" {{-- {{ $hotel->hotel_address }} --}}">
+                        <input class="form-control" name="address" placeholder="Enter ..." type="text" value=" {{ $hotel->service }}">
                     </div>
                 </div>
             </div>
@@ -152,7 +135,7 @@
                     <div class="box-body pad">
                         <label class="control-label">restaurant</label>
                         <textarea cols="80" id="editor1" name="describ" rows="10">
-                           {{--  {{ $hotel->describ }} --}}
+                            {{ $hotel->restaurant}}
                         </textarea>
                     </div>
 

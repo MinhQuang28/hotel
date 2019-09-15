@@ -61,7 +61,7 @@
 
         <li class="cus"><a href="{{ url('admin/customer') }}"><i class="fa fa-group"></i> <span>Quản lý khách hàng</span></a></li>
         <li class="thong_ke"><a href="{{ url('admin/Thong_ke') }}"><i class="fa fa-group"></i> <span></span>Thống Kê</a></li>
-        <li class="feed_back"><a href="{{ url('admin/feed_back') }}"><i class="fa fa-group"></i> <span></span>Phản hồi</a></li>
+        <li class="feed_back"><a href="{{ url('admin/view_feed_back') }}"><i class="fa fa-group"></i> <span></span>Phản hồi</a></li>
         <li class="profile"><a href="{{ url('admin/profile') }}"><i class="fa  fa-user-md"></i> <span>Frofile</span></a></li>
         <li class=""><a href="{{ url('admin/logout') }}"><i class="fa  fa-sign-out"></i> <span>Logout</span></a></li>
     </ul>

@@ -9,6 +9,9 @@ class Admin {
 	public function get_all() {
 		$array = DB::select("select * from $this->table ");
 		return $array;
+	}public function get_feed_back() {
+		$array = DB::select("select * from feed_back ");
+		return $array;
 	}
 	public function insert() {
 		DB::insert("insert into $this->table('id', 'name', 'email','pass','gender', 'birth', 'access', 'status')

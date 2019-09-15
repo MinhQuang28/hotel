@@ -76,4 +76,9 @@ class Hotel {
 		$array=DB::select('select * from info_hotel where id_hotel = ?', [$id]);
 		return $array[0];
 	}
+	public function get_info($id){ 
+		$arr=DB::select('select * from info_hotel where id_hotel = ? limit 1', [$id]);
+		return $arr['0'];
+		 
+	}
 }

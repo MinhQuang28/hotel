@@ -16,9 +16,12 @@ Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"], function(){
 	Route::get('profile', function() {
 		return view('admin.profile');
 	});
+	//feed_back
+Route::get('fetchdata_feed_back','adminController@getdata_feed_back')->name('fetchdata_feed_back');
 	//thong ke 
 	Route::get('Thong_ke','Controller@thong_ke')->name('Thong_ke');
-	Route::get('feed_back','Controller@wfeed_back')->name('feed_back');
+	Route::get('feed_back','adminController@getdata_feed_back')->name('feed_back');
+	Route::get('view_feed_back','adminController@feed_back')->name('view_feed_back');
 	Route::group(["prefix" => "user"], function () {
 		$group="user";
 		$controller="adminController";
@@ -141,14 +144,17 @@ Route::get('blog/view_comment','indexController@view_comment')->name('view/add_c
 // chỉnh sủa sau
 Route::get('about', function(){
 	return view('hotel.about');
-});Route::get('blog/{id}','indexController@get_one_news')->name('blog');
 
-Route::get('Contact', function(){
-	return view('hotel.contact');
 });
-Route::get('registration', function(){
-	return view('hotel.registration')->name('registration');
-});
+//feed_back
+Route::post('insert_feed_back','indexController@insert_feed_back')->name('insert_feed_back');
+
+Route::get('blog/{id}','indexController@get_one_news')->name('blog');
+
+Route::get('Contact', 'indexController@contact')->name('Contact');
+
+Route::get('registration', 'indexController@hotel')->name('registration');
+
 Route::get('service', function(){
 	return view('hotel.service');
 });

@@ -215,6 +215,14 @@
 <section class="innerpage-wrapper">
     <div id="contact-us" class="innerpage-section-padding">
         <div class="container">
+              @if (session('mes'))
+       <div class="alert alert-success" role="alert">
+ 
+         {{ session('mes') }}
+
+</div>
+     
+     @endif
             <div class="row">
 
                 <div class="col-sm-12 col-md-5 no-pd-r">
@@ -222,25 +230,25 @@
                         <h3>Contact Us</h3>
                         <p>If you have any problems, please contact number : 08.66.43.465 or address 29 . Tran hung Dạo , Ha Noi, Viet nam.
                             <br> Thank you for using our service.</p>
-                        <form>
-
+                        <form action="{{ route('insert_feed_back') }}" method="post">
+                        @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Name"  required/>
+                                <input type="text" class="form-control" placeholder="Name" name="name" required/>
                                 <span><i class="fa fa-user"></i></span>
                             </div>
 
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email"  required/>
+                                <input type="email" class="form-control" placeholder="Email" name="email"  required/>
                                 <span><i class="fa fa-envelope"></i></span>
                             </div>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Subject"  required/>
+                                <input type="text" class="form-control" placeholder="Phone"  name="phone" required/>
                                 <span><i class="fa fa-info-circle"></i></span>
                             </div>
 
                             <div class="form-group">
-                                <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                                <textarea name="mes" class="form-control" rows="4" placeholder="Your Message"></textarea>
                                 <span><i class="fa fa-pencil"></i></span>
                             </div>
 

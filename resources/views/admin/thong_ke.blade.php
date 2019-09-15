@@ -108,24 +108,24 @@
       function drawVisualization() {
         // Some raw data (not necessarily accurate)
         var data = google.visualization.arrayToDataTable([
-          ['Month', 'thành công', 'đã huỷ', 'Tổng hoá đơn tháng',  'tỉ lệ '],
-            ['01',  {{ $hoadon['bill_done']['8'] }},     6,        6,            3.6],
-          ['02',  5,      4,        6,                  6],
-          ['03',  5,      2,        6,                  3],
-          ['04',  5,      3,        12,               9.4],
-          ['05',  {{ $hoadon['bill_done']['8'] }},     6,        6,            3.6],
-          ['06',  5,      4,        6,                  6],
-          ['07',  5,      2,        6,                  3],
-          ['08',  5,      3,        12,               9.4],
-          ['09',  5,      1,         13,              9.6],
-          ['10',  5,      4,        6,                  6],
-          ['11',  5,      2,        6,                  3],
-          ['12',  5,      3,        12,               9.4]
+          ['Month', 'thành công', 'đã huỷ', 'Tổng hoá đơn tháng',  'Đơn hoàn thành/tổng hoá đơn'],
+            ['01',  {{ $hoadon['bill_done']['1'] }},     {{ $hoadon['bill_cancel']['1'] }},        {{ $hoadon['total_bill1']['1'] }},            {{ $hoadon['bill_done']['1'] }}],
+          ['02', {{ $hoadon['bill_done']['2'] }},    {{ $hoadon['bill_cancel']['2'] }},        {{ $hoadon['total_bill1']['2'] }},            {{ $hoadon['bill_done']['2'] }}],
+          ['03',  {{ $hoadon['bill_done']['3'] }},     {{ $hoadon['bill_cancel']['3'] }},        {{ $hoadon['total_bill1']['3'] }},            {{ $hoadon['bill_done']['3'] }}],
+          ['04',  {{ $hoadon['bill_done']['4'] }},     {{ $hoadon['bill_cancel']['4'] }},        {{ $hoadon['total_bill1']['4'] }},            {{ $hoadon['bill_done']['4'] }}],
+          ['05',  {{ $hoadon['bill_done']['5'] }},     {{ $hoadon['bill_cancel']['5'] }},        {{ $hoadon['total_bill1']['5'] }},            {{ $hoadon['bill_done']['5'] }}],
+          ['06',  {{ $hoadon['bill_done']['6'] }},     {{ $hoadon['bill_cancel']['6'] }},        {{ $hoadon['total_bill1']['6'] }},            {{ $hoadon['bill_done']['6'] }}],
+          ['07',  {{ $hoadon['bill_done']['7'] }},     {{ $hoadon['bill_cancel']['7'] }},        {{ $hoadon['total_bill1']['7'] }},            {{ $hoadon['bill_done']['7'] }}],
+          ['08',  {{ $hoadon['bill_done']['8'] }},     {{ $hoadon['bill_cancel']['8'] }},        {{ $hoadon['total_bill1']['8'] }},            {{ $hoadon['bill_done']['8'] }}],
+          ['09',  {{ $hoadon['bill_done']['9'] }},     {{ $hoadon['bill_cancel']['9'] }},        {{ $hoadon['total_bill1']['9'] }},            {{ $hoadon['bill_done']['9'] }}],
+          ['10',  {{ $hoadon['bill_done']['10'] }},     {{ $hoadon['bill_cancel']['10'] }},        {{ $hoadon['total_bill1']['10'] }},            {{ $hoadon['bill_done']['10'] }}],
+          ['11',  {{ $hoadon['bill_done']['11'] }},     {{ $hoadon['bill_cancel']['11'] }},        {{ $hoadon['total_bill1']['11'] }},            {{ $hoadon['bill_done']['11'] }}],
+          ['12',  {{ $hoadon['bill_done']['12'] }},     {{ $hoadon['bill_cancel']['12'] }},        {{ $hoadon['total_bill1']['12'] }},            {{ $hoadon['bill_done']['12'] }}]
           
         ]);
 
         var options = {
-          title : 'thống kê hoá đơn theo năm',
+          title : 'Lịch hoá đơn theo tháng',
           vAxis: {title: 'số lượng'},
           hAxis: {title: 'Month'},
           seriesType: 'bars',
@@ -142,23 +142,23 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['month', 'Đăng kí'],
-          ['01',  1000    ],
-          ['02',  1170    ],
-          ['03',  660   ],
-        ['04',  1000  ],
-          ['05',  1170    ],
-          ['06',  660   ],
-           ['07',  1000    ],
-          ['08',  1170    ],
-          ['09',  660   ],
-          ['10',  1030   ], 
-          ['11',  660   ],
-          ['12',  1030   ]
+          ['month', 'Đăng kí mới'],
+          ['01',  {{$cus['1']}}     ],
+          ['02',  {{$cus['2']}}     ],
+          ['03',  {{$cus['3']}}     ],
+          ['04',  {{$cus['4']}}     ],
+          ['05',  {{$cus['5']}}     ],
+          ['06',  {{$cus['6']}}     ],
+          ['07',  {{$cus['7']}}     ],
+          ['08',  {{$cus['8']}}     ],
+          ['09',  {{$cus['9']}}     ],
+          ['10',  {{$cus['10']}}     ], 
+          ['11',  {{$cus['11']}}     ],
+          ['12',  {{$cus['12']}}     ]
         ]);
 
         var options = {
-          title: 'Company Performance',
+          title: 'Lịch sử tài khoản đăng kí mới theo tháng',
           hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
           vAxis: {minValue: 0}
         };
