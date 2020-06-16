@@ -10,7 +10,8 @@ class Bill {
 	public $room = 'room';
 	public $customer = 'customer';
 	public function get_all() {
-		$array = DB::select("SELECT * FROM bill   ");
+		$array = DB::select("SELECT * FROM bill");
+	
 		return $array;
 	}
 	public function get_today() {
@@ -223,7 +224,12 @@ left join hotel on hotel.hotel_id=type_room.hotel_id
             limit 1", [$this->bill_id]);
 
         return $array_details[0];
-    }
+	}
+	public function get_time_now(){
+		$time = DB::select("SELECT NOW() as time");
+		//dd($time);
+		return $time[0];
+	}
 
 
 }

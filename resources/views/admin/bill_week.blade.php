@@ -19,7 +19,7 @@
      <div class="row">
         <div class="col-xs-2 form-group">
           {{--   <label>Hotel</label> --}}
-          <select data-column="5" class="form-control filter-select">
+          <select data-column="6" class="form-control filter-select">
             <option value="">--Select Bill Action--</option>
             <option value="Chờ duyệt">Chờ duyệt</option>
             <option value="Đã Duyệt">Đã duyệt</option>
@@ -34,7 +34,7 @@
        
     <div class="col-xs-offset-10" align="right">
     <button type="button" name="add" id="add_data" class="btn btn-success btn-sm">Add BIll</button>
-</div>
+
 </div>
 
 

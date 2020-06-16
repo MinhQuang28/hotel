@@ -347,7 +347,7 @@
                                     <div class="grid-block main-block h-grid-block">
                                         <div class="main-img h-grid-img">
                                             <a href="hotel-detail-left-sidebar.html">
-                                                <img src="../images/{{ $hotels->img1 }}" class="img-responsive" alt="hotel-img" />
+                                                <img src="images/{{ $hotels->img1 }}" class="img-responsive" alt="hotel-img" />
                                             </a>
                                             <div class="main-mask">
                                                 <ul class="list-unstyled list-inline offer-price-1">

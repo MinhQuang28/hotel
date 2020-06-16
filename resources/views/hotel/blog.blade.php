@@ -341,7 +341,8 @@
                         <div class="main-block blog-post blog-list">
                             <div class="main-img blog-post-img">
                                 <a href="blog-detail-left-sidebar.html">
-                                    <img src="images/{{$blog1->img1}}" class="img-responsive" alt="blog-post-image" />
+
+                                    <img src="{{url('images/',$blog1->img1)}}" class="img-responsive" alt="blog-post-image" />
                                 </a>
                                 <div class="main-mask blog-post-info">
                                     <ul class="list-inline list-unstyled blog-post-info">

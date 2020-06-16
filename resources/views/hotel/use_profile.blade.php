@@ -49,7 +49,7 @@
                                             <div class="panel-body">
                                                 <div class="row">
                                                     <div class="col-sm-5 col-md-4 user-img">
-                                                        <img src="../images/78.jpg" class="img-responsive" alt="user-img" />
+                                                        <img src="images/78.jpg" class="img-responsive" alt="user-img" />
 
                                                     </div><!-- end columns -->
                                                     

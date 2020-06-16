@@ -13,6 +13,10 @@ use App\Model\Room;
 
 class billController extends Controller {
 	
+	function __construct(){
+		date_default_timezone_set('Asia/Macau');
+	}
+	
 
 	function index() {
 		return view('admin.bill');
@@ -22,13 +26,19 @@ class billController extends Controller {
 		return view('admin.bill_today');
 	}
 	function bill_week(){
+		$bill=new Bill();
+		$time=$bill->get_time_now();
+		// $now=date("Y-m-d",strtotime($time->time));
+		// dd($now);
 		return view('admin.bill_week');
 	}
 	function get_bill_week(){
-		date_default_timezone_set('Asia/Macau');
+		
 		$bill=new Bill();
+		$time=$bill->get_time_now();
 		$bill=$bill->get_week();
-	
+		
+		$now=date("Y-m-d",strtotime($time->time));
 		return Datatables::of($bill)
 		->editColumn('check_in', function ($bill) {
 				//change over here
@@ -77,10 +87,11 @@ class billController extends Controller {
 		->make(true);
 	}
 	function getToday(){
-		date_default_timezone_set('Asia/Macau');
+		
 		$bill=new Bill();
+		$time=$bill->get_time_now();
 		$bill=$bill->get_today();
-
+		$now=date("Y-m-d",strtotime($time->time));
 		return Datatables::of($bill)
 		->editColumn('check_in', function ($bill) {
 				//change over here

@@ -226,12 +226,12 @@
 <div class="flexslider slider" id="slider-3">
     <ul class="slides">
 
-        <li class="item-1 back-size" style="background:         linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(images/51.jpg) 50% 65%;
+        <li class="item-1 back-size" style="background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(images/51.jpg) 50% 65%;
         background-size:cover;
         height:100%;">
     </li><!-- end item-1 -->
 
-    <li class="item-2 back-size" style="background:         linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(images/hotel2.jpg) 50% 65%;
+    <li class="item-2 back-size" style="background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(images/hotel2.jpg) 50% 65%;
     background-size:cover;
     height:100%;">
 </li><!-- end item-2 -->
@@ -397,13 +397,12 @@
 
                 <div class="owl-carousel owl-theme owl-custom-arrow" id="owl-hotel-offers">
                     @foreach ($hotel as $hotel)
-
-
+                  
                     <div class="item">
                         <div class="main-block hotel-block">
                             <div class="main-img">
-                                <a href="{{ url('hotel',[$hotel->hotel_id]) }}">
-                                    <img src="../images/{{$hotel->img1}}" alt="hotel-img" />
+                                <a href="{{ url('hotel',[$hotel->url_hotel]) }}">
+                                    <img src="images/{{$hotel->img1}}" alt="hotel-img" />
                                 </a>
                                 <div class="main-mask">
                                     <ul class="list-unstyled list-inline offer-price-1">
@@ -485,8 +484,8 @@
             <div class="col-sm-12 col-md-12 col-lg-6 luxury-text luxury-room-text">
                 <h2>Crowne Plaza Times Square</h2>
                 <p>Crowne Plaza Times Square tọa lạc tại thành phố Đà Lạt, trong bán kính 1,7 km từ Hồ Xuân Hương và 1,7 km từ Công viên Yersin. Nhà trọ có nhà hàng, khu vườn, sảnh khách chung, Wi-Fi miễn phí, dịch vụ đặt vé, sân hiên, dịch vụ phòng, máy ATM và dịch vụ thu đổi ngoại tệ cho khách..</p>
-                <a href="hotel-detail-right-sidebar.html" class="btn btn-black">From $99/Day</a>
-                <a href="hotel-detail-right-sidebar.html" class="btn btn-o-border">View Details</a>
+                <a href="{{ url('hotel/Crowne-Plaza-Times-Square') }}" class="btn btn-black">From $99/Day</a>
+                <a href="{{ url('hotel/Crowne-Plaza-Times-Square') }}" class="btn btn-o-border">View Details</a>
             </div><!-- end columns -->
         </div><!-- end row -->
     </div><!-- end container -->

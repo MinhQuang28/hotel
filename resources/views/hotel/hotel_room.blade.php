@@ -4,28 +4,35 @@
     <title>Hotel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
 
     <!-- Google Fonts -->   
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
     <!-- Bootstrap Stylesheet -->   
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
     <!-- Font Awesome Stylesheet -->
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
-
+    <!-- <link rel="stylesheet" href="../css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <!-- Custom Stylesheets --> 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" id="cpswitch" href="../css/orange.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <!-- <link rel="stylesheet" id="cpswitch" href="../css/orange.css"> -->
+    <link rel="stylesheet" href="{{ asset('css/orange.css') }}">
+    <!-- <link rel="stylesheet" href="../css/responsive.css"> -->
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
     <!--Date-Picker Stylesheet-->
-    <link rel="stylesheet" href="../css/datepicker.css">
+    <!-- <link rel="stylesheet" href="../css/datepicker.css"> -->
+    <link rel="stylesheet" href="{{ asset('css/datepicker.css') }}">
 
     <!-- Slick Stylesheet -->
-    <link rel="stylesheet" href="../css/slick.css">
-    <link rel="stylesheet" href="../css/slick-theme.css">
+    <!-- <link rel="stylesheet" href="../css/slick.css"> -->
+    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+    <!-- <link rel="stylesheet" href="../css/slick-theme.css"> -->
+    <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
 </head>
 
 
@@ -229,8 +236,8 @@
                             <h3>Book Hotel</h3>
                             <p>Find your dream hotel today</p>
 
-                            <form action="{{ route('search_room') }}" method="post">
-                                @csrf
+                            <form action="{{ route('search_room') }}" method="Get">
+                               
                                 <input type="number" name="id" value="{{ $hotel->hotel_id }}" hidden="hidden">
                                 <div class="form-group">
                                     <input type="text" class="form-control dpd1" value="{{Session::get('check_in')}}"  placeholder="Check-in Date" name="check_in" required/>                                              <i class="fa fa-calendar"></i>
@@ -282,7 +289,7 @@
                             <div class="side-bar-block main-block ad-block">
                                 <div class="main-img ad-img">
                                     <a href="#">
-                                        <img src="../images/car-ad.jpg" class="img-responsive" alt="car-ad" />
+                                        <img src="{{asset('images/car-ad.jpg')}}" class="img-responsive" alt="car-ad" />
                                         <div class="ad-mask">
                                             <div class="ad-text">
                                                 <span>Luxury</span>
@@ -313,19 +320,20 @@
 
                     <div class="detail-slider">
                         <div class="feature-slider">
-                            <div><img src="../images/{{ $info->img }}" class="img-responsive" alt="feature-img"/></div>
-                            <div><img src="../images/{{ $info->img1 }}" class="img-responsive" alt="feature-img"/></div>
-                            <div><img src="../images/{{ $info->img2 }}" class="img-responsive" alt="feature-img"/></div>
-                            <div><img src="../images/{{ $info->img3 }}" class="img-responsive" alt="feature-img"/></div>
-                            <div><img src="../images/{{ $info->img }}" class="img-responsive" alt="feature-img"/></div>
+                  
+                            <div><img src=" {{ url('images',[ $info->img]) }}" class="img-responsive" alt="feature-img"/></div>
+                            <div><img src="{{ url('images',[ $info->img1]) }}" class="img-responsive" alt="feature-img"/></div>
+                            <div><img src="{{ url('images',[ $info->img2]) }}" class="img-responsive" alt="feature-img"/></div>
+                            <div><img src="{{ url('images',[ $info->img3]) }}" class="img-responsive" alt="feature-img"/></div>
+                            <div><img src="{{ url('images',[ $info->img]) }}" class="img-responsive" alt="feature-img"/></div>
                         </div><!-- end feature-slider -->
 
                         <div class="feature-slider-nav">
-                            <div><img src="../images/{{ $info->img }}" class="img-responsive" alt="feature-thumb"/></div>
-                            <div><img src="../images/{{ $info->img1 }}" class="img-responsive" alt="feature-thumb"/></div>
-                            <div><img src="../images/{{ $info->img2 }}" class="img-responsive" alt="feature-thumb"/></div>
-                            <div><img src="../images/{{ $info->img3 }}" class="img-responsive" alt="feature-thumb"/></div>
-                            <div><img src="../images/{{ $info->img }}" class="img-responsive" alt="feature-thumb"/></div>
+                            <div><img src="{{ url('images',[ $info->img]) }}" class="img-responsive" alt="feature-thumb"/></div>
+                            <div><img src="{{ url('images',[ $info->img1]) }}" class="img-responsive" alt="feature-thumb"/></div>
+                            <div><img src="{{ url('images',[ $info->img2]) }}" class="img-responsive" alt="feature-thumb"/></div>
+                            <div><img src="{{ url('images',[ $info->img3]) }}" class="img-responsive" alt="feature-thumb"/></div>
+                            <div><img src="{{ url('images',[ $info->img]) }}" class="img-responsive" alt="feature-thumb"/></div>
                         </div><!-- end feature-slider-nav -->
                     </div>  <!-- end detail-slider -->
 
@@ -343,7 +351,7 @@
                             <div id="hotel-overview" class="tab-pane in active">
                                 <div class="row">
                                     <div class="col-sm-4 col-md-4 tab-img">
-                                        <img src="../images/{{ $hotel->img1 }}" class="img-responsive" alt="flight-detail-img" />
+                                        <img src="{{ url('images',[ $hotel->img1]) }}" class="img-responsive" alt="flight-detail-img" />
                                     </div><!-- end columns -->
 
                                     <div class="col-sm-8 col-md-8 tab-text">
@@ -356,7 +364,7 @@
                             <div id="restaurant" class="tab-pane">
                                 <div class="row">
                                     <div class="col-sm-4 col-md-4 tab-img">
-                                        <img src="../images/{{ $info->img1 }}" class="img-responsive" alt="flight-detail-img" />
+                                        <img src="{{ url('images',[ $info->img1]) }}" class="img-responsive" alt="flight-detail-img" />
                                     </div><!-- end columns -->
 
                                     <div class="col-sm-8 col-md-8 tab-text">
@@ -369,7 +377,7 @@
                             <div id="pick-up" class="tab-pane">
                                 <div class="row">
                                     <div class="col-sm-4 col-md-4 tab-img">
-                                        <img src="../images/{{ $info->img2 }}" class="img-responsive" alt="flight-detail-img" />
+                                        <img src="{{ url('images',[ $info->img2]) }}" class="img-responsive" alt="flight-detail-img" />
                                     </div><!-- end columns -->
 
                                     <div class="col-sm-8 col-md-8 tab-text">
@@ -382,7 +390,7 @@
                             <div id="luxury-gym" class="tab-pane">
                                 <div class="row">
                                     <div class="col-sm-4 col-md-4 tab-img">
-                                        <img src="../images/gyms.jpg" class="img-responsive" alt="flight-detail-img" />
+                                        <img src="{{ asset('images/gyms.jpg') }}" class="img-responsive" alt="flight-detail-img" />
                                     </div><!-- end columns -->
 
                                     <div class="col-sm-8 col-md-8 tab-text">
@@ -413,7 +421,8 @@
                             <div class="list-content">
                                 <div class="main-img list-img room-img">
                                     <a href="#">
-                                        <img src="../images/{{ $rooms->img_type }}" class="img-responsive" alt="room-img" />
+                                  
+                                        <img src=" {{ url('images',[ $rooms->img_type ]) }}" class="img-responsive" alt="room-img" />
                                     </a>
                                     <div class="main-mask">
                                         <ul class="list-unstyled list-inline offer-price-1">
@@ -596,12 +605,17 @@
 src="https://code.jquery.com/jquery-3.4.1.js"
 integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 crossorigin="anonymous"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/bootstrap-datepicker.js"></script>
-<script src="../js/slick.min.js"></script>
-<script src="../js/custom-navigation.js"></script>
-<script src="../js/custom-date-picker.js"></script>
-<script src="../js/custom-slick.js"></script>
+<script type="text/javascript" src="{{asset('js/bootstrap.min.js') }}"></script>
+
+<script type="text/javascript" src="{{asset('js/bootstrap-datepicker.js')}}"></script>
+
+<script type="text/javascript" src="{{ asset('js/slick.min.js')}}"></script>
+
+<script type="text/javascript" src="{{ asset('js/custom-navigation.js') }}"></script>
+
+<script type="text/javascript" src="{{asset('js/custom-date-picker.js') }}"></script>
+
+<script type="text/javascript" src="{{asset('js/custom-slick.js') }}"></script>
 <!-- Page Scripts Ends -->
 </body>
 </html>

@@ -73,17 +73,25 @@ class indexController extends Controller {
 		$room=$request->get('room');
 		$bed=$request->get('bed');
 		$id=$request->get('id');
+		if(isset($id)){
+			Session::put('id_hotel',$id);
+		}else{
+			$id=Session::get('id_hotel');
+		}
+		
+
+		
 		Session::put('check_in',$request->get('check_in'));
 		Session::put('check_out',$request->get('check_out'));
 		Session::put('room',$room);
 		$hotel= new Hotel();
-		$one_hotel=$hotel->get_hotel($id);
-		$info=$hotel->info_hotel($id);
+		$one_hotel=$hotel->get_hotel_id($id);
+		$info=$hotel->info_hotel_id($id);
 		$show_rooms = DB::table('type_room')
 		->where('hotel_id',$id )
-		->where('bed',$bed)
+		// ->where('bed',$bed)
 		->paginate(3);
-
+//dd($show_rooms);
 		return view('hotel.hotel_room',['hotel'=>$one_hotel,'info'=>$info,'room'=>$show_rooms]);
 	}
 	public function proocess_booking(Request $request){

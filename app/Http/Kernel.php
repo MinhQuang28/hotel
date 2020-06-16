@@ -46,8 +46,8 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             
-        ],   'CheckUser' => [
-            \App\Http\Middleware\CheckUser::class,
+        ],   'LoginUser' => [
+            \App\Http\Middleware\LoginUser::class,
              \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,

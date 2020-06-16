@@ -1,5 +1,12 @@
 <?php
 
+//route api
+Route::group(["prefix" => "api"], function () {
+Route::get("view_index_hotel","ApiController@get_index_hotel")
+->name("view_index_hotel");
+Route::get("seach_hotel_api1/{id}", "ApiController@seach_hotel_api1")->name("seach_hotel_api1");
+
+});
 
 Route::get("/", function () {
 	return view("welcome");
@@ -123,10 +130,10 @@ Route::post("process_login_user","Controller@process_login_user")
 //tìm kiếm
 Route::post("search","indexController@search")
 ->name("search");
-Route::post("search_room","indexController@search_room")
+Route::get("search_room","indexController@search_room")
 ->name("search_room");
 // account booking sau khi đăng nhập
-Route::group(["prefix" => "", "middleware" => "CheckUser"], function(){
+Route::group(["prefix" => "", "middleware" => "LoginUser"], function(){
 	Route::post('proocess_booking',"indexController@proocess_booking")->name('proocess_booking');
 	Route::get('thank_you',"indexController@view_comfirm")->name('thank_you');
 	Route::get('profile','indexController@profile_account')->name('profile');

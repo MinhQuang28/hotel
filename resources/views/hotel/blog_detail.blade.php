@@ -167,7 +167,7 @@
 
                         <div class="blog-post">
                             <div class="main-img blog-post-img">
-                                <img src="../../images/{{ $blog->img1 }}" class="img-responsive" alt="blog-post-image" />
+                                <img src="../images/{{ $blog->img1 }}" class="img-responsive" alt="blog-post-image" />
                                 <div class="main-mask blog-post-info">
                                     <ul class="list-inline list-unstyled blog-post-info">
                                         <li><span><i class="fa fa-calendar"></i></span>{{ date('M d,Y', strtotime($blog->create_at)) }}</li>
