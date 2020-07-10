@@ -2,10 +2,26 @@
 
 //route api
 Route::group(["prefix" => "api"], function () {
-Route::get("view_index_hotel","ApiController@get_index_hotel")
-->name("view_index_hotel");
+Route::get("get_view_index","ApiController@get_index_hotel")->name("get_view_index");
 Route::get("seach_hotel_api1/{id}", "ApiController@seach_hotel_api1")->name("seach_hotel_api1");
+Route::get("get_city_index", "ApiController@get_city")->name("get_city_index");
+Route::get("get_list_hotel/{id}", "ApiController@list_hotel")->name("get_list_hotel");
+Route::post("info_hotel_id", "ApiController@info_hotel_id")->name("info_hotel_id");
+Route::post("info_hotel_room", "ApiController@info_room_hotel")->name("info_hotel_room");
 
+Route::post("info_room_id", "ApiController@info_room_id")->name("info_room_id");
+
+Route::post("login_user_api", "ApiController@login_user_api")->name("login_user_api");
+
+Route::post("get_info_user_api", "ApiController@info_user_api")->name("get_info_user_api");
+
+Route::post("api_view_booking", "ApiController@api_view_booking")->name("api_view_booking");
+Route::post("api_view_booking_done", "ApiController@api_view_booking_done")->name("api_view_booking_done");
+Route::post("api_view_booking_waiting", "ApiController@api_view_booking_waiting")->name("api_view_booking_waiting");
+Route::post("api_view_booking_false", "ApiController@api_view_booking_false")->name("api_view_booking_false");
+Route::post("api_booking_hotel", "ApiController@api_booking_hotel")->name("api_booking_hotel");
+Route::get("api_view_bill/{id}", "ApiController@view_bill")->name("api_view_bill");
+Route::get("api_cancel/{id}", "ApiController@cancel_booking")->name("api_cancel");
 });
 
 Route::get("/", function () {
